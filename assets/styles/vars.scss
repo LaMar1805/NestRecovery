@@ -1,0 +1,29 @@
+:root {
+  --background: #1A2714;
+  --backgroundCard: #1A2714;
+  --backgroundContrast: #D9C8B4;
+  --colorBaseContrast: #000;
+  --container: 1160px;
+  --actionGradient: linear-gradient(90deg, #C59541 0%, #FBDD78 36.98%, #BE9042 100%);
+  --gridGap: 40px;
+  --totalCol: 12;
+  --sideGutter: calc((100vw - var(--container)  ) / 2 - 8px - var(--gridGap));
+  --grid:  var(--sideGutter) repeat(var(--totalCol), 1fr) var(--sideGutter);
+  --gridinner: repeat(var(--totalCol), 1fr);
+  --yellowGradient: linear-gradient(180deg, #FBDD78 26%, #FBDD78 26%, #FFF8AA 37%, #FBDD78 48%, #DAB45B 52%, #BE9042 56%, #A97630 61%, #9D6725 64%, #996222 67%, #9E6825 71%, #AD7930 77%, #C59541 83%, #F8D065 88%, #E7BD59 89%, #FBDF78 95%, #FFF290 100%);
+  --colorYellow: #FBDD78;
+  --centered: 2/-2;
+  --full_centered: 1/-1;
+
+  @media screen and (max-width: 1199px){
+    --gridGap: 16px;
+    --totalCol: 8;
+    --centered: 3/-3;
+  }
+  @media screen and (max-width: 767px){
+    --gridGap: 16px;
+    --totalCol: 4;
+    --centered: 2/-2;
+  }
+
+}

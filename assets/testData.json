@@ -1,0 +1,290 @@
+{
+  "data": {
+    "recovery": [
+          {
+            "image": {
+              "src": "/images/exp/recovery@2x.png",
+              "width": 561,
+              "height": 280
+            }
+          },
+          {
+            "image": {
+              "src": "/images/exp/recovery_2@2x.png",
+              "width": 561,
+              "height": 280
+            }
+          }
+    ],
+    "accordion": [
+      {
+        "title": "What surgeries do you provide recovery for?",
+        "text": "<p>We provide recovery care after any elective surgery, specializing in plastic surgery.</p>"
+      },
+      {
+        "title": "What is included in the room rate?",
+        "text": "<h4>The room rate includes:</h4><ul> <li> Stay of one guest, including a private bathroom and private outdoor area </li> <li> 24/7 licensed nursing care </li> <li> Upon physician&apos;s request, a Sequential Compression Device and/or Oxygen Concentrator </li> <li> Recovery clothing </li> <li> Transportation: pick-up after your surgery, all follow-up visits with your surgeon during your stay with us, drop-off after your stay (Los Angeles Metropolitan Area, including LAX.) </li> <li> Post-op meals </li> <li> Breakfasts and snacks during your stay </li> </ul>"
+      },
+      {
+        "title": "Can I stay with you before my surgery?",
+        "text": "<p>Of course you can! If you want to settle in your room before the surgery, staying with us the night before is a great choice. We will transport you to your surgery and back to your room afterward.</p>"
+      },
+       {
+        "title": "What should I bring with me for my stay?",
+        "text": "<p>Bring whatever you usually pack for an overnight stay. We provide all the necessary toiletries and professional recovery wear for your visit. If you underwent facial surgery, consider bringing a large hat and a scarf for privacy during your transportation to follow-up appointments and back.</p><p>Please do not bring any valuables (cash, jewelry, etc.) Nest Recovery is not liable for any lost or damaged items during your stay.</p>"
+      },
+      {
+        "title": "What time is check-in and check-out?",
+        "text": "<p>Check-in time is any time after 2 pm. Check-out time is any time until 11 am. Early check-in or late check-out may be approved, subject to availability and extra fee.</p>"
+      },
+    {
+        "title": "What are the hours of operation at your facility?",
+        "text": "<p>Nursing care: 24/7.</p><p>Nursing care: 24/7.</p><p>Office: 9 am - 6 pm, Mon-Sun.</p>"
+      },
+      {
+        "title": "What is your cancellation policy?",
+        "text": "<p>We offer a 48-hour cancellation policy. If you want to cancel your stay, please call us 48 hours before the check-in time on your arrival date and we will refund the deposit in full. If we do not receive your 48-hour notice, unfortunately, we cannot refund the deposit for the first night of your stay.</p><p>If you need to change your visit dates, please call us as soon as possible, and we will do our best to accommodate your change.</p>"
+      },
+      {
+        "title": "May I have visitors? What are your visiting hours?",
+        "text": "<p>Of course! We heartily recommend that your friends and family visit you to support you during the recovery. We do not limit visiting hours; however, overnight guests are charged an extra fee of $300 per night (breakfast and snacks included.) Overnight guests will be provided with rollaway beds."
+      },
+      {
+        "title": "Where can I get lunch and dinner during my stay?",
+        "text": "<p>Nest Recovery is located in the heart of Beverly Hills with a variety of restaurants in the area offering delivery via Uber Eats and other apps. Some of our favourites are:</p> <ul> <li>Wally&rsquo;s&nbsp;</li> <li>Cafe Roma</li> <li>Polo Lounge</li> <li>Ebaldi</li> </ul>"
+      },
+      {
+        "title": "I have more questions.",
+        "text": "<p>If you did not find an answer to your questions above, please do not hesitate to reach out. We are happy to provide you with any information you need.<p>"
+      }
+    ],
+    "chef": [
+          {
+            "image": {
+              "src": "/images/chef/chef_2_1@2x.png",
+              "width": 561,
+              "height": 280
+            }
+          },
+          {
+            "image": {
+              "src": "/images/chef/chef_2_2@2x.png",
+              "width": 561,
+              "height": 280
+            }
+          },
+          {
+            "image": {
+              "src": "/images/chef/chef_2_3@2x.png",
+              "width": 561,
+              "height": 280
+            }
+          }
+    ],
+    "innercircle": [
+      {
+        "image": {
+          "src": "/images/exp/innercircle@2x.png",
+          "width": 460,
+          "height": 350
+        }
+      },
+      {
+        "image": {
+          "src": "/images/exp/innercircle_2@2x.png",
+          "width": 460,
+          "height": 350
+        }
+      },
+
+      {
+        "image": {
+          "src": "/images/exp/innercircle_3@2x.png",
+          "width": 460,
+          "height": 350
+        }
+      },
+      {
+        "image": {
+          "src": "/images/exp/innercircle@2x.png",
+          "width": 460,
+          "height": 350
+        }
+      },
+      {
+        "image": {
+          "src": "/images/exp/innercircle_2@2x.png",
+          "width": 460,
+          "height": 350
+        }
+      },
+
+      {
+        "image": {
+          "src": "/images/exp/innercircle_3@2x.png",
+          "width": 460,
+          "height": 350
+        }
+      }
+
+    ],
+    "wteThree": [
+      {
+        "image": {
+          "src": "/images/whattoexpect/wte_5@2x.png",
+          "width": 460,
+          "height": 350
+        }
+      },
+      {
+        "image": {
+          "src": "/images/whattoexpect/wte_6@2x.png",
+          "width": 460,
+          "height": 350
+        }
+      },
+
+      {
+        "image": {
+          "src": "/images/whattoexpect/wte_4@2x.png",
+          "width": 460,
+          "height": 350
+        }
+      }
+
+    ],
+    "cardBenefits": [
+      {
+        "title": "Professional Care",
+        "description": "Spacious suites, each outfitted with modern amenities and private patios/outdoor access. Chef-prepared meals.",
+        "link": "#",
+        "image": {
+          "src": "/images/1@2x.png",
+          "width": 551,
+          "height": 1002
+        }
+      },
+      {
+        "title": "Comfort of retreat",
+        "description": "Spacious suites, each outfitted with modern amenities and private patios/outdoor access. Chef-prepared meals.",
+        "link": "#",
+        "image": {
+          "src": "/images/2@2x.png",
+          "width": 551,
+          "height": 1002
+        }
+      },
+      {
+        "title": "Privacy on your terms",
+        "description": "Spacious suites, each outfitted with modern amenities and private patios/outdoor access. Chef-prepared meals.",
+        "link": "#",
+        "image": {
+          "src": "/images/3@2x.png",
+          "width": 551,
+          "height": 1002
+        }
+      }
+    ],
+    "careNurses": [
+      {
+        "image": {
+          "src": "/images/care__nurses/care__nurses_3@2x.png",
+          "width": 640,
+          "height": 781
+        }
+      },
+      {
+        "image": {
+          "src": "/images/care__nurses/care__nurses_2@2x.png",
+          "width": 640,
+          "height": 781
+        }
+      },
+      {
+        "image": {
+          "src": "/images/care__nurses/care__nurses@2x.png",
+          "width": 640,
+          "height": 781
+        }
+      }
+    ],
+    "wte": [
+      {
+        "image": {
+          "src": "/images/whattoexpect/wte_1@2x.png",
+          "width": 461,
+          "height": 351
+        }
+      },
+      {
+        "image": {
+          "src": "/images/whattoexpect/wte_2@2x.png",
+          "width": 461,
+          "height": 351
+        }
+      },
+      {
+        "image": {
+          "src": "/images/whattoexpect/wte_3@2x.png",
+          "width": 461,
+          "height": 351
+        }
+      }
+    ],
+    "therapy": [
+      {
+        "text": "Rate: $250/hour",
+        "image": {
+          "src": "/images/care__nurses/nurses_4@2x.png",
+          "width": 543,
+          "height": 397
+        }
+      }
+    ],
+    "massage": {
+      "title": "Lymphatic drainage massage",
+      "text": "<p>If recommended by your doctor, we offer on-site lymphatic drainage massage, expertly administered by our skilled masseur, Vasil. With an impressive 20 years of experience, Vasil holds a degree in Kinesiology with a focus on exercise science from CSUN. He is currently completing his doctorate program at SCUHS, working towards earning the title of Dr. of Chiropractic this year.</p><span class=rateString>Rate: $300/session</span>",
+      "image": [
+        {
+          "image": {
+            "src": "/images/care__nurses/nurses_5@2x.png",
+            "width": 543,
+            "height": 397
+          }
+        }
+      ]
+    },
+    "menuLinks": [
+      {
+        "text": "Rooms",
+        "link": "/rooms"
+      },
+      {
+        "text": "Care",
+        "link": "/care"
+      },
+      {
+        "text": "Experiences",
+        "link": "/experiences"
+      },
+      {
+        "text": "About",
+        "link": "/about"
+      }
+    ],
+    "footerMenuLinks": [
+      {
+        "text": "Privacy Policy",
+        "link": "#"
+      },
+      {
+        "text": "Terms of Service",
+        "link": "#"
+      },
+      {
+        "text": "© Nest Recovery 2023"
+      }
+    ]
+  }
+}
+

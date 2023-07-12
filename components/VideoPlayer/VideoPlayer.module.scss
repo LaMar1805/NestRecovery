@@ -1,0 +1,44 @@
+.video_player__button {
+  svg {
+	circle {
+	  fill: url(#green);
+	  stroke: url(#gradient);
+	}
+	rect {
+	  fill: url(#gradient);
+	}
+  }
+  &:hover {
+	svg {
+
+	  circle {
+		fill: url(#gradient);
+	  }
+	  rect {
+		fill: url(#green);
+	  }
+	}
+  }
+}
+.video_player__button_playing {
+  svg {
+	circle {
+	  fill: url(#green);
+	  stroke: url(#gradient);
+	  stroke-width: 1px;
+	}
+	path {
+	  fill: url(#gradient);
+	}
+  }
+  &:hover {
+	svg {
+	  circle {
+		fill: url(#gradient);
+	  }
+	  path {
+		fill: url(#green);
+	  }
+	}
+  }
+}
