@@ -30,7 +30,7 @@
 
   .section__footer {
 
-	margin-top: -123px;
+	//margin-top: -123px;
 	position: relative;
 	z-index: 10;
 
@@ -52,11 +52,16 @@
   }
 
   .swiper-slide.section-screen__slide {
+
 	height: calc(100vh - 360px);
-
-
 	@media screen and (max-width: 1089px){
 	  max-height: 250px;
+	}
+  }
+  &.with-footer {
+	.swiper-slide.section-screen__slide {
+	  height: calc(100vh - 470px);
+
 	}
   }
 }
@@ -260,14 +265,14 @@
 	bottom: 0;
 	color: white;
 	font-size: 40px;
-	left: 4.5rem;
+	left: 2rem;
 	z-index: 20;
   }
 
   .video_player_controls {
 	position: absolute;
 	bottom: 0;
-	right: 4.5rem;
+	right: 2rem;
 	z-index: 20;
   }
 

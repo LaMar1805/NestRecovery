@@ -1,24 +1,23 @@
 import Image from 'next/image'
 import Section from "@/components/layout/Section";
-import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
 import testData from "@/assets/testData.json"
 import slideImg from "@/assets/images/exp/screen@2x.png"
+import slideImg2 from "@/assets/images/exp/exp_sl_6@2x.png"
+import slideImg3 from "@/assets/images/exp/exp_sl_7@2x.png";
 import chef from "@/assets/images/exp/chef_1@2x.png"
 import SliderViewport from "@/components/Slider/SliderViewport";
-import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
-import { DefList } from "@/components/ui/Elements";
-import { CareTherapySvg } from "@/components/Icons";
-import CardImage from "@/components/Cards/CardImage";
 
 export default function ExperiencesPage() {
 
-    const images = [slideImg,slideImg,slideImg];
-    const screenSlider = images.map((item, index) => <Image key={index}  objectFit={"cover"} fill={true}   sizes="100vw" src={item} alt={''}/> );
+    const images = [slideImg,slideImg2,slideImg3];
+    const screenSlider = images.map((item, index) => <Image key={index}  style={{ objectFit: "cover"}}  fill={true}   sizes="100vw" src={item} alt={''}/> );
+
     const sectSlider = testData.data.innercircle.map((item, index) => <Image key={index}
         width={item.image.width}
         height={item.image.height}
         src={item.image.src} alt={''}/> );
+
     const img = testData.data.recovery;
 
   return (
@@ -67,7 +66,7 @@ export default function ExperiencesPage() {
                 variant={'section-gallery section-innercircle grid'}
                 gallery={<div className={'section__gallery_wrapper'}>
                     <div className={'section__gallery'}>
-                    <Slider items={sectSlider} loop={true} navigation={true} breakpoints={{
+                    <Slider items={sectSlider} navigation={true} breakpoints={{
                         // when window width is >= 320px
                         320: {
                             slidesPerView: 1,

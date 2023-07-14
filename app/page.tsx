@@ -3,18 +3,19 @@ import Section from "@/components/layout/Section";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
 import testData from "@/assets/testData.json"
-import slideImg from "@/assets/images/Ofich2Dg 1@2x.png"
+import slideImg from "@/assets/images/index/Ofich2Dg1@2x.png"
+import slideImg2 from "@/assets/images/index/index_sl_1@2x.png"
+import slideImg3 from "@/assets/images/index/index_sl_2@2x.png"
 import contactImg from "@/assets/images/Still-3 1@2x.png"
 import SliderViewport from "@/components/Slider/SliderViewport";
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 import { DefList } from "@/components/ui/Elements";
 
 export default function Home() {
-    const images = [slideImg,slideImg,slideImg];
-    const screenSlider = images.map((item, index) => <Image key={index}  objectFit={"cover"} fill={true}   sizes="100vw" src={item} alt={''}/> )
 
+    const images = [slideImg,slideImg2,slideImg3];
+    const screenSlider = images.map((item, index) => <Image key={index}  objectFit={"cover"} fill={true}   src={item} alt={''}/> )
     const img = testData.data.cardBenefits;
-
 
   return (
       <main className={'page-index'}>
@@ -26,7 +27,10 @@ export default function Home() {
                             <Link href={'#'} className={'button button-big'}>Book</Link>
                         </div>}
                 title={<h1 className={'section__title'}>Expert medical care in the comfort of a luxury retreat</h1>}
-                gallery={<Slider items={screenSlider} perView={1} spaceBetween={0}/>}
+                gallery={<Slider autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}  items={screenSlider} perView={1} spaceBetween={0}/>}
             />
 
             <Section
@@ -40,7 +44,7 @@ export default function Home() {
                 container={false}
                 title={<h2 className={'section__title'}>9653 Highridge Dr<strong>Beverly Hills, CA 90210</strong></h2>}
                 text={<div className={'section__text'}><strong>10 minutes</strong> away from multiple top plastic surgery clinics in the LA area</div>}
-                gallery={<VideoPlayer title={'Breathtaking canyon views'} src={'/nest_promo.mp4'}/>}
+                gallery={<VideoPlayer title={'Breathtaking canyon views'} src={'/website_promo_6.mp4'}/>}
             />
 
             <Section

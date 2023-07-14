@@ -13,6 +13,7 @@ export default function WhatToExpectPage() {
         width={item.image.width}
         height={item.image.height}
         src={item.image.src} alt={''}/> );
+
   return (
         <main className={'page-what-to-expect'}>
             <Section
@@ -73,7 +74,7 @@ export default function WhatToExpectPage() {
                 </div>}
                 links={<div className={'section__footer'}>
                     <Link href={'#'} className={'button button-big'}>Book</Link>
-                    <Link href={'#'} className={'button button-big'}>Read FAQ</Link>
+                    <Link href={'/faq'} className={'button button-big'}>Read FAQ</Link>
                 </div>}
                 variant={'section-gallery wte-four grid'}
                 gallery={<div className={'section__gallery_wrapper'}>

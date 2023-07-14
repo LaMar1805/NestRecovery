@@ -30,9 +30,9 @@ export default function HeaderNavbar({children}:{children: ReactNode | ReactElem
 	const Burger = () => <a className={'burger'} onClick={handleBurger}>{!open ? <BurgerSvg /> : <BurgerClosedSvg />}</a>;
 	return desktop ?
 		<>
-			<Navbar style={''} items={testData.data.menuLinks.slice(0, 2)}/>
+			<Navbar style={''} items={testData.data.menuLinks.slice(0, 3)}/>
 			{children}
-			<Navbar style={''} items={testData.data.menuLinks.slice(2, 4)}/>
+			<Navbar style={''} items={testData.data.menuLinks.slice(3, 6)}/>
 		</> : <>
 			<div className={`logoMobile header__menu ${!animate ? 'animate__scale_out' : 'animate__scale_in'}`}>{open && <Navbar style={''} items={testData.data.menuLinks}/>}</div>
 

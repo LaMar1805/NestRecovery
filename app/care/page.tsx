@@ -3,17 +3,16 @@ import Section from "@/components/layout/Section";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
 import testData from "@/assets/testData.json"
-import slideImg from "@/assets/images/care@2x.png"
-import contactImg from "@/assets/images/Still-3 1@2x.png"
+import slideImg from "@/assets/images/care__nurses/care@2x.png";
+import slideImg2 from "@/assets/images/care__nurses/care_sl_3@2x.png";
+import slideImg3 from "@/assets/images/care__nurses/care_sl_4@2x.png";
 import SliderViewport from "@/components/Slider/SliderViewport";
-import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
-import { DefList } from "@/components/ui/Elements";
 import { CareTherapySvg } from "@/components/Icons";
 
 export default function CarePage() {
 
-    const images = [slideImg,slideImg,slideImg];
-    const screenSlider = images.map((item, index) => <Image key={index}  objectFit={"cover"} fill={true}   sizes="100vw" src={item} alt={''}/> );
+    const images = [slideImg,slideImg2,slideImg3];
+    const screenSlider = images.map((item, index) => <Image key={index} fill={true} style={{ objectFit: "cover"}}   sizes="100vw" src={item} alt={''}/> );
     const img = testData.data.careNurses;
 
   return (
@@ -21,7 +20,7 @@ export default function CarePage() {
             <Section
                 variant={'section-screen'}
                 container={false}
-                links={<div className={'grid section__footer grid'}>
+                links={<div className={'section__footer grid'}>
                             <h2 className={'section__footer_title'}>24/7 licensed nursing care and cutting-edge technology</h2>
                             <Link href={'#'} className={'button button-big'}>Book</Link>
                         </div>}

@@ -12,7 +12,7 @@ interface SectionProp {
 export const Container = ({children}:any) => <div className={'container'}>{children}</div>
 const Section = ({variant, gallery, text, links, title, container = true}: SectionProp) => {
 	return (
-		<section className={`section ${variant}`}>
+		<section className={`section ${variant} ${links ? 'with-footer' : ''}`}>
 			{container ?
 				<Container>
 					{title}

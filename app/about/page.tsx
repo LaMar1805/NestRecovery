@@ -1,15 +1,11 @@
 import Image from 'next/image'
 import Section from "@/components/layout/Section";
 import Link from "next/link";
-import testData from "@/assets/testData.json";
-import slideImg from "@/assets/images/care@2x.png";
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
-import fallbackImg from "@/assets/images/fallback.png"
+import fallbackImg from "@/assets/images/founder.jpg";
 import svgImg from "@/assets/svg/lena_kaminski.svg"
 export default function AboutPage() {
 
-    const images = [slideImg,slideImg,slideImg];
-    const img = testData.data.careNurses;
 
   return (
         <main className={'page-about'}>
@@ -17,7 +13,7 @@ export default function AboutPage() {
                 variant={'section-screen'}
                 container={false}
                 title={<h1 className={'section__title'}>About Nest Recovery</h1>}
-                gallery={<VideoPlayer src={'/about.mp4'} />}
+                gallery={<VideoPlayer src={'/nest_promo_1.mp4'} />}
             />
 
             <Section
@@ -33,7 +29,7 @@ export default function AboutPage() {
                 container={false}
                 title={<h2 className={'section__title'}>Meet <span>the Founder</span></h2>}
                 links={<div className={'grid section__footer grid'}>
-                    <Link href={'/what-to-expect'} className={'button button-big'}>Learn more</Link>
+                    <Link href={'/chef'} className={'button button-big'}>Learn more</Link>
                 </div>}
                 text={<div className={'section__text'}>
                     <p>Lena Kaminski, RN, is a highly skilled director of nursing with a focus on plastic surgery. With 10+ years of experience in the field, Lena has established herself as a leader in her profession, known for her expertise, dedication, and compassionate patient care. Her calm and reassuring demeanor helps to put patients at ease, while her attention to detail and commitment to safety ensure that each patient experiences the highest level of care.</p>

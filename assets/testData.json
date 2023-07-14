@@ -264,12 +264,21 @@
         "link": "/care"
       },
       {
+        "text": "Chef",
+        "link": "/chef"
+      },
+
+      {
         "text": "Experiences",
         "link": "/experiences"
       },
       {
         "text": "About",
         "link": "/about"
+      },
+      {
+        "text": "Faq",
+        "link": "/faq"
       }
     ],
     "footerMenuLinks": [

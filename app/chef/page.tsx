@@ -11,9 +11,9 @@ import fallbackImg from "@/assets/images/chef/chefj@2x.png";
 import svgImg from "@/assets/svg/jordan_grandviergne.svg";
 
 export default function ChefPage() {
+
     const images = [slideImg,slideImg2,slideImg3];
-    const screenSlider = images.map((item, index) => <Image key={index}  objectFit={"cover"} fill={true}   sizes="100vw" src={item} alt={''}/> );
-   
+    const screenSlider = images.map((item, index) => <Image key={index}  style={{ objectFit: "cover"}}  fill={true}   sizes="100vw" src={item} alt={''}/> );
     const img = testData.data.chef;
 
   return (
