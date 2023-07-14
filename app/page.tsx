@@ -29,33 +29,33 @@ export const metadata: Metadata = {
         description: '',
         url: new URL('https://www.nestrecovery.me'),
         siteName: 'Nest Recovery',
-        videos: [
-            {
-                url:`${process.env.baseUrl}/website_promo_6.mp4`,
-                height: 720,
-                width: 1280,
-                type: 'video/mp4'
-            }
-        ],
-        images: [
-            {
-                alt: 'asdasd',
-                url: `${process.env.baseUrl}/_next/static/media/Ofich2Dg1.d322e2ca.png`,
-                height: 412,
-                width: 1400,
-            },
-            {
-                url: `${process.env.baseUrl}/_next/static/media/index_sl_1.55a7db97.png`,
-                height: 412,
-                width: 1400,
-            },
-            {
-                url: `${process.env.baseUrl}/_next/static/media/index_sl_2.ae2c9303.png`,
-                height: 412,
-                width: 1400,
-
-            }
-        ],
+        // videos: [
+        //     {
+        //         url:`${process.env.baseUrl}/website_promo_6.mp4`,
+        //         height: 720,
+        //         width: 1280,
+        //         type: 'video/mp4'
+        //     }
+        // ],
+        // images: [
+        //     {
+        //         alt: 'asdasd',
+        //         url: `${process.env.baseUrl}/_next/static/media/Ofich2Dg1.d322e2ca.png`,
+        //         height: 412,
+        //         width: 1400,
+        //     },
+        //     {
+        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_1.55a7db97.png`,
+        //         height: 412,
+        //         width: 1400,
+        //     },
+        //     {
+        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_2.ae2c9303.png`,
+        //         height: 412,
+        //         width: 1400,
+        //
+        //     }
+        // ],
         locale: 'en_US',
         type: 'website',
     },
@@ -64,7 +64,12 @@ export default function Home() {
 
     const images = [slideImg,slideImg2,slideImg3];
     const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
-    const screenSlider = images.map((item, index) => <Image key={index} priority={true} style={{objectFit: "cover"}} fill={true}   src={item} alt={''}/> )
+    const screenSlider = images.map((item, index) => <Image key={index}   placeholder="blur" priority={true} width={1400}   height={412} sizes="100vw"      style={{
+        maxWidth: '100%',
+        width: '100%',
+        aspectRatio: 1400 / 412,
+        height: 'auto',
+    }} src={item} alt={''}/> )
     const cardsSlider = cardsImages.map((item, index) => <CardImage style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
         image={<Image key={index}  src={item} alt={''}/>} />)
 
