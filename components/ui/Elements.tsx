@@ -16,8 +16,7 @@ export function Navbar({items, style = ''}:{
 }) {
 	return (
 		<ul className={"navbar " + style}>
-			{items.map((item, index) =>
-			<li className={"navbar__text"} key={index}>{item} </li>
+			{items.map((item:any, index:number) =>	<li className={"navbar__text"} key={index}>{item} </li>
 			)}
 		</ul>);
 }

@@ -22,6 +22,7 @@ export default function HeaderNavbar({children}:{children: ReactNode | ReactElem
 			setAnimate(2);
 		}
 		if(!open) {
+			// @ts-ignore
 			domNode.addEventListener('click', () => {
 				setAnimate(2);
 				setOpen(prevState => !prevState);
@@ -34,7 +35,7 @@ export default function HeaderNavbar({children}:{children: ReactNode | ReactElem
 	const linkAr = testData.data.menuLinks.map((item) => <><Link className={"navbar__link"} key={id} onClick={() => (width && width > 1200) && handleBurger()} href={item.link}>{item.text}</Link>
 		{item.submenu ? <Navbar style={'navbar__submenu'} items={item.submenu.map((item) => <Link className={"navbar__link navbar__link-submenu"} key={id} onClick={() => (width && width > 1200) && handleBurger()} href={item.link}>{item.text}</Link>)}/> : null}</>)
 	const Burger = () => <a className={'burger'}  onClick={handleBurger}>{!open ? <BurgerSvg /> : <BurgerClosedSvg />}</a>;
-	if(width > 1200) {
+	if(width && width > 1200) {
 		return(
 			<>
 				<Navbar   style={''} items={linkAr.slice(0,3)}/>
