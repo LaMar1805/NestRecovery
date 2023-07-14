@@ -1,27 +1,26 @@
 import Image from 'next/image'
 import Section from "@/components/layout/Section";
 import Slider from "@/components/Slider/Slider";
-import testData from "@/assets/testData.json"
-import slideImg from "@/assets/images/exp/screen@2x.png"
-import slideImg2 from "@/assets/images/exp/exp_sl_6@2x.png"
-import slideImg3 from "@/assets/images/exp/exp_sl_7@2x.png";
-import chef from "@/assets/images/exp/chef_1@2x.png"
+import slideImg from "@/assets/images/exp/screen.png"
+import slideImg2 from "@/assets/images/exp/exp_sl_6.png"
+import slideImg3 from "@/assets/images/exp/exp_sl_7.png";
+import imgIn from "@/assets/images/exp/exp_sl_8.png";
+import imgIn2 from "@/assets/images/exp/innercircle.png";
+import imgIn3 from "@/assets/images/exp/exp_sl_9.png";
+import imgRec from "@/assets/images/exp/recovery.png";
+import imgRec2 from "@/assets/images/exp/recovery_2.png";
+
+import chef from "@/assets/images/exp/chef_1.png"
 import SliderViewport from "@/components/Slider/SliderViewport";
 
 export default function ExperiencesPage() {
 
     const images = [slideImg,slideImg2,slideImg3];
-    // const imgs = [recImg, recImg2];
+    const imgs = [imgIn, imgIn2, imgIn3];
+    const imgrs = [imgRec, imgRec2];
     const screenSlider = images.map((item, index) => <Image key={index}  style={{ objectFit: "cover"}}  fill={true}   sizes="100vw" src={item} alt={''}/> );
-    // const img = imgs.map((item, index) => <Image key={index}  src={item} alt={''}/> );
-
-    const sectSlider = testData.data.innercircle.map((item, index) => <Image key={index}
-        width={item.image.width}
-        height={item.image.height}
-        src={item.image.src} alt={''}/> );
-
-    const img = testData.data.recovery;
-
+    const imgt = imgs.map((item, index) => <Image key={index}  src={item} alt={''}/> );
+    const imgr = imgrs.map((item, index) => <Image key={index}  src={item} alt={''}/> );
 
   return (
         <main className={'page-experiences'}>
@@ -32,7 +31,10 @@ export default function ExperiencesPage() {
                     <h1 className={'section__title'}>Nest recovery experiences</h1>
                     <p  className={'section__subtitle'}>Whether you prefer to heal discreetly in the tranquillity of your accommodations or are feeling more social, we&#39;ve got you covered.</p>
             </>}
-                gallery={<Slider items={screenSlider} perView={1} spaceBetween={0}/>}
+                gallery={<Slider autoplay={{
+                    delay: 20000,
+                    disableOnInteraction: false,
+                }} items={screenSlider} perView={1} spaceBetween={0}/>}
             />
 
             <Section
@@ -57,7 +59,7 @@ export default function ExperiencesPage() {
                             pagination: false,
                             centeredSlides: false
                         }
-                    }} push={false} items={img}/>
+                    }} push={false} items={imgr}/>
             </div>}
             />
             <Section
@@ -69,21 +71,25 @@ export default function ExperiencesPage() {
                 variant={'section-gallery section-innercircle grid'}
                 gallery={<div className={'section__gallery_wrapper'}>
                     <div className={'section__gallery'}>
-                    <Slider items={sectSlider} navigation={true} breakpoints={{
+                    <Slider items={[...imgt, ...imgt,...imgt]} navigation={true} breakpoints={{
                         // when window width is >= 320px
                         320: {
+                            loop: true,
                             slidesPerView: 1,
                             spaceBetween: 0,
                             navigation: false
                         },
+
+
                         1200: {
                             loop: true,
-                            slidesPerView: 2,
+                            slidesPerView: 3,
                             spaceBetween: 60,
+                            freeMode: false,
                             pagination: false,
                             centeredSlides: false
                         }
-                    }} perView={4} />
+                    }} />
                     </div>
             </div>}
             />

@@ -3,17 +3,25 @@ import Section from "@/components/layout/Section";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
 import testData from "@/assets/testData.json"
-import slideImg from "@/assets/images/care__nurses/care@2x.png";
-import slideImg2 from "@/assets/images/care__nurses/care_sl_3@2x.png";
-import slideImg3 from "@/assets/images/care__nurses/care_sl_4@2x.png";
+import slideImg from "@/assets/images/care__nurses/care.png";
+import slideImg2 from "@/assets/images/care__nurses/care_sl_3.png";
+import slideImg3 from "@/assets/images/care__nurses/care_sl_4.png";
+import slideImgSection from "@/assets/images/care__nurses/care__nurses.png";
+import slideImgSection2 from "@/assets/images/care__nurses/care__nurses_2.png";
+import slideImgSection3 from "@/assets/images/care__nurses/care__nurses_3.png";
 import SliderViewport from "@/components/Slider/SliderViewport";
 import { CareTherapySvg } from "@/components/Icons";
+import CardImage from "@/components/Cards/CardImage";
+import React from "react";
 
 export default function CarePage() {
 
     const images = [slideImg,slideImg2,slideImg3];
+    const imagesSect = [slideImgSection,slideImgSection2,slideImgSection3];
     const screenSlider = images.map((item, index) => <Image key={index} fill={true} style={{ objectFit: "cover"}}   sizes="100vw" src={item} alt={''}/> );
-    const img = testData.data.careNurses;
+    const img = imagesSect.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
+        image={<Image key={index} style={{width: "100%", background: 'none'}} src={item} alt={''}/>} />)
+    // const img = testData.data.careNurses;
 
   return (
         <main className={'page-care'}>
@@ -25,7 +33,10 @@ export default function CarePage() {
                             <Link href={'#'} className={'button button-big'}>Book</Link>
                         </div>}
                 title={<h1 className={'section__title'}>Professional support for your recovery</h1>}
-                gallery={<Slider items={screenSlider} perView={1} spaceBetween={0}/>}
+                gallery={<Slider autoplay={{
+                    delay: 20000,
+                    disableOnInteraction: false,
+                }} items={screenSlider} loop={true} perView={1} spaceBetween={0}/>}
             />
 
             <Section
@@ -36,7 +47,19 @@ export default function CarePage() {
                     <p>If recommended by your doctor, your care will be complemented with Sequential Compression Device and Oxygen Concentrator at no extra charge or IV at $50 per fluid bag.</p> </div>}
                 variant={'section-gallery grid'}
                 gallery={<div className={'section__gallery'}>
-                    <SliderViewport cardStyle={'card-nurses'} push={false} items={img}/>
+                    <SliderViewport   breakpoints={{
+                        // when window width is >= 320px
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+
+                        },
+                        // when window width is >= 480px
+                        1200: {
+                            slidesPerView: 3,
+                            spaceBetween: 30
+                        }
+                    }} cardStyle={'card-nurses'}  push={false} items={img}/>
             </div>}
             />
             <Section

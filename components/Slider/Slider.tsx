@@ -10,7 +10,7 @@ import { ReactNode, useRef } from "react";
 import { Arrow } from "@/components/ui/Elements";
 
 // @ts-ignore
-const Slider = ({items, spaceBetween = 0,  perView = 1, pagination = true, navigation=false, breakpoints = undefined, autoplay }:{
+const Slider = ({items, spaceBetween = 0, loop = false,  perView = 1, pagination = true, navigation=false, breakpoints = undefined, autoplay }:{
 	items: ReactNode[]
 	spaceBetween?: number
 	perView?: number
@@ -27,6 +27,7 @@ const Slider = ({items, spaceBetween = 0,  perView = 1, pagination = true, navig
 				autoplay={autoplay}
 				modules={[Navigation, Pagination, Autoplay]}
 				spaceBetween={spaceBetween}
+				loop={loop}
 				onBeforeInit={(swiper) => {
 					swiperRef.current = swiper;
 				}}
@@ -36,8 +37,8 @@ const Slider = ({items, spaceBetween = 0,  perView = 1, pagination = true, navig
 			// 	}
 
 				// watchSlidesProgress={true}
-				autoHeight={true}
-				// style={{maxWidth: '100%', width: '100%'}}
+				// autoHeight={true}
+				style={{maxWidth: '100%', width: '100%'}}
 				pagination={{ enabled: pagination, clickable: true, bulletClass: 'custom__bullet', bulletActiveClass: 'custom_bullet_active' }}
 				slidesPerView={perView}
 				// centeredSlides={true}

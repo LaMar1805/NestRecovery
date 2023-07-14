@@ -2,8 +2,8 @@ import Image from 'next/image'
 import Section from "@/components/layout/Section";
 import Link from "next/link";
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
-import fallbackImg from "@/assets/images/founder.jpg";
-import svgImg from "@/assets/svg/lena_kaminski.svg"
+import fallbackImg from "@/assets/images/founder.png";
+import svgImg from "@/assets/svg/lena_kaminski.svg";
 export default function AboutPage() {
 
 
@@ -28,7 +28,7 @@ export default function AboutPage() {
             <Section
                 container={false}
                 title={<h2 className={'section__title'}>Meet <span>the Founder</span></h2>}
-                links={<div className={'grid section__footer grid'}>
+                links={<div className={'section__footer'}>
                     <Link href={'/chef'} className={'button button-big'}>Learn more</Link>
                 </div>}
                 text={<div className={'section__text'}>

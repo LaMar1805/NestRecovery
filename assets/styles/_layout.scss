@@ -55,21 +55,23 @@
     margin-bottom: 1.75rem;
   }
   .textStyled {
-
-      display: flex;
-      align-items: center;
-    height: 36px;
-
     &.left {
       order: -1;
       max-width: 10rem;
     }
+
     &.right {
       order: 1;
       max-width: 7rem;
     }
-  }
+    a {
+      display: flex;
+      align-items: center;
+      height: 36px;
 
+
+    }
+  }
   .navbar {
     @media screen and (max-width: 1079px){
       flex-flow: column;

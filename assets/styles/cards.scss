@@ -4,7 +4,6 @@
 	grid-column: span 3;
 	cursor: pointer;
 	position: relative;
-	background-color: var(--backgroundCard);
 	flex-direction: column;
 	display: flex;
 
@@ -14,6 +13,7 @@
 	}
 
 	img {
+	  width: 100%;
 	  object-fit: cover;
 	  display: block;
 	}
@@ -63,7 +63,7 @@
 	.card__image{
 	  position: relative;
 	  flex: 1;
-
+	  background-color: var(--backgroundCard);
 	  display: flex;
 	  flex-direction: column;
 	  svg {
@@ -109,6 +109,10 @@
 	  }
 	}
 	@media screen and (max-width: 1199px){
+	  max-width: 360px;
+	  img {
+		aspect-ratio: 360/400;
+	  }
 	  .card__title {
 		position: relative;
 		margin-top: -2.125rem;
@@ -150,6 +154,13 @@
   &.card-exp-recovery {
 	position: relative;
 	z-index: 10;
+
+  }
+  @media screen and (max-width: 1199px){
+
+	  max-width: 480px;
+	  justify-self: center;
+	  align-self: center;
 
   }
 }

@@ -2,13 +2,19 @@ import Image from 'next/image'
 import Section from "@/components/layout/Section";
 import Link from "next/link";
 import testData from "@/assets/testData.json";
-import slideImg from "@/assets/images/whattoexpect/screen@2x.png";
-import wteImg from "@/assets/images/whattoexpect/wte_@2x.png";
+import slideImg from "@/assets/images/whattoexpect/screen.png";
+import wteImg from "@/assets/images/whattoexpect/wte_.png";
+import wteCardImg from "@/assets/images/whattoexpect/wte_1.png";
+import wteCardImg2 from "@/assets/images/whattoexpect/wte_2.png";
+import wteCardImg3 from "@/assets/images/whattoexpect/wte_3.png";
 import SliderViewport from "@/components/Slider/SliderViewport";
 import Slider from "@/components/Slider/Slider";
+import CardImage from "@/components/Cards/CardImage";
+import React from "react";
 export default function WhatToExpectPage() {
-
-    const img = testData.data.wte;
+    const cardImg = [wteCardImg, wteCardImg2, wteCardImg3];
+    const img = cardImg.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
+        image={<Image key={index} style={{width: "100%", background: 'none'}} src={item} alt={''}/>} />)
     const sectSlider = testData.data.wteThree.map((item, index) => <Image key={index}
         width={item.image.width}
         height={item.image.height}
@@ -19,7 +25,7 @@ export default function WhatToExpectPage() {
             <Section
                 variant={'section-screen'}
                 container={false}
-                gallery={<div className={'section__gallery'}><Image src={slideImg} alt={''}/></div>}
+                gallery={<div className={'section__gallery'} style={{height: "80px"}}><Image  style={{objectFit: "contain", "width": "100vw"}} src={slideImg} alt={''}/></div>}
             />
             <Section
                 title={<h2 className={'section__title'}>What to expect</h2>}

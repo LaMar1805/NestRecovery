@@ -100,17 +100,21 @@
   text-transform: uppercase;
   color: #1A2714;
   margin-top: 0;
-  cursor: pointer;
+
 
   display: flex;
   justify-content: space-between;
   svg {
     transform: rotateZ(180deg);
+    cursor: pointer;
   }
   h3 {
     margin: 30px 0;
     font-weight: 400;
     flex: 1 auto;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
   }
 
 }

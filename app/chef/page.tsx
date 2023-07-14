@@ -2,20 +2,26 @@ import Image from 'next/image'
 import Section from "@/components/layout/Section";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
-import testData from "@/assets/testData.json"
-import slideImg from "@/assets/images/chef/slider@2x.png"
-import slideImg2 from "@/assets/images/chef/slider_2@2x.png"
-import slideImg3 from "@/assets/images/chef/slider_3@2x.png"
+import slideImg from "@/assets/images/chef/slider.png"
+import slideImg2 from "@/assets/images/chef/slider_2.png"
+import slideImg3 from "@/assets/images/chef/slider_3.png"
+import sectImg from "@/assets/images/chef/chef_2_1.png"
+import sectImg2 from "@/assets/images/chef/chef_2_2.png"
+import sectImg3 from "@/assets/images/chef/chef_2_3.png"
 import SliderViewport from "@/components/Slider/SliderViewport";
-import fallbackImg from "@/assets/images/chef/chefj@2x.png";
+import fallbackImg from "@/assets/images/chef/chefj.png";
 import svgImg from "@/assets/svg/jordan_grandviergne.svg";
+import CardImage from "@/components/Cards/CardImage";
+import React from "react";
 
 export default function ChefPage() {
 
     const images = [slideImg,slideImg2,slideImg3];
     const screenSlider = images.map((item, index) => <Image key={index}  style={{ objectFit: "cover"}}  fill={true}   sizes="100vw" src={item} alt={''}/> );
-    const img = testData.data.chef;
+    const cardsImages = [sectImg,sectImg2,sectImg3];
 
+    const img = cardsImages.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
+        image={<Image key={index}  src={item} alt={''}/>} />)
   return (
         <main className={'page-chef'}>
             <Section
@@ -25,11 +31,14 @@ export default function ChefPage() {
                     <h1 className={'section__title'}>La Haute Cuisine</h1>
                     <p  className={'section__subtitle'}>The ultimate French experience created by Chef Jordan Grandviergne</p>
             </>}
-                gallery={<Slider items={screenSlider} perView={1} spaceBetween={0}/>}
+                gallery={<Slider autoplay={{
+                    delay: 20000,
+                    disableOnInteraction: false,
+                }} items={screenSlider} perView={1} spaceBetween={0}/>}
             />
             <Section
                 container={false}
-                links={<div className={'section__footer grid'}>
+                links={<div className={'section__footer'}>
                     <Link href={'/what-to-expect'} className={'button button-big'}>Explore classes</Link>
                 </div>}
                 text={<div className={'section__text'}>

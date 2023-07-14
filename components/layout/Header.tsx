@@ -1,6 +1,7 @@
 import React from "react";
 import { BeverlyHills,  LogoSvg, NestRecovery } from "@/components/Icons";
 import HeaderNavbar from "@/components/layout/Navbar";
+import Link from "next/link";
 
 const Header = () => {
 
@@ -9,13 +10,13 @@ const Header = () => {
 			<div className={'container'}>
 				<HeaderNavbar >
 					<div className={"layout-header__logo"}>
-						<LogoSvg/>
+						<Link href={'/'}><LogoSvg/></Link>
 					</div>
 					<div className={'textStyled left'}>
-						<NestRecovery/>
+						<Link href={'/'}><NestRecovery/></Link>
 					</div>
 					<div className={'textStyled right'}>
-						<BeverlyHills/>
+						<Link href={'/'}><BeverlyHills/></Link>
 					</div>
 				</HeaderNavbar>
 			</div>

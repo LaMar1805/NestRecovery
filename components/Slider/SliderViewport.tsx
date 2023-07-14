@@ -12,13 +12,18 @@ const SliderViewport = ({items, push = true, cardStyle, breakpoints = false, fil
 
 	useEffect(() => {
 		let result = [];
-		items.map((item: any, index: number) => result.push(<CardImage style={cardStyle} title={item.title} description={item.description} 	key={index+100}
-			image={<Image
-				fill={fillImg} objectFit={"cover"}
-				width={!fillImg && item.image.width}
-				height={!fillImg &&  item.image.height}
-				src={item.image.src} alt={''} key={index}/>}
-		/>));
+		if(items.width !== undefined) {
+			items.map((item: any, index: number) => result.push(<CardImage style={cardStyle} title={item.title} description={item.description} 	key={index+100}
+				image={<Image
+					fill={fillImg} objectFit={"cover"}
+					width={!fillImg && item.image.width}
+					height={!fillImg &&  item.image.height}
+					src={item.image.src} alt={''} key={index}/>}
+			/>));
+		} else  {
+			result = [...items]
+			console.log(result)
+		}
 		if (width && push && width > 1199) {
 			result.push(<CardImage style={cardStyle} image={<FallBackImgSvg />} key={123}/>);
 		}

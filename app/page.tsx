@@ -3,20 +3,72 @@ import Section from "@/components/layout/Section";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
 import testData from "@/assets/testData.json"
-import slideImg from "@/assets/images/index/Ofich2Dg1@2x.png"
-import slideImg2 from "@/assets/images/index/index_sl_1@2x.png"
-import slideImg3 from "@/assets/images/index/index_sl_2@2x.png"
-import contactImg from "@/assets/images/Still-3 1@2x.png"
+import slideImg from "@/assets/images/index/Ofich2Dg1.png"
+import slideImg2 from "@/assets/images/index/index_sl_1.png"
+import slideImg3 from "@/assets/images/index/index_sl_2.png"
+import slideCardImg from "@/assets/images/index/1.png"
+import slideCardImg2 from "@/assets/images/index/2.png"
+import slideCardImg3 from "@/assets/images/index/3.png"
+import contactImg from "@/assets/images/Still-3 1.png"
 import SliderViewport from "@/components/Slider/SliderViewport";
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 import { DefList } from "@/components/ui/Elements";
+import CardImage from "@/components/Cards/CardImage";
+import React from "react";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: 'EXPERT MEDICAL CARE IN THE COMFORT OF A LUXURY RETREAT',
+    description: '',
+    twitter: {
+        title: "EXPERT MEDICAL CARE IN THE COMFORT OF A LUXURY RETREAT",
+        images: [slideCardImg3.src, slideCardImg2.src, slideCardImg.src]
+    },
 
+    openGraph: {
+        title: 'EXPERT MEDICAL CARE IN THE COMFORT OF A LUXURY RETREAT',
+        description: '',
+        url: 'https://nextjs.org',
+        siteName: 'Nest Recovery',
+        videos: [
+            {
+                url:'http://localhost:3000/website_promo_6.mp4',
+                height: 720,
+                width: 1280,
+                type: 'video/mp4'
+            }
+        ],
+        images: [
+            {
+                alt: 'asdasd',
+                url: 'http://localhost:3000/_next/static/media/Ofich2Dg1.d322e2ca.png',
+                height: 412,
+                width: 1400,
+            },
+            {
+                url: 'http://localhost:3000/_next/static/media/index_sl_1.55a7db97.png',
+                height: 412,
+                width: 1400,
+            },
+            {
+                url: 'http://localhost:3000/_next/static/media/index_sl_2.ae2c9303.png',
+                height: 412,
+                width: 1400,
+
+            }
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+}
 export default function Home() {
 
     const images = [slideImg,slideImg2,slideImg3];
-    const screenSlider = images.map((item, index) => <Image key={index}  objectFit={"cover"} fill={true}   src={item} alt={''}/> )
-    const img = testData.data.cardBenefits;
-
+    const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
+    const screenSlider = images.map((item, index) => <Image key={index}  style={{objectFit: "cover"}} fill={true}   src={item} alt={''}/> )
+    const cardsSlider = cardsImages.map((item, index) => <CardImage style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
+        image={<Image key={index}  src={item} alt={''}/>} />)
+    // const img = testData.data.cardBenefits;
+    console.log(images)
   return (
       <main className={'page-index'}>
             <Section
@@ -28,7 +80,7 @@ export default function Home() {
                         </div>}
                 title={<h1 className={'section__title'}>Expert medical care in the comfort of a luxury retreat</h1>}
                 gallery={<Slider autoplay={{
-                    delay: 2500,
+                    delay: 20000,
                     disableOnInteraction: false,
                 }}  items={screenSlider} perView={1} spaceBetween={0}/>}
             />
@@ -36,7 +88,7 @@ export default function Home() {
             <Section
                 container
                 variant={'section-gallery grid'}
-                gallery={<SliderViewport  cardStyle={'card-benefit'} items={img}/>}
+                gallery={<SliderViewport  cardStyle={'card-benefit'} items={cardsSlider}/>}
             />
 
             <Section

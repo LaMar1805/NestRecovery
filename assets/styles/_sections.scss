@@ -4,10 +4,24 @@
 	font-size: 42px;
 	text-transform: uppercase;
 	margin-bottom: 2rem;
-	@media screen and (max-width: 1079px){
+
+  }
+  @media screen and (max-width: 1199px){
+	.section__text, .section__gallery, .section__title, .section__footer {
+	  grid-column: var(--centered);
+	}
+	.section__title {
 	  font-size: 24px;
 	}
+	&.section-gallery, & {
+	  .section__gallery, .section__gallery_wrapper {
+		max-width: 480px;
+		justify-self: center;
+		align-self: center;
+	  }
+	}
   }
+
 }
 
 .section-screen {
