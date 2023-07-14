@@ -2,13 +2,16 @@ import {  BeverlyHillsSmall } from "@/components/Icons";
 import { Container } from "@/components/layout/Section";
 import { Navbar } from "@/components/ui/Elements";
 import testData from "@/assets/testData.json";
+import Link from "next/link";
+import React, { useId } from "react";
 const Footer = () => {
+	const id = useId();
 
-	return (
+			return (
 		<footer className={'footer'}>
 			<Container>
-				<Navbar items={testData.data.footerMenuLinks.slice(0, 2)} />
-				<Navbar items={[...testData.data.footerMenuLinks.slice(2,3), { text: <BeverlyHillsSmall key={'fdsfz'}/>}]} />
+				<Navbar items={testData.data.footerMenuLinks.map((item) => item.link ? <Link className={"navbar__link"} key={id} href={item.link}>{item.text}</Link> : item.text).slice(0,2)} />
+				<Navbar items={[...testData.data.footerMenuLinks.map((item) => item.link ? <Link className={"navbar__link"} key={id} href={item.link}>{item.text}</Link> : item.text).slice(2,4),  <BeverlyHillsSmall key={'1543254'}/>]} />
 			</Container>
 		</footer>
 	)

@@ -1,5 +1,4 @@
 import React from "react";
-import Link, { LinkProps } from "next/link";
 import { ArrowSvg } from "@/components/Icons";
 export const DefList = ({term, text}:{term: string, text: string | React.ReactElement}) => {
 	return (
@@ -11,7 +10,7 @@ export const DefList = ({term, text}:{term: string, text: string | React.ReactEl
 }
 export const Arrow = ({style = '', action} : {style?: string, action?: any}) => <a className={`arrow ${style}`} onClick={action}><ArrowSvg /></a>
 
-export function Navbar({items, style = '', children}:{
+export function Navbar({items, style = ''}:{
 	style?: string
 	items:  React.ReactElement | React.ReactNode[] | string | any
 }) {
