@@ -13,7 +13,8 @@ const SliderViewport = ({items, push = true, cardStyle, breakpoints = false, fil
 	useEffect(() => {
 		let result = [];
 		items.map((item: any, index: number) => result.push(<CardImage style={cardStyle} title={item.title} description={item.description} 	key={index+100}
-			image={<Image fill={fillImg} objectFit={"cover"}
+			image={<Image
+				fill={fillImg} objectFit={"cover"}
 				width={!fillImg && item.image.width}
 				height={!fillImg &&  item.image.height}
 				src={item.image.src} alt={''} key={index}/>}

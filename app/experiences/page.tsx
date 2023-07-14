@@ -11,7 +11,9 @@ import SliderViewport from "@/components/Slider/SliderViewport";
 export default function ExperiencesPage() {
 
     const images = [slideImg,slideImg2,slideImg3];
+    // const imgs = [recImg, recImg2];
     const screenSlider = images.map((item, index) => <Image key={index}  style={{ objectFit: "cover"}}  fill={true}   sizes="100vw" src={item} alt={''}/> );
+    // const img = imgs.map((item, index) => <Image key={index}  src={item} alt={''}/> );
 
     const sectSlider = testData.data.innercircle.map((item, index) => <Image key={index}
         width={item.image.width}
@@ -19,6 +21,7 @@ export default function ExperiencesPage() {
         src={item.image.src} alt={''}/> );
 
     const img = testData.data.recovery;
+
 
   return (
         <main className={'page-experiences'}>
