@@ -24,8 +24,18 @@ export default function ExperiencesPage() {
         width: '100%',
         height: '100%',
     }} src={item} alt={''}/> );
-    const imgt = imgs.map((item, index) => <Image key={index}  src={item} alt={''}/> );
-    const imgr = imgrs.map((item, index) => <Image key={index}  src={item} alt={''}/> );
+    const imgt = imgs.map((item, index) => <Image key={index} sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+        maxWidth: '100%',
+        objectFit: "cover",
+        width: '100%',
+        height: '100%',
+    }}  src={item} alt={''}/> );
+    const imgr = imgrs.map((item, index) => <Image key={index} sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+        maxWidth: '100%',
+        objectFit: "cover",
+        width: '100%',
+        height: '100%',
+    }} src={item} alt={''}/> );
 
   return (
         <main className={'page-experiences'}>
@@ -109,7 +119,12 @@ export default function ExperiencesPage() {
                 </div>}
                 variant={'section-gallery section-chef grid'}
                 gallery={                    <div className={'section__gallery'}>
-                    <Image src={chef} alt={''}/>
+                    <Image src={chef} sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+                        maxWidth: '100%',
+                        objectFit: "cover",
+                        width: '100%',
+                        height: '100%',
+                    }} alt={''}/>
                 </div>}
             />
         </main>

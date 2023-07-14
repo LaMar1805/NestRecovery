@@ -26,7 +26,12 @@ export default function ChefPage() {
     const cardsImages = [sectImg,sectImg2,sectImg3];
 
     const img = cardsImages.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
-        image={<Image key={index}  src={item} alt={''}/>} />)
+        image={<Image sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+            maxWidth: '100%',
+            objectFit: "cover",
+            width: '100%',
+            height: '100%',
+        }} key={index}  src={item} alt={''}/>} />)
   return (
         <main className={'page-chef'}>
             <Section
@@ -55,7 +60,12 @@ export default function ChefPage() {
                 gallery={<div className={'section__gallery'}>
                     <div className={'card'}>
                         <div className={'card__image'}>
-                            <Image src={fallbackImg} alt={''}/>
+                            <Image src={fallbackImg} sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+                                maxWidth: '100%',
+                                objectFit: "cover",
+                                width: '100%',
+                                height: '100%',
+                            }}  alt={''}/>
                         </div>
                         <div className={'card__footer'}>
                             <Image src={svgImg} alt={''}/>

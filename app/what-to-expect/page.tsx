@@ -15,7 +15,12 @@ export default function WhatToExpectPage() {
     const cardImg = [wteCardImg, wteCardImg2, wteCardImg3];
     const img = cardImg.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
         image={<Image key={index} style={{width: "100%", background: 'none'}} src={item} alt={''}/>} />)
-    const sectSlider = testData.data.wteThree.map((item, index) => <Image key={index}
+    const sectSlider = testData.data.wteThree.map((item, index) => <Image sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+        maxWidth: '100%',
+        objectFit: "cover",
+        width: '100%',
+        height: '100%',
+    }} key={index}
         width={item.image.width}
         height={item.image.height}
         src={item.image.src} alt={''}/> );

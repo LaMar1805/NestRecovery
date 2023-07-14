@@ -64,14 +64,19 @@ export default function Home() {
 
     const images = [slideImg,slideImg2,slideImg3];
     const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
-    const screenSlider = images.map((item, index) => <Image key={index}   placeholder="blur" priority={true}  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"      style={{
+    const screenSlider = images.map((item, index) => <Image key={index}  placeholder="blur"  sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
         maxWidth: '100%',
         objectFit: "cover",
         width: '100%',
         height: '100%',
     }} src={item} alt={''}/> )
     const cardsSlider = cardsImages.map((item, index) => <CardImage style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
-        image={<Image key={index}  src={item} alt={''}/>} />)
+        image={<Image placeholder="blur"  sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+            maxWidth: '100%',
+            objectFit: "cover",
+            width: '100%',
+            height: '100%',
+        }} key={index}  src={item} alt={''}/>} />)
 
   return (
       <main className={'page-index'}>
@@ -111,7 +116,12 @@ export default function Home() {
                     <DefList   key={'Phone'}  term={'Phone'} text={<Link href={'tel:4242825171'} >(424)282-5171</Link>} />
                     <DefList  key={'Hours'}  term={'Hours'} text={'9 am - 6 pm, Mon-Sun'} />
                 </div>}
-                gallery={<div className={'section__image'}><Image alt={'Breathtaking canyon views'} src={contactImg}/></div>}
+                gallery={<div className={'section__image'}><Image placeholder="blur" priority={true}  sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+                    maxWidth: '100%',
+                    objectFit: "cover",
+                    width: '100%',
+                    height: '100%',
+                }} alt={'Breathtaking canyon views'} src={contactImg}/></div>}
             />
         </main>
   )

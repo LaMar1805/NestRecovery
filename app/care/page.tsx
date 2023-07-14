@@ -25,7 +25,13 @@ export default function CarePage() {
         height: '100%',
     }} src={item} alt={''}/> );
     const img = imagesSect.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
-        image={<Image key={index} style={{width: "100%", background: 'none'}} src={item} alt={''}/>} />)
+        image={<Image key={index} sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+            maxWidth: '100%',
+            objectFit: "cover",
+            width: '100%',
+            background: 'none',
+            height: '100%',
+        }}  src={item} alt={''}/>} />)
     // const img = testData.data.careNurses;
 
   return (
@@ -77,7 +83,12 @@ export default function CarePage() {
                 gallery={<div className={'section__gallery'}>
                     <div className={'card'}>
                         <div className={'card__image'}>
-                            <Image src={testData.data.therapy[0].image.src} alt={''} width={testData.data.therapy[0].image.width} height={testData.data.therapy[0].image.height}/>
+                            <Image src={testData.data.therapy[0].image.src} sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+                                maxWidth: '100%',
+                                objectFit: "cover",
+                                width: '100%',
+                                height: '100%',
+                            }} alt={''} width={testData.data.therapy[0].image.width} height={testData.data.therapy[0].image.height}/>
                         </div>
                     </div>
                     <div className={'card'}>
@@ -93,30 +104,17 @@ export default function CarePage() {
                 title={<h2 className={'section__title'}>{testData.data.massage.title}</h2>}
                 text={<div className={'section__text'}>
                     <div dangerouslySetInnerHTML={{__html: testData.data.massage.text}}/>
-                        <Image src={testData.data.massage.image[0].image.src} alt={''} width={testData.data.massage.image[0].image.width} height={testData.data.massage.image[0].image.height}/>
+                        <Image src={testData.data.massage.image[0].image.src}  sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+                            maxWidth: '100%',
+                            objectFit: "cover",
+                            width: '100%',
+                            height: '100%',
+                        }} alt={''} width={testData.data.massage.image[0].image.width} height={testData.data.massage.image[0].image.height}/>
 
                 </div>}
                 variant={'section-gallery section-massage grid'}
             />
 
-            {/*<Section*/}
-            {/*    variant={'section-place grid'}*/}
-            {/*    container={false}*/}
-            {/*    title={<h2 className={'section__title'}>Trust us with your treatment plan</h2>}*/}
-            {/*    text={<div className={'section__text'}><strong>10 minutes</strong> away from multiple top plastic surgery clinics in the LA area</div>}*/}
-            {/*    gallery={<VideoPlayer title={'Breathtaking canyon views'} src={'/nest_promo.mp4'}/>}*/}
-            {/*/>*/}
-
-            {/*<Section*/}
-            {/*    variant={'section-contact'}*/}
-            {/*    title={<h2 className={'section__title'}>Contact Nest Recovery</h2>}*/}
-            {/*    text={<div className={'section__text'}>*/}
-            {/*        <DefList key={'email'}  term={'Email'} text={<Link href={'mailto:info@nestrecovery.me'}>info@nestrecovery.me</Link>} />*/}
-            {/*        <DefList   key={'Phone'}  term={'Phone'} text={<Link href={'tel:4242825171'} >(424)282-5171</Link>} />*/}
-            {/*        <DefList  key={'Hours'}  term={'Hours'} text={'9 am - 6 pm, Mon-Sun'} />*/}
-            {/*    </div>}*/}
-            {/*    gallery={<div className={'section__image'}><Image alt={'Breathtaking canyon views'} src={contactImg}/></div>}*/}
-            {/*/>*/}
         </main>
   )
 }
