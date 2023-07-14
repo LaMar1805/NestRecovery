@@ -4,7 +4,7 @@ import { PlaySvg, StopSvg } from "@/components/Icons";
 import styles from './VideoPlayer.module.scss';
 const VideoPlayer = ({src,  title}:{src:string, title?: string}) => {
 
-    const videoRef = useRef(null);
+    const videoRef = useRef<any>(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
     const [isIntersecting, setIsIntersecting] = useState(false);

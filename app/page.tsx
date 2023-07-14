@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'EXPERT MEDICAL CARE IN THE COMFORT OF A LUXURY RETREAT',
         description: '',
-        url: 'https://nextjs.org',
+        url: new URL('https://www.nestrecovery.me'),
         siteName: 'Nest Recovery',
         videos: [
             {
