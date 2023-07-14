@@ -21,14 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-X7K6VG59EG" />
 
 
-        <Script id="gtag-google" dangerouslySetInnerHTML={{__html: `window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-X7K6VG59EG');`}}/>
 
         <Layout>
           {children}
