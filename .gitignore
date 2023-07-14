@@ -34,8 +34,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /.idea/*
-public/about.mp4
-public/nest_promo.mp4
 /.idea/
 /.idea/inspectionProfiles/
 /.idea/deployment.xml
