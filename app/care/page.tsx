@@ -18,7 +18,12 @@ export default function CarePage() {
 
     const images = [slideImg,slideImg2,slideImg3];
     const imagesSect = [slideImgSection,slideImgSection2,slideImgSection3];
-    const screenSlider = images.map((item, index) => <Image key={index} fill={true} style={{ objectFit: "cover"}}   sizes="100vw" src={item} alt={''}/> );
+    const screenSlider = images.map((item, index) => <Image key={index}    placeholder="blur" priority={true}  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"      style={{
+        maxWidth: '100%',
+        objectFit: "cover",
+        width: '100%',
+        height: '100%',
+    }} src={item} alt={''}/> );
     const img = imagesSect.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
         image={<Image key={index} style={{width: "100%", background: 'none'}} src={item} alt={''}/>} />)
     // const img = testData.data.careNurses;

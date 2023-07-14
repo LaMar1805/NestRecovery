@@ -18,7 +18,12 @@ export default function ExperiencesPage() {
     const images = [slideImg,slideImg2,slideImg3];
     const imgs = [imgIn, imgIn2, imgIn3];
     const imgrs = [imgRec, imgRec2];
-    const screenSlider = images.map((item, index) => <Image key={index}  style={{ objectFit: "cover"}}  fill={true}   sizes="100vw" src={item} alt={''}/> );
+    const screenSlider = images.map((item, index) => <Image key={index}    placeholder="blur" priority={true}  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"      style={{
+        maxWidth: '100%',
+        objectFit: "cover",
+        width: '100%',
+        height: '100%',
+    }} src={item} alt={''}/> );
     const imgt = imgs.map((item, index) => <Image key={index}  src={item} alt={''}/> );
     const imgr = imgrs.map((item, index) => <Image key={index}  src={item} alt={''}/> );
 

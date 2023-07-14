@@ -64,11 +64,11 @@ export default function Home() {
 
     const images = [slideImg,slideImg2,slideImg3];
     const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
-    const screenSlider = images.map((item, index) => <Image key={index}   placeholder="blur" priority={true} width={1400}   height={412} sizes="100vw"      style={{
+    const screenSlider = images.map((item, index) => <Image key={index}   placeholder="blur" priority={true}  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"      style={{
         maxWidth: '100%',
+        objectFit: "cover",
         width: '100%',
-        aspectRatio: 1400 / 412,
-        height: 'auto',
+        height: '100%',
     }} src={item} alt={''}/> )
     const cardsSlider = cardsImages.map((item, index) => <CardImage style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
         image={<Image key={index}  src={item} alt={''}/>} />)

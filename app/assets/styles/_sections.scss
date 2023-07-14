@@ -66,15 +66,14 @@
   }
 
   .swiper-slide.section-screen__slide {
-
-	height: calc(100vh - 360px);
+	//height: calc(100vh - 360px);
 	@media screen and (max-width: 1089px){
-	  max-height: 250px;
+	  //max-height: 250px;
 	}
   }
   &.with-footer {
 	.swiper-slide.section-screen__slide {
-	  height: calc(100vh - 470px);
+	  //height: calc(100vh - 470px);
 
 	}
   }

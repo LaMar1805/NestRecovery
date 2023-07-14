@@ -25,7 +25,12 @@ export default function WhatToExpectPage() {
             <Section
                 variant={'section-screen'}
                 container={false}
-                gallery={<div className={'section__gallery'} style={{height: "80px"}}><Image  style={{objectFit: "contain", "width": "100vw"}} src={slideImg} alt={''}/></div>}
+                gallery={<div className={'section__gallery'} style={{height: "80px"}}><Image    placeholder="blur" priority={true}  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"      style={{
+                    maxWidth: '100%',
+                    objectFit: "cover",
+                    width: '100%',
+                    height: '100%',
+                }} src={slideImg} alt={''}/></div>}
             />
             <Section
                 title={<h2 className={'section__title'}>What to expect</h2>}
