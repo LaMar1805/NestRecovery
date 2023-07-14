@@ -22,7 +22,6 @@ const SliderViewport = ({items, push = true, cardStyle, breakpoints = false, fil
 			/>));
 		} else  {
 			result = [...items]
-			console.log(result)
 		}
 		if (width && push && width > 1199) {
 			result.push(<CardImage style={cardStyle} image={<FallBackImgSvg />} key={123}/>);

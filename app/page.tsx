@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         siteName: 'Nest Recovery',
         videos: [
             {
-                url:'http://localhost:3000/website_promo_6.mp4',
+                url:`${process.env.baseUrl}/website_promo_6.mp4`,
                 height: 720,
                 width: 1280,
                 type: 'video/mp4'
@@ -40,17 +40,17 @@ export const metadata: Metadata = {
         images: [
             {
                 alt: 'asdasd',
-                url: 'http://localhost:3000/_next/static/media/Ofich2Dg1.d322e2ca.png',
+                url: `${process.env.baseUrl}/_next/static/media/Ofich2Dg1.d322e2ca.png`,
                 height: 412,
                 width: 1400,
             },
             {
-                url: 'http://localhost:3000/_next/static/media/index_sl_1.55a7db97.png',
+                url: `${process.env.baseUrl}/_next/static/media/index_sl_1.55a7db97.png`,
                 height: 412,
                 width: 1400,
             },
             {
-                url: 'http://localhost:3000/_next/static/media/index_sl_2.ae2c9303.png',
+                url: `${process.env.baseUrl}/_next/static/media/index_sl_2.ae2c9303.png`,
                 height: 412,
                 width: 1400,
 
@@ -64,11 +64,10 @@ export default function Home() {
 
     const images = [slideImg,slideImg2,slideImg3];
     const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
-    const screenSlider = images.map((item, index) => <Image key={index}  style={{objectFit: "cover"}} fill={true}   src={item} alt={''}/> )
+    const screenSlider = images.map((item, index) => <Image key={index} priority={true} style={{objectFit: "cover"}} fill={true}   src={item} alt={''}/> )
     const cardsSlider = cardsImages.map((item, index) => <CardImage style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
         image={<Image key={index}  src={item} alt={''}/>} />)
-    // const img = testData.data.cardBenefits;
-    console.log(images)
+
   return (
       <main className={'page-index'}>
             <Section
