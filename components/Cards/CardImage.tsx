@@ -1,15 +1,28 @@
-import { ReactNode } from "react";
+import { PropsWithChildren, ReactNode } from "react";
+import Link from "next/link";
+
 interface CardProp {
 	title?: string
 	description?: ReactNode | string
 	image?: ReactNode
 	style?: string
+	href?: string
 }
-const CardImage = ({title, description, image, style = ''}:CardProp) => {
+//
+// const CustomLink = ({children, ...props}:  PropsWithChildren<CardProp>) => {
+// 	const {style, href = '/'} = props;
+// 	return (
+// 		<Link className={`card ${style}`} href={href}>
+// 			{children}
+// 		</Link>
+// 	)
+// }
+const CardImage = ({title, description, image, style = '', href}:CardProp) => {
+
 	return (
 		<div className={`card ${style}`}>
 			<div className={'card__image'}>{image}</div>
-			{title && <h3 className={'card__title'} style={{zIndex: 30}}>{title}</h3>}
+			{title && (href ? <Link href={href} className={'card__title_link'}><h3 className={'card__title'} style={{zIndex: 30}}>{title}</h3></Link> : <h3 className={'card__title'} style={{zIndex: 30}}>{title}</h3>)}
 			{description && <div className={'card__description'}>{description}</div>}
 		</div>
 	)

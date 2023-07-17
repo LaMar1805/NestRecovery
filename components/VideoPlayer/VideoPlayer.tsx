@@ -14,9 +14,9 @@ const VideoPlayer = ({src,  title}:{src:string, title?: string}) => {
             ([entry]) => {
                 setIsIntersecting(entry.isIntersecting);
             },
-            { rootMargin: "-450px" }
+            { rootMargin: "-33%" }
         );
-        // console.log(isIntersecting);
+        console.log(isIntersecting);
         observer.observe(videoRef.current);
 
         return () => observer.disconnect();
@@ -33,10 +33,10 @@ const VideoPlayer = ({src,  title}:{src:string, title?: string}) => {
         const progress = (currentTime / duration) * 100;
         setProgress(progress);
     };
-    const setVolume = () => {
-        videoRef.current.muted = false;
-        videoRef.current.volume = 1;
-    }
+    // const setVolume = () => {
+    //     videoRef.current.muted = false;
+    //     videoRef.current.volume = 1;
+    // }
     const handlePause = () => {
         setIsPlaying(false);
         // console.log('pause');

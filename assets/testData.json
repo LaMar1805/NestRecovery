@@ -53,7 +53,7 @@
       },
     {
         "title": "What are the hours of operation at your facility?",
-        "text": "<p>Nursing care: 24/7.</p><p>Nursing care: 24/7.</p><p>Office: 9 am - 6 pm, Mon-Sun.</p>"
+        "text": "<p>Nursing care: 24/7.</p><p>Office: 9 am - 6 pm, Mon-Sun.</p>"
       },
       {
         "title": "What is your cancellation policy?",
@@ -171,7 +171,7 @@
       {
         "title": "Professional Care",
         "description": "24/7 nursing care by licensed medical practitioners. State of the art medical equipment to provide all necessary treatments on site.",
-        "link": "#",
+        "link": "/care",
         "image": {
           "src": "/images/index/1.png",
           "width": 551,
@@ -181,7 +181,7 @@
       {
         "title": "Comfort of retreat",
         "description": "Spacious suites, each outfitted with modern amenities and private patios/outdoor access. Chef-prepared meals.",
-        "link": "#",
+        "link": "/rooms",
         "image": {
           "src": "/images/index/2.png",
           "width": 551,
@@ -191,7 +191,7 @@
       {
         "title": "Privacy on your terms",
         "description": "Discreet transportation, check-in, and check-out for complete privacy. Entertainment options, if you feel social.",
-        "link": "#",
+        "link": "/experiences",
         "image": {
           "src": "/images/index/3.png",
           "width": 551,

@@ -70,7 +70,7 @@ export default function Home() {
         width: '100%',
         height: '100%',
     }} src={item} alt={''}/> )
-    const cardsSlider = cardsImages.map((item, index) => <CardImage style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
+    const cardsSlider = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
         image={<Image placeholder="blur"  sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
             maxWidth: '100%',
             objectFit: "cover",
@@ -114,9 +114,9 @@ export default function Home() {
                 text={<div className={'section__text'}>
                     <DefList key={'email'}  term={'Email'} text={<Link href={'mailto:info@nestrecovery.me'}>info@nestrecovery.me</Link>} />
                     <DefList   key={'Phone'}  term={'Phone'} text={<Link href={'tel:4242825171'} >(424)282-5171</Link>} />
-                    <DefList  key={'Hours'}  term={'Hours'} text={'9 am - 6 pm, Mon-Sun'} />
+                    <DefList  key={'Hours'}  term={'Hours'} text={<>9 am - 6 pm, Mon<span>-</span>Sun</>} />
                 </div>}
-                gallery={<div className={'section__image'}><Image placeholder="blur" priority={true}  sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+                gallery={<div className={'section__image'}><Image placeholder="blur" priority={true}  sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw" style={{
                     maxWidth: '100%',
                     objectFit: "cover",
                     width: '100%',

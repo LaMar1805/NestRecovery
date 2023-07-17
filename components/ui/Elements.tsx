@@ -4,7 +4,7 @@ export const DefList = ({term, text}:{term: string, text: string | React.ReactEl
 	return (
 	<dl className={'def_list'}>
 		<dt>{term}</dt>
-		<dd>{text}</dd>
+		<dd >{text}</dd>
 	</dl>
 	)
 }
