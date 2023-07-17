@@ -41,7 +41,7 @@ export default function CarePage() {
                 container={false}
                 links={<div className={'section__footer grid'}>
                             <h2 className={'section__footer_title'}>24/7 licensed nursing care and cutting-edge technology</h2>
-                            <Link href={'#'} className={'button button-big'}>Book</Link>
+                            <Link href={'https://hotels.cloudbeds.com/reservation/y3Nqxi'} className={'button button-big'}>Book</Link>
                         </div>}
                 title={<h1 className={'section__title'}>Professional support for your recovery</h1>}
                 gallery={<Slider autoplay={{

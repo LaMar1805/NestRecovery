@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { PlaySvg, StopSvg } from "@/components/Icons";
 import styles from './VideoPlayer.module.scss';
-const VideoPlayer = ({src,  title}:{src:string, title?: string}) => {
+const VideoPlayer = ({src, title, auto = true}:{src:string, title?: string, auto?: boolean}) => {
 
     const videoRef = useRef<any>(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -16,7 +16,6 @@ const VideoPlayer = ({src,  title}:{src:string, title?: string}) => {
             },
             { rootMargin: "-33%" }
         );
-        console.log(isIntersecting);
         observer.observe(videoRef.current);
 
         return () => observer.disconnect();
@@ -57,7 +56,7 @@ const VideoPlayer = ({src,  title}:{src:string, title?: string}) => {
         }
     }
     useEffect(() => {
-        if(isIntersecting) {
+        if(isIntersecting && auto) {
             handlePlay();
         } else {
             handlePause();
@@ -75,7 +74,7 @@ const VideoPlayer = ({src,  title}:{src:string, title?: string}) => {
           {title && <h3 className={'video_player__title'}>{title}</h3>}
           <div className={'video_player_media'}>
               <video
-                  muted={true}
+                  muted={auto}
                   onTimeUpdate={handleProgress}
                   style={{ width: "100%"}} ref={videoRef}>
                 <source src={src}/>

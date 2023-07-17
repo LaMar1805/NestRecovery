@@ -89,7 +89,7 @@ export default function WhatToExpectPage() {
                     <p>If you ever feel social during your healing journey, you can visit our common areas, including the dining room, lounge zone, and pool. Otherwise, all your time with us will be completely private and confidential.</p>
                 </div>}
                 links={<div className={'section__footer'}>
-                    <Link href={'#'} className={'button button-big'}>Book</Link>
+                    <Link href={'https://hotels.cloudbeds.com/reservation/y3Nqxi'} className={'button button-big'}>Book</Link>
                     <Link href={'/faq'} className={'button button-big'}>Read FAQ</Link>
                 </div>}
                 variant={'section-gallery wte-four grid'}

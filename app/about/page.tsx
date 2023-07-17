@@ -13,7 +13,7 @@ export default function AboutPage() {
                 variant={'section-screen'}
                 container={false}
                 title={<h1 className={'section__title'}>About Nest Recovery</h1>}
-                gallery={<VideoPlayer src={'/nest_promo_1.mp4'} />}
+                gallery={<VideoPlayer auto={false} src={'/nest_promo_1.mp4'} />}
             />
 
             <Section

@@ -102,7 +102,7 @@
       max-width: 240px;
     }
     .textStyled.left {
-      margin: 1rem 0 .625rem;
+      margin: 0;
       order: initial;
       max-width: 182px;
     }
@@ -113,8 +113,9 @@
       align-items: center;
       flex-flow: column;
       margin: initial;
-      display: grid;
-      justify-content: end;
+      display: flex;
+      position: relative;
+      justify-content: center;
     }
     height: 280px;
   }

@@ -85,7 +85,7 @@ export default function Home() {
                 container={false}
                 links={<div className={'grid section__footer grid'}>
                             <h2 className={'section__footer_title'}>Post-surgery recovery in the heart of Beverly Hills</h2>
-                            <Link href={'#'} className={'button button-big'}>Book</Link>
+                            <Link href={'https://hotels.cloudbeds.com/reservation/y3Nqxi'} className={'button button-big'}>Book</Link>
                         </div>}
                 title={<h1 className={'section__title'}>Expert medical care in the comfort of a luxury retreat</h1>}
                 gallery={<Slider autoplay={{
