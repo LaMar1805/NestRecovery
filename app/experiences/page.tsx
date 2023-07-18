@@ -12,6 +12,7 @@ import imgRec2 from "@/assets/images/exp/recovery_2@2x.png";
 
 import chef from "@/assets/images/exp/chef_1@2x.png"
 import SliderViewport from "@/components/Slider/SliderViewport";
+import ImageLoader from "@/components/ImageLoader";
 
 export default function ExperiencesPage() {
 
@@ -26,7 +27,7 @@ export default function ExperiencesPage() {
         width: '100%',
         height: '100%',
     }} src={item} alt={''}/> );
-    const imgt = imgs.map((item, index) => <Image key={index} quality={80}
+    const imgt = imgs.map((item, index) => <ImageLoader key={index} quality={80}
         placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
         sizes={'100vw'}    style={{
         maxWidth: '100%',
@@ -34,7 +35,7 @@ export default function ExperiencesPage() {
         width: '100%',
         height: '100%',
     }}  src={item} alt={''}/> );
-    const imgr = imgrs.map((item, index) => <Image key={index} quality={80}
+    const imgr = imgrs.map((item, index) => <ImageLoader key={index} quality={80}
         placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
         sizes={'100vw'}   style={{
         maxWidth: '100%',
@@ -125,7 +126,7 @@ export default function ExperiencesPage() {
                 </div>}
                 variant={'section-gallery section-chef grid'}
                 gallery={                    <div className={'section__gallery'}>
-                    <Image src={chef} quality={80}
+                    <ImageLoader src={chef} quality={80}
                         placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(chef.src)}&w=${640}&q=30`}
                         sizes={'100vw'}    style={{
                         maxWidth: '100%',
