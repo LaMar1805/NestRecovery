@@ -64,10 +64,10 @@ export default function Home() {
 
     const images = [slideImg,slideImg2,slideImg3];
     const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
+    console.log(`/_next/image?url=${encodeURI(images[0].src)}&w=${640}&q=30`)
     const screenSlider = images.map((item, index) => <Image key={index} quality={80}
         placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
         sizes={'100vw'}
-        priority={true}
         style={{
         maxWidth: '100%',
         objectFit: "cover",
