@@ -4,6 +4,7 @@ import Link from "next/link";
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 import fallbackImg from "../assets/images/founder.png";
 import svgImg from "@/assets/svg/lena_kaminski.svg";
+import ImageLoader from "@/components/ImageLoader";
 export default function AboutPage() {
 
 
@@ -38,7 +39,7 @@ export default function AboutPage() {
                 gallery={<div className={'section__gallery'}>
                     <div className={'card'}>
                         <div className={'card__image'}>
-                            <Image quality={80}
+                            <ImageLoader quality={80}
                                 placeholder={"blur"} width={fallbackImg.width} height={fallbackImg.height} blurDataURL={`/_next/image?url=${encodeURI(fallbackImg.src)}&w=${640}&q=30`}
                                 sizes={'100vw'}   style={{
                                 maxWidth: '100%',

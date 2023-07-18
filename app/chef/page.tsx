@@ -13,11 +13,12 @@ import fallbackImg from "@/assets/images/chef/chefj@2x.png";
 import svgImg from "@/assets/svg/jordan_grandviergne.svg";
 import CardImage from "@/components/Cards/CardImage";
 import React from "react";
+import ImageLoader from "@/components/ImageLoader";
 
 export default function ChefPage() {
 
     const images = [slideImg,slideImg2,slideImg3];
-    const screenSlider = images.map((item, index) => <Image key={index}  quality={80}
+    const screenSlider = images.map((item, index) => <ImageLoader key={index}  quality={80}
         placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
         sizes={'100vw'}   style={{
         maxWidth: '100%',
@@ -28,7 +29,7 @@ export default function ChefPage() {
     const cardsImages = [sectImg,sectImg2,sectImg3];
 
     const img = cardsImages.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
-        image={<Image quality={80}
+        image={<ImageLoader quality={80}
             placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
             sizes={'100vw'}    style={{
             maxWidth: '100%',
@@ -64,7 +65,7 @@ export default function ChefPage() {
                 gallery={<div className={'section__gallery'}>
                     <div className={'card'}>
                         <div className={'card__image'}>
-                            <Image src={fallbackImg} sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+                            <ImageLoader src={fallbackImg} sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
                                 maxWidth: '100%',
                                 objectFit: "cover",
                                 width: '100%',

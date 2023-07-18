@@ -11,14 +11,15 @@ import SliderViewport from "@/components/Slider/SliderViewport";
 import Slider from "@/components/Slider/Slider";
 import CardImage from "@/components/Cards/CardImage";
 import React from "react";
+import ImageLoader from "@/components/ImageLoader";
 export default function WhatToExpectPage() {
     const cardImg = [wteCardImg, wteCardImg2, wteCardImg3];
     const img = cardImg.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
-        image={<Image quality={80}
+        image={<ImageLoader quality={80}
             placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
             sizes={'100vw'} key={index} style={{width: "100%", background: 'none'}} src={item} alt={''}/>} />)
 
-    const sectSlider = testData.data.wteThree.map((item, index) => <Image sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+    const sectSlider = testData.data.wteThree.map((item, index) => <ImageLoader sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
         maxWidth: '100%',
         objectFit: "cover",
         width: '100%',
@@ -53,7 +54,7 @@ export default function WhatToExpectPage() {
                 variant={'section-gallery wte-two grid'}
                 gallery={<div className={'section__gallery_wrapper'}>
                     <div className={'section__gallery'}>
-                        <Image src={wteImg} alt={''} />
+                        <ImageLoader src={wteImg} alt={''} />
                     </div>
                 </div>}
             />

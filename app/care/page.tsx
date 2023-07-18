@@ -13,21 +13,25 @@ import SliderViewport from "@/components/Slider/SliderViewport";
 import { CareTherapySvg } from "@/components/Icons";
 import CardImage from "@/components/Cards/CardImage";
 import React from "react";
+import ImageLoader from "@/components/ImageLoader";
 
 export default function CarePage() {
 
     const images = [slideImg,slideImg2,slideImg3];
     const imagesSect = [slideImgSection,slideImgSection2,slideImgSection3];
-    const screenSlider = images.map((item, index) => <Image key={index}  quality={80}
-        placeholder={"blur"}  width={item.width} height={item.height} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
-        sizes={'100vw'}   style={{
-        maxWidth: '100%',
-        objectFit: "cover",
-        width: '100%',
-        height: '100%',
-    }} src={item} alt={''}/> );
+    const screenSlider = images.map((item, index) =>   <ImageLoader key={index} quality={80}
+        placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
+        sizes={'100vw'}
+        style={{
+            maxWidth: '100%',
+            objectFit: "cover",
+            // objectPosition: "40% center",
+            width: '100%',
+            height: '100%',
+        }}
+        src={item} alt={''}/>);
     const img = imagesSect.map((item, index) => <CardImage style={'card-nurses'} key={index+100}
-        image={<Image key={index} quality={80}
+        image={<ImageLoader key={index} quality={80}
             placeholder={"blur"} width={item.width} height={item.height} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
             sizes={'100vw'}
         //     style={{
@@ -89,7 +93,7 @@ export default function CarePage() {
                 gallery={<div className={'section__gallery'}>
                     <div className={'card'}>
                         <div className={'card__image'}>
-                            <Image src={testData.data.therapy[0].image.src} quality={80}
+                            <ImageLoader src={testData.data.therapy[0].image.src} quality={80}
                                 placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(testData.data.therapy[0].image.src)}&w=${640}&q=30`}
                                 sizes={'100vw'}  style={{
                                 maxWidth: '100%',
@@ -112,7 +116,7 @@ export default function CarePage() {
                 title={<h2 className={'section__title'}>{testData.data.massage.title}</h2>}
                 text={<div className={'section__text'}>
                     <div dangerouslySetInnerHTML={{__html: testData.data.massage.text}}/>
-                        <Image src={testData.data.massage.image[0].image.src} quality={80}
+                        <ImageLoader src={testData.data.massage.image[0].image.src} quality={80}
                             placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(testData.data.massage.image[0].image.src)}&w=${640}&q=30`}
                             sizes={'100vw'}    style={{
                             maxWidth: '100%',
