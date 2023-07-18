@@ -75,6 +75,7 @@ const VideoPlayer = ({src, title, auto = true}:{src:string, title?: string, auto
           <div className={'video_player_media'}>
               <video
                   muted={auto}
+                  preload={"none"}
                   onTimeUpdate={handleProgress}
                   style={{ width: "100%"}} ref={videoRef}>
                 <source src={src}/>

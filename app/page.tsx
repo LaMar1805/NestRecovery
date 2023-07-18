@@ -16,6 +16,7 @@ import { DefList } from "@/components/ui/Elements";
 import CardImage from "@/components/Cards/CardImage";
 import React from "react";
 import { Metadata } from "next";
+import ImageLoader from "@/components/ImageLoader";
 export const metadata: Metadata = {
     title: 'EXPERT MEDICAL CARE IN THE COMFORT OF A LUXURY RETREAT',
     description: '',
@@ -65,21 +66,35 @@ export default function Home() {
     const images = [slideImg,slideImg2,slideImg3];
     const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
     console.log(`/_next/image?url=${encodeURI(images[0].src)}&w=${640}&q=30`)
-    const screenSlider = images.map((item, index) => <Image key={index} quality={80}
-        placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
-        sizes={'100vw'}
-        style={{
-        maxWidth: '100%',
-        objectFit: "cover",
-            // objectPosition: "40% center",
-        width: '100%',
-        height: '100%',
-    }}
-        src={item} alt={''}/> )
+    const screenSlider = images.map((item, index) =>
+        <ImageLoader key={index} quality={80}
+            placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
+            sizes={'100vw'}
+            style={{
+                maxWidth: '100%',
+                objectFit: "cover",
+                // objectPosition: "40% center",
+                width: '100%',
+                height: '100%',
+            }}
+            src={item} alt={''}/>
+    //     <Image key={index} quality={80}
+    //     placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
+    //     sizes={'100vw'}
+    //     style={{
+    //     maxWidth: '100%',
+    //     objectFit: "cover",
+    //         // objectPosition: "40% center",
+    //     width: '100%',
+    //     height: '100%',
+    // }}
+    //     src={item} alt={''}/>
+    //
+    )
     const cardsSlider = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
         image={<Image
             quality={75}
-            placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`} key={index} sizes={"50vw"} src={item} alt={''}/>} />)
+            placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`} key={index} sizes={"(max-width: 768px) 100vw, (max-width: 1199) 33vw, (min-width: 1200)  "} src={item} alt={''}/>} />)
 
   return (
       <main className={'page-index'}>
@@ -119,9 +134,8 @@ export default function Home() {
                     <DefList   key={'Phone'}  term={'Phone'} text={<Link href={'tel:4242825171'} >(424)282-5171</Link>} />
                     <DefList  key={'Hours'}  term={'Hours'} text={<>9 am - 6 pm, Mon<span>-</span>Sun</>} />
                 </div>}
-                gallery={<div className={'section__image'}><Image quality={80}
-                    placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(contactImg.src)}&w=${640}&q=30`}
-                    sizes={'100vw'}
+                gallery={<div className={'section__image'}><ImageLoader quality={80}
+
                     style={{
                         maxWidth: '100%',
                         objectFit: "cover",
