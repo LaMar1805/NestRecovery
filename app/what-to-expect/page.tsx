@@ -2,11 +2,11 @@ import Image from 'next/image'
 import Section from "@/components/layout/Section";
 import Link from "next/link";
 import testData from "@/assets/testData.json";
-import slideImg from "@/assets/images/whattoexpect/screen.png";
-import wteImg from "@/assets/images/whattoexpect/wte_.png";
-import wteCardImg from "@/assets/images/whattoexpect/wte_1.png";
-import wteCardImg2 from "@/assets/images/whattoexpect/wte_2.png";
-import wteCardImg3 from "@/assets/images/whattoexpect/wte_3.png";
+import slideImg from "@/assets/images/whattoexpect/screen@2x.png";
+import wteImg from "@/assets/images/whattoexpect/wte_@2x.png";
+import wteCardImg from "@/assets/images/whattoexpect/wte_1@2x.png";
+import wteCardImg2 from "@/assets/images/whattoexpect/wte_2@2x.png";
+import wteCardImg3 from "@/assets/images/whattoexpect/wte_3@2x.png";
 import SliderViewport from "@/components/Slider/SliderViewport";
 import Slider from "@/components/Slider/Slider";
 import CardImage from "@/components/Cards/CardImage";
@@ -14,7 +14,9 @@ import React from "react";
 export default function WhatToExpectPage() {
     const cardImg = [wteCardImg, wteCardImg2, wteCardImg3];
     const img = cardImg.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
-        image={<Image key={index} style={{width: "100%", background: 'none'}} src={item} alt={''}/>} />)
+        image={<Image quality={80}
+            placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
+            sizes={'100vw'} key={index} style={{width: "100%", background: 'none'}} src={item} alt={''}/>} />)
     const sectSlider = testData.data.wteThree.map((item, index) => <Image sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
         maxWidth: '100%',
         objectFit: "cover",

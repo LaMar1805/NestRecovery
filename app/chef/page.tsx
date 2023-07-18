@@ -2,14 +2,14 @@ import Image from 'next/image'
 import Section from "@/components/layout/Section";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
-import slideImg from "@/assets/images/chef/slider.png"
-import slideImg2 from "@/assets/images/chef/slider_2.png"
-import slideImg3 from "@/assets/images/chef/slider_3.png"
-import sectImg from "@/assets/images/chef/chef_2_1.png"
-import sectImg2 from "@/assets/images/chef/chef_2_2.png"
-import sectImg3 from "@/assets/images/chef/chef_2_3.png"
+import slideImg from "@/assets/images/chef/slider@2x.png"
+import slideImg2 from "@/assets/images/chef/slider_2@2x.png"
+import slideImg3 from "@/assets/images/chef/slider_3@2x.png"
+import sectImg from "@/assets/images/chef/chef_2_1@2x.png"
+import sectImg2 from "@/assets/images/chef/chef_2_2@2x.png"
+import sectImg3 from "@/assets/images/chef/chef_2_3@2x.png"
 import SliderViewport from "@/components/Slider/SliderViewport";
-import fallbackImg from "@/assets/images/chef/chefj.png";
+import fallbackImg from "@/assets/images/chef/chefj@2x.png";
 import svgImg from "@/assets/svg/jordan_grandviergne.svg";
 import CardImage from "@/components/Cards/CardImage";
 import React from "react";
@@ -17,7 +17,9 @@ import React from "react";
 export default function ChefPage() {
 
     const images = [slideImg,slideImg2,slideImg3];
-    const screenSlider = images.map((item, index) => <Image key={index}     placeholder="blur" priority={true}  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"      style={{
+    const screenSlider = images.map((item, index) => <Image key={index}  quality={80}
+        placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
+        sizes={'100vw'}   style={{
         maxWidth: '100%',
         objectFit: "cover",
         width: '100%',
@@ -26,7 +28,9 @@ export default function ChefPage() {
     const cardsImages = [sectImg,sectImg2,sectImg3];
 
     const img = cardsImages.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
-        image={<Image sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+        image={<Image quality={80}
+            placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
+            sizes={'100vw'}    style={{
             maxWidth: '100%',
             objectFit: "cover",
             width: '100%',

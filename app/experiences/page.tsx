@@ -1,16 +1,16 @@
 import Image from 'next/image'
 import Section from "@/components/layout/Section";
 import Slider from "@/components/Slider/Slider";
-import slideImg from "@/assets/images/exp/screen.png"
-import slideImg2 from "@/assets/images/exp/exp_sl_6.png"
-import slideImg3 from "@/assets/images/exp/exp_sl_7.png";
-import imgIn from "@/assets/images/exp/exp_sl_8.png";
-import imgIn2 from "@/assets/images/exp/innercircle.png";
-import imgIn3 from "@/assets/images/exp/exp_sl_9.png";
-import imgRec from "@/assets/images/exp/recovery.png";
-import imgRec2 from "@/assets/images/exp/recovery_2.png";
+import slideImg from "@/assets/images/exp/screen@2x.png"
+import slideImg2 from "@/assets/images/exp/exp_sl_6@2x.png"
+import slideImg3 from "@/assets/images/exp/exp_sl_7@2x.png";
+import imgIn from "@/assets/images/exp/exp_sl_8@2x.png";
+import imgIn2 from "@/assets/images/exp/innercircle@2x.png";
+import imgIn3 from "@/assets/images/exp/exp_sl_9@2x.png";
+import imgRec from "@/assets/images/exp/recovery@2x.png";
+import imgRec2 from "@/assets/images/exp/recovery_2@2x.png";
 
-import chef from "@/assets/images/exp/chef_1.png"
+import chef from "@/assets/images/exp/chef_1@2x.png"
 import SliderViewport from "@/components/Slider/SliderViewport";
 
 export default function ExperiencesPage() {
@@ -18,19 +18,25 @@ export default function ExperiencesPage() {
     const images = [slideImg,slideImg2,slideImg3];
     const imgs = [imgIn, imgIn2, imgIn3];
     const imgrs = [imgRec, imgRec2];
-    const screenSlider = images.map((item, index) => <Image key={index}    placeholder="blur" priority={true}  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"      style={{
+    const screenSlider = images.map((item, index) => <Image key={index}   priority={true} quality={80}
+        placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
+        sizes={'100vw'}   style={{
         maxWidth: '100%',
         objectFit: "cover",
         width: '100%',
         height: '100%',
     }} src={item} alt={''}/> );
-    const imgt = imgs.map((item, index) => <Image key={index} sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+    const imgt = imgs.map((item, index) => <Image key={index} quality={80}
+        placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
+        sizes={'100vw'}    style={{
         maxWidth: '100%',
         objectFit: "cover",
         width: '100%',
         height: '100%',
     }}  src={item} alt={''}/> );
-    const imgr = imgrs.map((item, index) => <Image key={index} sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+    const imgr = imgrs.map((item, index) => <Image key={index} quality={80}
+        placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
+        sizes={'100vw'}   style={{
         maxWidth: '100%',
         objectFit: "cover",
         width: '100%',
@@ -119,7 +125,9 @@ export default function ExperiencesPage() {
                 </div>}
                 variant={'section-gallery section-chef grid'}
                 gallery={                    <div className={'section__gallery'}>
-                    <Image src={chef} sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+                    <Image src={chef} quality={80}
+                        placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(chef.src)}&w=${640}&q=30`}
+                        sizes={'100vw'}    style={{
                         maxWidth: '100%',
                         objectFit: "cover",
                         width: '100%',

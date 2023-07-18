@@ -38,7 +38,9 @@ export default function AboutPage() {
                 gallery={<div className={'section__gallery'}>
                     <div className={'card'}>
                         <div className={'card__image'}>
-                            <Image placeholder="blur" sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+                            <Image quality={80}
+                                placeholder={"blur"} width={fallbackImg.width} height={fallbackImg.height} blurDataURL={`/_next/image?url=${encodeURI(fallbackImg.src)}&w=${640}&q=30`}
+                                sizes={'100vw'}   style={{
                                 maxWidth: '100%',
                                 objectFit: "cover",
                                 width: '100%',

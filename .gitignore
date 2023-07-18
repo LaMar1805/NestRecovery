@@ -34,10 +34,3 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /.idea/*
-/.idea/
-/.idea/inspectionProfiles/
-/.idea/deployment.xml
-/.idea/modules.xml
-/.idea/nest_recovery.iml
-/.idea/vcs.xml
-/.idea/workspace.xml

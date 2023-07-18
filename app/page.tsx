@@ -3,13 +3,13 @@ import Section from "@/components/layout/Section";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
 import testData from "@/assets/testData.json"
-import slideImg from "@/assets/images/index/Ofich2Dg1.png"
-import slideImg2 from "@/assets/images/index/index_sl_1.png"
-import slideImg3 from "@/assets/images/index/index_sl_2.png"
-import slideCardImg from "@/assets/images/index/1.png"
-import slideCardImg2 from "@/assets/images/index/2.png"
-import slideCardImg3 from "@/assets/images/index/3.png"
-import contactImg from "@/assets/images/Still-3 1.png"
+import slideImg from "@/assets/images/index/Ofich2Dg1@2x.png"
+import slideImg2 from "@/assets/images/index/index_sl_1@2x.png"
+import slideImg3 from "@/assets/images/index/index_sl_2@2x.png"
+import slideCardImg from "@/assets/images/index/1@2x.png"
+import slideCardImg2 from "@/assets/images/index/2@2x.png"
+import slideCardImg3 from "@/assets/images/index/3@2x.png"
+import contactImg from "@/assets/images/Still-3 1@2x.png"
 import SliderViewport from "@/components/Slider/SliderViewport";
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 import { DefList } from "@/components/ui/Elements";
@@ -40,17 +40,17 @@ export const metadata: Metadata = {
         // images: [
         //     {
         //         alt: 'asdasd',
-        //         url: `${process.env.baseUrl}/_next/static/media/Ofich2Dg1.d322e2ca.png`,
+        //         url: `${process.env.baseUrl}/_next/static/media/Ofich2Dg1.d322e2ca@2x.png`,
         //         height: 412,
         //         width: 1400,
         //     },
         //     {
-        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_1.55a7db97.png`,
+        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_1.55a7db97@2x.png`,
         //         height: 412,
         //         width: 1400,
         //     },
         //     {
-        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_2.ae2c9303.png`,
+        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_2.ae2c9303@2x.png`,
         //         height: 412,
         //         width: 1400,
         //
@@ -64,19 +64,22 @@ export default function Home() {
 
     const images = [slideImg,slideImg2,slideImg3];
     const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
-    const screenSlider = images.map((item, index) => <Image key={index}  placeholder="blur"  sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+    const screenSlider = images.map((item, index) => <Image key={index} quality={80}
+        placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
+        sizes={'100vw'}
+        priority={true}
+        style={{
         maxWidth: '100%',
         objectFit: "cover",
+            // objectPosition: "40% center",
         width: '100%',
         height: '100%',
-    }} src={item} alt={''}/> )
+    }}
+        src={item} alt={''}/> )
     const cardsSlider = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
-        image={<Image placeholder="blur"  sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
-            maxWidth: '100%',
-            objectFit: "cover",
-            width: '100%',
-            height: '100%',
-        }} key={index}  src={item} alt={''}/>} />)
+        image={<Image
+            quality={75}
+            placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`} key={index} sizes={"50vw"} src={item} alt={''}/>} />)
 
   return (
       <main className={'page-index'}>
@@ -116,12 +119,16 @@ export default function Home() {
                     <DefList   key={'Phone'}  term={'Phone'} text={<Link href={'tel:4242825171'} >(424)282-5171</Link>} />
                     <DefList  key={'Hours'}  term={'Hours'} text={<>9 am - 6 pm, Mon<span>-</span>Sun</>} />
                 </div>}
-                gallery={<div className={'section__image'}><Image placeholder="blur" priority={true}  sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw" style={{
-                    maxWidth: '100%',
-                    objectFit: "cover",
-                    width: '100%',
-                    height: '100%',
-                }} alt={'Breathtaking canyon views'} src={contactImg}/></div>}
+                gallery={<div className={'section__image'}><Image quality={80}
+                    placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(contactImg.src)}&w=${640}&q=30`}
+                    sizes={'100vw'}
+                    style={{
+                        maxWidth: '100%',
+                        objectFit: "cover",
+                        // objectPosition: "40% center",
+                        width: '100%',
+                        height: '100%',
+                    }}alt={'Breathtaking canyon views'} src={contactImg}/></div>}
             />
         </main>
   )

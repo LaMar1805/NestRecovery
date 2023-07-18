@@ -9,15 +9,16 @@ const Layout = ({
 }: {
 	children: React.ReactNode
 }) => {
+	const envDev = process.env.NODE_ENV !== "development"
 	return (
 		<>
-			<Script src="https://www.googletagmanager.com/gtag/js?id=G-X7K6VG59EG" />
+			{envDev && (<><Script src="https://www.googletagmanager.com/gtag/js?id=G-X7K6VG59EG" />
 
 			<Script id="gtag-google" dangerouslySetInnerHTML={{__html: `window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-X7K6VG59EG');`}}/>
+          gtag('config', 'G-X7K6VG59EG');`}}/></>)}
 		<Header/>
 			{children}
 		<Footer/>

@@ -17,14 +17,14 @@
     "recovery": [
           {
             "image": {
-              "src": "/images/exp/recovery.png",
+              "src": "/images/exp/recovery@2x.png",
               "width": 561,
               "height": 280
             }
           },
           {
             "image": {
-              "src": "/images/exp/recovery_2.png",
+              "src": "/images/exp/recovery_2@2x.png",
               "width": 561,
               "height": 280
             }
@@ -75,21 +75,21 @@
     "chef": [
           {
             "image": {
-              "src": "/images/chef/chef_2_1.png",
+              "src": "/images/chef/chef_2_1@2x.png",
               "width": 561,
               "height": 280
             }
           },
           {
             "image": {
-              "src": "/images/chef/chef_2_2.png",
+              "src": "/images/chef/chef_2_2@2x.png",
               "width": 561,
               "height": 280
             }
           },
           {
             "image": {
-              "src": "/images/chef/chef_2_3.png",
+              "src": "/images/chef/chef_2_3@2x.png",
               "width": 561,
               "height": 280
             }
@@ -98,36 +98,14 @@
     "innercircle": [
       {
         "image": {
-          "src": "/images/exp/innercircle.png",
+          "src": "/images/exp/innercircle@2x.png",
           "width": 460,
           "height": 350
         }
       },
       {
         "image": {
-          "src": "/images/exp/innercircle_2.png",
-          "width": 460,
-          "height": 350
-        }
-      },
-
-      {
-        "image": {
-          "src": "/images/exp/innercircle_3.png",
-          "width": 460,
-          "height": 350
-        }
-      },
-      {
-        "image": {
-          "src": "/images/exp/innercircle.png",
-          "width": 460,
-          "height": 350
-        }
-      },
-      {
-        "image": {
-          "src": "/images/exp/innercircle_2.png",
+          "src": "/images/exp/innercircle_2@2x.png",
           "width": 460,
           "height": 350
         }
@@ -135,7 +113,29 @@
 
       {
         "image": {
-          "src": "/images/exp/innercircle_3.png",
+          "src": "/images/exp/innercircle_3@2x.png",
+          "width": 460,
+          "height": 350
+        }
+      },
+      {
+        "image": {
+          "src": "/images/exp/innercircle@2x.png",
+          "width": 460,
+          "height": 350
+        }
+      },
+      {
+        "image": {
+          "src": "/images/exp/innercircle_2@2x.png",
+          "width": 460,
+          "height": 350
+        }
+      },
+
+      {
+        "image": {
+          "src": "/images/exp/innercircle_3@2x.png",
           "width": 460,
           "height": 350
         }
@@ -145,14 +145,14 @@
     "wteThree": [
       {
         "image": {
-          "src": "/images/whattoexpect/wte_5.png",
+          "src": "/images/whattoexpect/wte_5@2x.png",
           "width": 460,
           "height": 350
         }
       },
       {
         "image": {
-          "src": "/images/whattoexpect/wte_6.png",
+          "src": "/images/whattoexpect/wte_6@2x.png",
           "width": 460,
           "height": 350
         }
@@ -160,7 +160,7 @@
 
       {
         "image": {
-          "src": "/images/whattoexpect/wte_4.png",
+          "src": "/images/whattoexpect/wte_4@2x.png",
           "width": 460,
           "height": 350
         }
@@ -173,7 +173,7 @@
         "description": "24/7 nursing care by licensed medical practitioners. State of the art medical equipment to provide all necessary treatments on site.",
         "link": "/care",
         "image": {
-          "src": "/images/index/1.png",
+          "src": "/images/index/1@2x.png",
           "width": 551,
           "height": 1002
         }
@@ -183,7 +183,7 @@
         "description": "Spacious suites, each outfitted with modern amenities and private patios/outdoor access. Chef-prepared meals.",
         "link": "/rooms",
         "image": {
-          "src": "/images/index/2.png",
+          "src": "/images/index/2@2x.png",
           "width": 551,
           "height": 1002
         }
@@ -193,7 +193,7 @@
         "description": "Discreet transportation, check-in, and check-out for complete privacy. Entertainment options, if you feel social.",
         "link": "/experiences",
         "image": {
-          "src": "/images/index/3.png",
+          "src": "/images/index/3@2x.png",
           "width": 551,
           "height": 1002
         }
@@ -202,21 +202,21 @@
     "careNurses": [
       {
         "image": {
-          "src": "/images/care__nurses/care__nurses_3.png",
+          "src": "/images/care__nurses/care__nurses_3@2x.png",
           "width": 640,
           "height": 781
         }
       },
       {
         "image": {
-          "src": "/images/care__nurses/care__nurses_2.png",
+          "src": "/images/care__nurses/care__nurses_2@2x.png",
           "width": 640,
           "height": 781
         }
       },
       {
         "image": {
-          "src": "/images/care__nurses/care__nurses.png",
+          "src": "/images/care__nurses/care__nurses@2x.png",
           "width": 640,
           "height": 781
         }
@@ -225,21 +225,21 @@
     "wte": [
       {
         "image": {
-          "src": "/images/whattoexpect/wte_1.png",
+          "src": "/images/whattoexpect/wte_1@2x.png",
           "width": 461,
           "height": 351
         }
       },
       {
         "image": {
-          "src": "/images/whattoexpect/wte_2.png",
+          "src": "/images/whattoexpect/wte_2@2x.png",
           "width": 461,
           "height": 351
         }
       },
       {
         "image": {
-          "src": "/images/whattoexpect/wte_3.png",
+          "src": "/images/whattoexpect/wte_3@2x.png",
           "width": 461,
           "height": 351
         }
@@ -249,7 +249,7 @@
       {
         "text": "Rate: $250/hour",
         "image": {
-          "src": "/images/care__nurses/nurses_4.png",
+          "src": "/images/care__nurses/nurses_4@2x.png",
           "width": 543,
           "height": 397
         }
@@ -261,7 +261,7 @@
       "image": [
         {
           "image": {
-            "src": "/images/care__nurses/nurses_5.png",
+            "src": "/images/care__nurses/nurses_5@2x.png",
             "width": 543,
             "height": 397
           }
