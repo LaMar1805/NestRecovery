@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Section from "@/components/layout/Section";
 import Slider from "@/components/Slider/Slider";
 import slideImg from "@/assets/images/exp/screen@2x.png"
@@ -19,7 +18,7 @@ export default function ExperiencesPage() {
     const images = [slideImg,slideImg2,slideImg3];
     const imgs = [imgIn, imgIn2, imgIn3];
     const imgrs = [imgRec, imgRec2];
-    const screenSlider = images.map((item, index) => <Image key={index}   priority={true} quality={80}
+    const screenSlider = images.map((item, index) => <ImageLoader key={index}  quality={80}
         placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
         sizes={'100vw'}   style={{
         maxWidth: '100%',

@@ -21,8 +21,10 @@ const Slider = ({items, spaceBetween = 0, loop = false,  perView = 1, pagination
 	autoplay?: any
 }) => {
 	const swiperRef = useRef<SwiperCore>();
-	return  (
+	// const [ready, setReady] = useState(false);
+	return (
 		<>
+
 			<Swiper
 				autoplay={autoplay}
 				modules={[Navigation, Pagination, Autoplay]}
@@ -30,6 +32,10 @@ const Slider = ({items, spaceBetween = 0, loop = false,  perView = 1, pagination
 				loop={loop}
 				onBeforeInit={(swiper) => {
 					swiperRef.current = swiper;
+				}}
+				onSwiper={(swiper) => {
+					console.log('ready', swiper)
+					// setReady(true)
 				}}
 			// 	navigation={{
 			// 		enabled: true
@@ -45,6 +51,7 @@ const Slider = ({items, spaceBetween = 0, loop = false,  perView = 1, pagination
 				breakpoints={breakpoints}
 				// watchOverflow={true}
 			>
+
 				{items.map((item:ReactNode, index: number) => <SwiperSlide className={'section-screen__slide'} key={index}>{item}</SwiperSlide>)}
 
 			</Swiper>
@@ -53,7 +60,8 @@ const Slider = ({items, spaceBetween = 0, loop = false,  perView = 1, pagination
 				<Arrow action={() => swiperRef.current?.slidePrev()} style={'backward'} />
 
 			</>)}
-		</>
-	)
+
+		</>)
+
 }
 export default Slider

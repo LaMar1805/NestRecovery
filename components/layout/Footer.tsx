@@ -10,8 +10,8 @@ const Footer = () => {
 			return (
 		<footer className={'footer'}>
 			<Container>
-				<Navbar items={testData.data.footerMenuLinks.map((item) => item.link ? <Link className={"navbar__link"} key={id} href={item.link}>{item.text}</Link> : item.text).slice(0,2)} />
-				<Navbar items={[...testData.data.footerMenuLinks.map((item) => item.link ? <Link className={"navbar__link"} key={id} href={item.link}>{item.text}</Link> : item.text).slice(2,4),  <BeverlyHillsSmall key={'1543254'}/>]} />
+				<Navbar items={testData.data.footerMenuLinks.map((item) => item.link ? <Link className={"navbar__link"} key={id} href={item.link}>{item.text}</Link> : item.text).slice(0,4)} />
+				<Navbar items={[...testData.data.footerMenuLinks.map((item) => item.link ? <Link className={"navbar__link"} key={id} href={item.link}>{item.text}</Link> : item.text).slice(4,6),  <BeverlyHillsSmall key={'1543254'}/>]} />
 			</Container>
 		</footer>
 	)

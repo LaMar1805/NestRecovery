@@ -307,13 +307,22 @@
     ],
     "footerMenuLinks": [
       {
+        "text": "Terms of Service",
+        "link": "/terms"
+      },
+      {
+        "text": "Booking and Stay Policy",
+        "link": "/bookingandstay"
+      },
+      {
         "text": "Privacy Policy",
         "link": "/privacy"
       },
       {
-        "text": "Terms of Service",
-        "link": "/terms"
+        "text": "California Privacy Policy",
+        "link": "/californiaprivacy"
       },
+
       {
         "text": "© Nest Recovery 2023"
       }

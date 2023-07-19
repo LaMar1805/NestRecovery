@@ -9,6 +9,6 @@ const ImageLoader = (props:ImageProps) => {
 	const handleLoad =() => {
 		setImg(true);
 	}
-	return <Image width={props.width} height={props.height}  src={props.src} style={props.style} placeholder={"empty"} sizes={!img ? "20vw" : "100vw"} onLoadingComplete={handleLoad} quality={10} alt={''} />;
+	return <Image width={props.width} height={props.height} priority={true}  src={props.src} style={props.style} placeholder={"empty"} sizes={!img ? "20vw" : "100vw"} onLoadingComplete={handleLoad} quality={!img ? 20 : 90}  alt={''} />;
 }
 export default ImageLoader
