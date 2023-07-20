@@ -5,18 +5,22 @@ import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 import fallbackImg from "../assets/images/founder.png";
 import svgImg from "@/assets/svg/lena_kaminski.svg";
 import ImageLoader from "@/components/ImageLoader";
+import imgVideo from "@/public/nest_promo_1.png";
 export default function AboutPage() {
-
-
   return (
         <main className={'page-about'}>
             <Section
                 variant={'section-screen'}
                 container={false}
                 title={<h1 className={'section__title'}>About Nest Recovery</h1>}
-                gallery={<VideoPlayer auto={false} src={'/nest_promo_1.mp4'} />}
+                gallery={
+                <VideoPlayer poster={<Image style={{
+                    zIndex: 4,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover"}} src={imgVideo} alt={''} quality={10}/>} auto={false} src={'/nest_promo_1.mp4'} />
+            }
             />
-
             <Section
                 container={false}
                 links={<div className={'section__filled'}>

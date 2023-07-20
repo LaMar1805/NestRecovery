@@ -17,6 +17,7 @@ import CardImage from "@/components/Cards/CardImage";
 import React from "react";
 import { Metadata } from "next";
 import ImageLoader from "@/components/ImageLoader";
+import imgVideo from "@/public/website_promo_6.png";
 export const metadata: Metadata = {
     title: 'EXPERT MEDICAL CARE IN THE COMFORT OF A LUXURY RETREAT',
     description: '',
@@ -65,7 +66,6 @@ export default function Home() {
 
     const images = [slideImg,slideImg2,slideImg3];
     const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
-    console.log(`/_next/image?url=${encodeURI(images[0].src)}&w=${640}&q=30`)
     const screenSlider = images.map((item, index) =>
         <ImageLoader key={index} quality={80}
             placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
@@ -78,18 +78,6 @@ export default function Home() {
                 height: '100%',
             }}
             src={item} alt={''}/>
-    //     <Image key={index} quality={80}
-    //     placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
-    //     sizes={'100vw'}
-    //     style={{
-    //     maxWidth: '100%',
-    //     objectFit: "cover",
-    //         // objectPosition: "40% center",
-    //     width: '100%',
-    //     height: '100%',
-    // }}
-    //     src={item} alt={''}/>
-    //
     )
     const cardsSlider = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
         image={<Image
@@ -123,7 +111,18 @@ export default function Home() {
                 container={false}
                 title={<h2 className={'section__title'}>9653 Highridge Dr<strong>Beverly Hills, CA 90210</strong></h2>}
                 text={<div className={'section__text'}><strong>10 minutes</strong> away from multiple top plastic surgery clinics in the LA area</div>}
-                gallery={<VideoPlayer title={'Breathtaking canyon views'} src={'/website_promo_6.mp4'}/>}
+                gallery={
+                    <VideoPlayer muted={true}  auto={false} poster={<Image  style={{
+
+                        zIndex: 4,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover"
+                    }} src={imgVideo}
+                        width={1280}
+                        height={720}
+                        alt={''} quality={10}/>}   title={'Breathtaking canyon views'} src={'/website_promo_6.mp4'} />
+               }
             />
 
             <Section
