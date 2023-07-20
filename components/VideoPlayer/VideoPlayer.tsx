@@ -35,7 +35,7 @@ const VideoPlayer = ({src, title, auto = true, poster, muted = true}:{src:string
         setIsPlaying(false);
     }
     const canPlay = () => {
-        console.log('can play')
+        // console.log('can play')
     }
     const handlePause = () => {
         setIsPlaying(false);

@@ -34,7 +34,7 @@ const Slider = ({items, spaceBetween = 0, loop = false,  perView = 1, pagination
 					swiperRef.current = swiper;
 				}}
 				onSwiper={(swiper) => {
-					console.log('ready', swiper)
+					// console.log('ready', swiper)
 					// setReady(true)
 				}}
 			// 	navigation={{

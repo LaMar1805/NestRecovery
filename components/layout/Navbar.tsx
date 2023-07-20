@@ -5,7 +5,9 @@ import { Navbar } from "@/components/ui/Elements";
 import testData from "@/assets/testData.json";
 import useWindowDimensions from "@/components/utils";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 export default function HeaderNavbar({children}:{children: ReactNode | ReactElement | undefined}) {
+	const pathname = usePathname()
 
 	const {width} = useWindowDimensions();
 	const [open, setOpen] = useState(false);
@@ -29,11 +31,14 @@ export default function HeaderNavbar({children}:{children: ReactNode | ReactElem
 			},{once:true});
 		}
 	};
+
 	useEffect(() => {
 		setAnimate(0);
 	}, [])
-	const linkAr = testData.data.menuLinks.map((item) => <><Link className={"navbar__link"} key={id} onClick={() => (width && width > 1200) && handleBurger()} href={item.link}>{item.text}</Link>
+
+	const linkAr = testData.data.menuLinks.map((item) => <><Link className={`navbar__link ${pathname === item.link && 'active'}`} key={id} onClick={() => (width && width > 1200) && handleBurger()} href={item.link}>{item.text}</Link>
 		{item.submenu ? <Navbar style={'navbar__submenu'} items={item.submenu.map((item) => <Link className={"navbar__link navbar__link-submenu"} key={id} onClick={() => (width && width > 1200) && handleBurger()} href={item.link}>{item.text}</Link>)}/> : null}</>)
+
 	const Burger = () => <a className={'burger'}  onClick={handleBurger}>{!open ? <BurgerSvg /> : <BurgerClosedSvg />}</a>;
 	if(width && width > 1200) {
 		return(

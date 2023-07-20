@@ -142,7 +142,7 @@
     transition: transform 0.2s ease-in-out, color 0.25s 0.05s ease-in-out;
 
   }
-  &:hover, &:focus {
+  &:hover, &:focus, &.active {
     color: var(--colorYellow);
     &:after {
       content: '';
