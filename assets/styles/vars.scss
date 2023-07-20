@@ -5,6 +5,7 @@
   --colorBaseContrast: #000;
   --container: 1160px;
   --actionGradient: linear-gradient(90deg, #C59541 0%, #FBDD78 36.98%, #BE9042 100%);
+  --actionGradientText: linear-gradient(90deg, #000 0%, #C59541 20%, #FBDD78 36.98%, #BE9042 50%, #000 100%);
   --gridGap: 40px;
   --totalCol: 12;
   --sideGutter: calc((100vw - var(--container)  ) / 2 - 8px - var(--gridGap));
