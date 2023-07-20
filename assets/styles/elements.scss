@@ -237,6 +237,7 @@
 
 }
 .accordion__item {
+  padding-left: 1rem;
   border-top: 2px solid #1A2714;
   border-bottom: 2px solid #1A2714;
   margin-top: -2px;
@@ -247,7 +248,7 @@
     background-color: #0000000f;
   }
   &.expanded {
-    background-color: #0000000f;
+    background-color: rgba(0, 0, 0, 0);
     .arrow--l-r span:nth-child(4) {
       transform: rotate(-45deg);
     }
@@ -304,6 +305,13 @@
     position: relative;
     display: inline-flex;
     justify-content: space-between;
+    .accordion__title h3 a {
+      color: inherit;
+      text-decoration: none;
+      flex: 1 1 auto;
+      display: inline-flex;
+      justify-content: space-between;
+    }
   }
   //&:hover {
   //  &:before {
