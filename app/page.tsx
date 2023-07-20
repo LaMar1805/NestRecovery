@@ -95,7 +95,7 @@ export default function Home() {
                         </div>}
                 title={<h1 className={'section__title'}>Expert medical care in the comfort of a luxury retreat</h1>}
                 gallery={<Slider autoplay={{
-                    delay: 20000,
+                    delay: 5000,
                     disableOnInteraction: false,
                 }}  items={screenSlider} perView={1} spaceBetween={0}/>}
             />
@@ -112,8 +112,7 @@ export default function Home() {
                 title={<h2 className={'section__title'}>9653 Highridge Dr<strong>Beverly Hills, CA 90210</strong></h2>}
                 text={<div className={'section__text'}><strong>10 minutes</strong> away from multiple top plastic surgery clinics in the LA area</div>}
                 gallery={
-                    <VideoPlayer muted={true}  auto={false} poster={<Image  style={{
-
+                    <VideoPlayer muted={true}  poster={<Image  style={{
                         zIndex: 4,
                         width: "100%",
                         height: "100%",
@@ -141,7 +140,7 @@ export default function Home() {
                         // objectPosition: "40% center",
                         width: '100%',
                         height: '100%',
-                    }}alt={'Breathtaking canyon views'} src={contactImg}/></div>}
+                    }} alt={'Breathtaking canyon views'} src={contactImg}/></div>}
             />
         </main>
   )

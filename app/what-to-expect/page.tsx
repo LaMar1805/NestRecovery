@@ -42,7 +42,7 @@ export default function WhatToExpectPage() {
                 }} src={slideImg} alt={''}/></div>}
             />
             <Section
-                title={<h2 className={'section__title'}>What to expect</h2>}
+                title={<h1 className={'section__title'}>What to expect</h1>}
                 variant={'section-default'}
                 text={<div className={'section__text'}><p>The moment you book your visit, we start preparing for your arrival. We coordinate with your doctor to iron out all the details and pick you up after your surgery.</p></div>}                />
             <Section

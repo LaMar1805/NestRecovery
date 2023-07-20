@@ -14,7 +14,7 @@ export default function AboutPage() {
                 container={false}
                 title={<h1 className={'section__title'}>About Nest Recovery</h1>}
                 gallery={
-                <VideoPlayer poster={<Image style={{
+                <VideoPlayer poster={<Image priority={true} style={{
                     zIndex: 4,
                     width: "100%",
                     height: "100%",

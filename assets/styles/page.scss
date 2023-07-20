@@ -781,11 +781,13 @@
 	  align-items: center;
 	}
 	.video_player_fallback_img {
-	  //position: absolute;
-	  //z-index: 4;
+	  position: relative;
+	  z-index: 4;
 	  //top: 0;
 	  //bottom: 0;
 	  //left: 0;
+	  margin-bottom: -315px;
+	  height: 100%;
 	  //right: 0;
 	  img	{
 		//width: 100%;
@@ -801,7 +803,7 @@
 		width: 100%;
 		object-fit: cover;
 		height: 100%;
-		margin-bottom: 0;
+		margin-bottom: -315px;
 	  }
 	}
 	.video_player_controls {
