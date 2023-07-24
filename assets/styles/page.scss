@@ -815,11 +815,15 @@
 	.video_player_media  {
 	  padding: 0;
 	  max-height: calc(100vh - 315px);
-
+		video {
+		  margin-top: -165px;
+		  margin-bottom: 165px;
+		}
 	  video, img {
 		width: 100%;
 		object-fit: cover;
 		height: 100%;
+
 		//margin-bottom: -315px;
 	  }
 	}
