@@ -54,7 +54,7 @@ export default function ChefPage() {
             <Section
                 container={false}
                 links={<div className={'section__footer'}>
-                    <Link href={'/what-to-expect'} className={'button button-big'}>Explore classes</Link>
+                    <Link href={'/experiences/#cheftag'}  className={'button button-big'}>Explore classes</Link>
                 </div>}
                 text={<div className={'section__text'}>
                     <p>Originally from Lyon, France, Jordan learned from French Michelin Star Chefs Paul Bocuse and Joseph Viola. After graduating best-in-class from Ecole de Cuisine Gourmets by Institut Paul Bocuse, Jordan further refined his unique style in the best restaurants of Macau, Shanghai and Jakarta and The Beverly Hills Hotel in the USA.</p>

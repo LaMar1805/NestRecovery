@@ -117,10 +117,11 @@ export default function ExperiencesPage() {
 
             <Section
                 container={false}
+                hashTag={'cheftag'}
                 title={<h2 className={'section__title'}>Culinary mastery: <span>Chef Jordan Grandviergne</span></h2>}
                 text={<div className={'section__text'}>
-                    <p>If you are feeling up to social interactions, Nest Recovery is uniquely equipped to accommodate you. Our boutique facility, with only 5 rooms, creates an intimate setting for individuals on their post-op healing journey. Our spacious lounge and dining area with their stunning views provide a serene backdrop for socializing. Guests can relax on the deck with a swimming pool overlooking the canyon, enjoy refreshing drinks from our juice bar, or engage in a friendly pool table game.</p>
-                    <span className={'rateString'}>Rate: Rate: $150/person + groceries</span>
+                    <p>Enhance your healing journey and have fun along the way with our exclusive cooking classes led by renowned Chef Jordan Grandviergne. Jordan learned from Michelin Star Chefs Paul Bocuse and Joseph Viola and refined his unique style while working in acclaimed restaurants worldwide, including The Beverly Hills Hotel. Immerse yourself in the art of gastronomy as Chef Jordan Grandviergne shares his expertise and passion. </p>
+                    <span className={'rateString'}>Rate: $150/person + groceries</span>
                     <div className={''}>Contact us to book ahead.</div>
                 </div>}
                 variant={'section-gallery section-chef grid'}

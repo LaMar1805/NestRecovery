@@ -126,6 +126,7 @@ export default function Home() {
 
             <Section
                 variant={'section-contact'}
+                hashTag={'contactpage'}
                 title={<h2 className={'section__title'}>Contact Nest Recovery</h2>}
                 text={<div className={'section__text'}>
                     <DefList key={'email'}  term={'Email'} text={<Link href={'mailto:info@nestrecovery.me'}>info@nestrecovery.me</Link>} />

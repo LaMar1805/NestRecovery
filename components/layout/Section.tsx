@@ -7,12 +7,13 @@ interface SectionProp {
 	title?: React.ReactElement | string
 	gallery?: React.ReactElement | React.ReactNode | StaticImport
 	links?: React.ReactElement
+	hashTag?: string
 	text?: React.ReactElement | string
 }
 export const Container = ({children}:any) => <div className={'container'}>{children}</div>
-const Section = ({variant, gallery, text, links, title, container = true}: SectionProp) => {
+const Section = ({variant, gallery, text, links, title, container = true, hashTag}: SectionProp) => {
 	return (
-		<section className={`section ${variant} ${links ? 'with-footer' : ''}`}>
+		<section className={`section ${variant} ${links ? 'with-footer' : ''}`} id={hashTag}>
 			{container ?
 				<Container>
 					{title}

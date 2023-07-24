@@ -53,7 +53,7 @@
       },
     {
         "title": "What are the hours of operation at your facility?",
-        "text": "<p>Nursing care: 24/7.</p><p>Office: 9 am - 6 pm, Mon-Sun.</p>"
+        "text": "<p>Nursing care: 24/7.</p><p>Transportation: 24/7.</p><p>Office: 9 am - 6 pm, Mon-Sun.</p>"
       },
       {
         "title": "What is your cancellation policy?",
@@ -257,7 +257,7 @@
     ],
     "massage": {
       "title": "Lymphatic drainage massage",
-      "text": "<p>Enhance your healing journey and have fun along the way with our exclusive cooking classes led by renowned Chef Jordan Grandviergne. Jordan learned from Michelin Star Chefs Paul Bocuse and Joseph Viola and refined his unique style while working in acclaimed restaurants worldwide, including The Beverly Hills Hotel. Immerse yourself in the art of gastronomy as Chef Jordan Grandviergne shares his expertise and passion. </p><span class=rateString>Rate: $300/session</span>",
+      "text": "<p>If recommended by your doctor, we offer on-site lymphatic drainage massage, expertly administered by our skilled masseur, Vasil. With an impressive 20 years of experience, Vasil holds a degree in Kinesiology with a focus on exercise science from CSUN. He is currently completing his doctorate program at SCUHS, working towards earning the title of Dr. of Chiropractic this year.</p><span class=rateString>Rate: $300/session</span>",
       "image": [
         {
           "image": {

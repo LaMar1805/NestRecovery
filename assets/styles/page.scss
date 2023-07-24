@@ -656,6 +656,7 @@
 	  }
 	  .rateString {
 		margin-bottom: 8px;
+		font-size: 2rem;
 		display: block;
 		& + div {
 		  font-size: 18px;
@@ -682,6 +683,22 @@
 		  right: 0;
 		  position: absolute;
 		}
+	  }
+	  .section__text {
+		p {
+		  margin-bottom: 2.5rem;
+		}
+		.rateString {
+
+		margin-bottom: 8px;
+		font-size: 18px;
+		display: block;
+		  text-transform: uppercase;
+		  & + div {
+			font-size: 14px;
+		  }
+		}
+
 	  }
 	  .section__gallery_wrapper {
 		grid-row: 3/4;
