@@ -18,7 +18,7 @@ import ImageLoader from "@/components/ImageLoader";
 export default function CarePage() {
 
     const images = [slideImg,slideImg2,slideImg3];
-    const imagesSect = [slideImgSection,slideImgSection2,slideImgSection3];
+    const imagesSect = [slideImgSection3, slideImgSection,slideImgSection2];
     const screenSlider = images.map((item, index) =>   <ImageLoader key={index} quality={80}
         placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
         sizes={'100vw'}

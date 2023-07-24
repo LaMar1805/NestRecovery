@@ -57,7 +57,7 @@ export default function ChefPage() {
                     <Link href={'/what-to-expect'} className={'button button-big'}>Explore classes</Link>
                 </div>}
                 text={<div className={'section__text'}>
-                    <p>Originally from Lyon, France, Jordan learned from French Michelin Star Chefs Paul Bocuse and Joseph Viola. After graduating best-in-class from École de Cuisine Gourmets by Institut Paul Bocuse, Jordan further refined his unique style in the best restaurants of Macau, Shanghai and Jakarta and The Beverly Hills Hotel in the USA.</p>
+                    <p>Originally from Lyon, France, Jordan learned from French Michelin Star Chefs Paul Bocuse and Joseph Viola. After graduating best-in-class from Ecole de Cuisine Gourmets by Institut Paul Bocuse, Jordan further refined his unique style in the best restaurants of Macau, Shanghai and Jakarta and The Beverly Hills Hotel in the USA.</p>
                     <p>Working in close collaboration with leading experts in nutritional science, Chef Grandviergne was able to design for our guests a breakfast menu that is not just super-healthy and beneficial for post-op recovery but also elevated to the highest peaks of French haute cuisine. </p>
                     <p>For guests staying with us for longer periods of time, Jordan offers exclusive cooking classes, providing an opportunity to learn his culinary techniques and secrets firsthand.</p>
             </div>}
