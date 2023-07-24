@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Section from "@/components/layout/Section";
 import Link from "next/link";
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
-import fallbackImg from "../assets/images/founder.png";
+import fallbackImg from "@/assets/images/founder.jpg";
 import svgImg from "@/assets/svg/lena_kaminski.svg";
 import ImageLoader from "@/components/ImageLoader";
 import imgVideo from "@/public/nest_promo_1.png";
