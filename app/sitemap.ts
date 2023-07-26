@@ -11,15 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			lastModified: new Date(),
 		},
 		{
-			url: 'https://www.nestrecovery.me/blog',
-			lastModified: new Date(),
-		},
-		{
 			url: 'https://www.nestrecovery.me/bookingandstay',
-			lastModified: new Date(),
-		},
-		{
-			url: 'https://www.nestrecovery.me/californiaprivacy',
 			lastModified: new Date(),
 		},
 		{
