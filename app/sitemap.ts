@@ -45,10 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		{
 			url: 'https://www.nestrecovery.me/what-to-expect',
 			lastModified: new Date(),
-		},
-
-
-
-
+		}
 	]
 }

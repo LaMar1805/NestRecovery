@@ -62,7 +62,7 @@ export default function ExperiencesPage() {
                 container={false}
                 title={<h2 className={'section__title'}>Recovery indulgence: serene bliss</h2>}
                 text={<div className={'section__text'}>
-                    <p>Experience the ultimate serenity of a retreat at our facility during the crucial days after your surgery. Relax in the tranquillity of your room, enjoying a wide variety of cable TV and streaming services, along with delectable food that caters to your post-op needs. Our rooms offer spacious patios or terraces, with some featuring expansive decks and stunning canyon views, perfect for embracing the beauty of nature. Discover solace, comfort, and inspiration in our retreat-like setting as you embark on your healing journey.</p>
+                    <p>Experience the ultimate serenity of a retreat at our facility during the crucial days after your surgery. Relax in the tranquillity of your room, enjoying the delectable food that caters to your post-op needs. Our rooms offer spacious patios or terraces, with some featuring expansive decks and stunning canyon views, perfect for embracing the beauty of nature. Discover solace, comfort, and inspiration in our retreat-like setting as you embark on your healing journey.</p>
                 </div>}
                 variant={'section-gallery grid'}
                 gallery={<div className={'section__gallery'}>
@@ -120,9 +120,9 @@ export default function ExperiencesPage() {
                 hashTag={'cheftag'}
                 title={<h2 className={'section__title'}>Culinary mastery: <span>Chef Jordan Grandviergne</span></h2>}
                 text={<div className={'section__text'}>
-                    <p>Enhance your healing journey and have fun along the way with our exclusive cooking classes led by renowned Chef Jordan Grandviergne. Jordan learned from Michelin Star Chefs Paul Bocuse and Joseph Viola and refined his unique style while working in acclaimed restaurants worldwide, including The Beverly Hills Hotel. Immerse yourself in the art of gastronomy as Chef Jordan Grandviergne shares his expertise and passion. </p>
+                    <p>Enhance your healing journey and have fun along the way with our exclusive cooking classes led by renowned Chef Jordan Grandviergne. Jordan trained under Michelin Star Chefs Paul Bocuse and Joseph Viola and refined his unique style while working in acclaimed restaurants worldwide, including The Beverly Hills Hotel. Immerse yourself in the art of gastronomy as Chef Jordan Grandviergne shares his expertise and passion. </p>
                     <span className={'rateString'}>Rate: $150/person + groceries</span>
-                    <div className={''}>Contact us to book ahead.</div>
+                    <div className={''}>Check our weekly event schedule at your bedside.</div>
                 </div>}
                 variant={'section-gallery section-chef grid'}
                 gallery={                    <div className={'section__gallery'}>

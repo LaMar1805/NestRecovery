@@ -87,7 +87,7 @@ export default function CarePage() {
                 container={false}
                 title={<h2 className={'section__title'}>Hyperbaric oxygen therapy</h2>}
                 text={<div className={'section__text'}>
-                    <p>Upon the physician&#39;s recommendations, your treatment can be supplemented with hyperbaric chamber treatments.</p>
+                    <p>Upon your physician&#39;s orders, your treatment can be supplemented with hyperbaric chamber treatments.</p>
                     <p>Hyperbaric oxygen therapy involves breathing pure oxygen in a pressurized environment, increasing the amount of oxygen the lungs gather. Hyperbaric treatments reduce post-surgical bruising, swelling, and inflammation and accelerate healing.</p> </div>}
                 variant={'section-therapy grid'}
                 gallery={<div className={'section__gallery'}>
