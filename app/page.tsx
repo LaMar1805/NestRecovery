@@ -77,7 +77,7 @@ export default function Home() {
                 width: '100%',
                 // height: '100%',
             }}
-            src={item} alt={''}/>
+            src={item} alt={''} priority={true}/>
     )
     const cardsSlider = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
         image={<Image
