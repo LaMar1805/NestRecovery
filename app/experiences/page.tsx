@@ -21,10 +21,10 @@ export default function ExperiencesPage() {
     const screenSlider = images.map((item, index) => <ImageLoader key={index}  quality={80}
         placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
         sizes={'100vw'}   style={{
-        maxWidth: '100%',
+        // maxWidth: '100%',
         objectFit: "cover",
         width: '100%',
-        height: '100%',
+        // height: '100%',
     }} src={item} alt={''}/> );
     const imgt = imgs.map((item, index) => <ImageLoader key={index} quality={80}
         placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}

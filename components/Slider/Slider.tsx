@@ -52,7 +52,7 @@ const Slider = ({items, spaceBetween = 0, loop = false,  perView = 1, pagination
 				// watchOverflow={true}
 			>
 
-				{items.map((item:ReactNode, index: number) => <SwiperSlide className={'section-screen__slide'} key={index}>{item}</SwiperSlide>)}
+				{items.map((item:ReactNode, index: number) => <SwiperSlide  className={'section-screen__slide'} key={index}>{item}</SwiperSlide>)}
 
 			</Swiper>
 			{navigation && (<>
