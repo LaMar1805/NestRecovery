@@ -18,7 +18,7 @@ export default function AboutPage() {
                     zIndex: 4,
                     width: "100%",
                     height: "100%",
-                    objectFit: "cover"}} src={imgVideo} alt={''} quality={10}/>} auto={false} src={'/nest_promo_1.mp4'} />
+                    objectFit: "cover"}} src={imgVideo}  alt={''} quality={10}/>} auto={false} src={'/nest_promo_1.mp4'} />
             }
             />
             <Section

@@ -25,7 +25,7 @@ export default function ExperiencesPage() {
         objectFit: "cover",
         width: '100%',
         // height: '100%',
-    }} src={item} alt={''}/> );
+    }} src={item} alt={''}  priority={index === 0}/> );
     const imgt = imgs.map((item, index) => <ImageLoader key={index} quality={80}
         placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
         sizes={'100vw'}    style={{
@@ -33,7 +33,7 @@ export default function ExperiencesPage() {
         objectFit: "cover",
         width: '100%',
         height: '100%',
-    }}  src={item} alt={''}/> );
+    }}  src={item} alt={''}  priority={index === 0}/> );
     const imgr = imgrs.map((item, index) => <ImageLoader key={index} quality={80}
         placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
         sizes={'100vw'}   style={{
@@ -41,7 +41,7 @@ export default function ExperiencesPage() {
         objectFit: "cover",
         width: '100%',
         height: '100%',
-    }} src={item} alt={''}/> );
+    }} src={item} alt={''}  priority={index === 0}/> );
 
   return (
         <main className={'page-experiences'}>

@@ -39,7 +39,7 @@ export default function WhatToExpectPage() {
                     objectFit: "cover",
                     width: '100%',
                     height: '100%',
-                }} src={slideImg} alt={''}/></div>}
+                }} src={slideImg} alt={''} /></div>}
             />
             <Section
                 title={<h1 className={'section__title'}>What to expect</h1>}

@@ -29,7 +29,7 @@ export default function CarePage() {
             width: '100%',
             // height: '100%',
         }}
-        src={item} alt={''}/>);
+        src={item} priority={index === 0} alt={''}/>);
     const img = imagesSect.map((item, index) => <CardImage style={'card-nurses'} key={index+100}
         image={<ImageLoader key={index} quality={80}
             placeholder={"blur"} width={item.width} height={item.height} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}

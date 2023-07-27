@@ -19,8 +19,8 @@ export default function ChefPage() {
 
     const images = [slideImg,slideImg2,slideImg3];
     const screenSlider = images.map((item, index) => <ImageLoader key={index}  quality={80}
-        placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
-        sizes={'100vw'}   style={{
+        placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=10`}
+        sizes={'100vw'}  priority={index === 0}   style={{
         // maxWidth: '100%',
         objectFit: "cover",
         width: '100%',
