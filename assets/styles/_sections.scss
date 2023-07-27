@@ -75,7 +75,7 @@
   }
   &.with-footer {
 	.swiper-slide.section-screen__slide {
-	  min-height: calc(100vh - 470px);
+	  max-height: calc(100vh - 470px);
 	  min-block-size: 300px;
 
 	}
