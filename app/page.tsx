@@ -69,7 +69,7 @@ export default function Home() {
     const screenSlider = images.map((item, index) =>
         <ImageLoader key={index} quality={80}
             placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
-            sizes={'100vw'}
+            // sizes={'100vw'}
             style={{
                 maxWidth: '100%',
                 objectFit: "cover",
