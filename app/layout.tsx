@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import {font} from "@/assets/fonts/fonts";
 import Layout from "@/components/layout/layout";
 import Script from "next/script";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: {
@@ -25,7 +26,9 @@ export default function RootLayout({
 
 
         <Layout>
-          {children}
+          <Suspense>
+            {children}
+          </Suspense>
         </Layout>
       </body>
     </html>
