@@ -3,13 +3,13 @@ import Section from "@/components/layout/Section";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
 import testData from "@/assets/testData.json"
-import slideImg from "@/assets/images/index/Ofich2Dg1@2x.png"
-import slideImg2 from "@/assets/images/index/index_sl_1@2x.png"
-import slideImg3 from "@/assets/images/index/index_sl_2@2x.png"
-import slideCardImg from "@/assets/images/index/1@2x.png"
-import slideCardImg2 from "@/assets/images/index/2@2x.png"
-import slideCardImg3 from "@/assets/images/index/3@2x.png"
-import contactImg from "@/assets/images/Still-3 1@2x.png"
+import slideImg from "@/assets/images/index/Ofich2Dg1.png"
+import slideImg2 from "@/assets/images/index/index_sl_1.png"
+import slideImg3 from "@/assets/images/index/index_sl_2.png"
+import slideCardImg from "@/assets/images/index/1.png"
+import slideCardImg2 from "@/assets/images/index/2.png"
+import slideCardImg3 from "@/assets/images/index/3.png"
+import contactImg from "@/assets/images/Still-3 1.png"
 import SliderViewport from "@/components/Slider/SliderViewport";
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 import { DefList } from "@/components/ui/Elements";
@@ -42,17 +42,17 @@ export const metadata: Metadata = {
         // images: [
         //     {
         //         alt: 'asdasd',
-        //         url: `${process.env.baseUrl}/_next/static/media/Ofich2Dg1.d322e2ca@2x.png`,
+        //         url: `${process.env.baseUrl}/_next/static/media/Ofich2Dg1.d322e2ca.png`,
         //         height: 412,
         //         width: 1400,
         //     },
         //     {
-        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_1.55a7db97@2x.png`,
+        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_1.55a7db97.png`,
         //         height: 412,
         //         width: 1400,
         //     },
         //     {
-        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_2.ae2c9303@2x.png`,
+        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_2.ae2c9303.png`,
         //         height: 412,
         //         width: 1400,
         //
@@ -69,9 +69,9 @@ export default function Home() {
     const screenSlider = images.map((item, index) =>
         <ImageLoader key={index} quality={75}
             placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
-            // sizes={'100vw'}
+            sizes={'100vw'}
             style={{
-                maxWidth: '100%',
+                // maxWidth: '100%',
                 objectFit: "cover",
                 // objectPosition: "40% center",
                 width: '100%',
