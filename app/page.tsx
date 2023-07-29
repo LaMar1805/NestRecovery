@@ -133,15 +133,19 @@ export default function Home() {
                     <DefList   key={'Phone'}  term={'Phone'} text={<Link href={'tel:4242825171'} >(424)282-5171</Link>} />
                     <DefList  key={'Hours'}  term={'Hours'} text={<>9 am - 6 pm, Mon<span>-</span>Sun</>} />
                 </div>}
-                gallery={<div className={'section__image'}><ImageLoader quality={80}
-
-                    style={{
-                        maxWidth: '100%',
-                        objectFit: "cover",
-                        // objectPosition: "40% center",
-                        width: '100%',
-                        height: '100%',
-                    }} alt={'Breathtaking canyon views'} src={contactImg}/></div>}
+                gallery={
+                <div className={'section__image'}>
+                    <ImageLoader quality={80}
+                        style={{
+                            maxWidth: '100%',
+                            objectFit: "cover",
+                            // objectPosition: "40% center",
+                            width: '100%',
+                            height: '100%',
+                        }}
+                        alt={'Breathtaking canyon views'}
+                        src={contactImg}/>
+                </div>}
             />
         </main>
   )

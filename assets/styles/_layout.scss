@@ -18,19 +18,21 @@
     grid-template-columns: var(--gridinner);
     gap: 0 var(--gridGap);
     > * {
-      grid-column: 2/-1;
-      width: calc(100% - 2rem);
+      grid-column: 1/-1;
+      //width: calc(100% - 2rem);
     }
     @media screen and (max-width: 1199px){
       > * {
         grid-column: 1/-1;
-        width: calc(100% - 2rem);
+        //width: calc(100% - 2rem);
       }
     }
 
   }
 }
-
+main {
+  min-height: calc( 100vh - 258px);
+}
 .container {
   grid-column: 2/-2;
   max-width: var(--container);

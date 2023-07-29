@@ -8,14 +8,17 @@ interface SectionProp {
 	gallery?: React.ReactElement | React.ReactNode | StaticImport
 	links?: React.ReactElement
 	hashTag?: string
-	text?: React.ReactElement | string
+	text?: React.ReactElement | string| React.ReactNode | StaticImport
+	header?: React.ReactElement | string | React.ReactNode | StaticImport
+	footer?: React.ReactElement | string | React.ReactNode | StaticImport
 }
 export const Container = ({children}:any) => <div className={'container'}>{children}</div>
-const Section = ({variant, gallery, text, links, title, container = true, hashTag}: SectionProp) => {
+const Section = ({header, footer, variant, gallery, text, links, title, container = true, hashTag}: SectionProp) => {
 	return (
 		<section className={`section ${variant} ${links ? 'with-footer' : ''}`} id={hashTag}>
 			{container ?
 				<Container>
+					{header}
 					{title}
 					{text}
 					{gallery}
@@ -23,6 +26,7 @@ const Section = ({variant, gallery, text, links, title, container = true, hashTa
 				</Container> :
 				<>
 					{title}
+					{header}
 					{text}
 					{gallery}
 					{links}</>

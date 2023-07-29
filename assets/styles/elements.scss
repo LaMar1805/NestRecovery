@@ -310,7 +310,8 @@
       color: inherit;
       text-decoration: none;
       flex: 1 1 auto;
-      display: inline-flex;
+       display: flex;
+       align-items: center;
       justify-content: space-between;
     }
   }

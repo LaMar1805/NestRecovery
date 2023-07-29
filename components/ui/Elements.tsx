@@ -1,10 +1,10 @@
 import React from "react";
 import { ArrowSvg } from "@/components/Icons";
-export const DefList = ({term, text}:{term: string, text: string | React.ReactElement}) => {
+export const DefList = ({term, text}:{term: string, text: string | React.ReactElement | any}) => {
 	return (
 	<dl className={'def_list'}>
 		<dt>{term}</dt>
-		<dd >{text}</dd>
+		<dd>{text}</dd>
 	</dl>
 	)
 }

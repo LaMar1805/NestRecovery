@@ -1,5 +1,215 @@
 {
   "data": {
+    "rooms_features": {
+      "bed": {
+        "src": "/svg/bed.svg",
+        "width": 115,
+        "height": 75
+      },
+     "deck": {
+       "src": "/svg/deck.svg",
+       "width": 101,
+       "height": 72
+     },
+     "view": {
+       "src": "/svg/view.svg",
+       "width": 117,
+       "height": 81
+     },
+      "fire_pit": {
+       "src": "/svg/fire_pit.svg",
+       "width": 55,
+       "height": 84
+     },
+     "closet":{
+       "src": "/svg/closet.svg",
+       "width": 128,
+       "height": 84
+     },
+     "fridge":{
+       "src": "/svg/fridge.svg",
+       "width": 96,
+       "height": 85
+     },
+     "bathtub":{
+       "src": "/svg/bathtub.svg",
+       "width": 66,
+       "height": 84
+     },
+     "shower":{
+       "src": "/svg/shower.svg",
+       "width": 70,
+       "height": 94
+     },
+     "patio": {
+       "src": "/svg/patio.svg",
+       "width": 103,
+       "height": 86
+     }
+    },
+    "rooms": [
+      {
+        "title": "Cinta Room",
+        "properties": [ "300 sqft", "100 sqft patio", "first floor"],
+        "href": "/rooms/cinta",
+        "images": {
+          "screen": {
+            "src": "/images/rooms/cinta/cinta@2x.png",
+            "width": 2800,
+            "height": 840
+          },
+          "gallery": [
+            {
+              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
+              "width": 3860,
+              "height": 2560
+            }
+          ]
+        },
+        "full_data": {
+          "features": ["bed", "patio", "closet", "fridge", "shower"],
+          "room_includes": [
+            {
+              "title": "Occupancy",
+              "rows": ["Single stay"]
+            },
+            {
+              "title": "Bathroom Features",
+              "rows": ["Hairdryer", "Robe + slippers"]
+            },
+            {
+              "title": "Food and Beverages",
+              "rows": ["Post-op meals", "Breakfast", "Snacks + juice bar"]
+            },
+            {
+              "title": "Recovery",
+              "rows": ["24/7 licensed nursing care", "Upon physician's request, Sequential Compression Device", "Upon physician's request, Oxygen Concentrator", "Recovery clothing (gown, robe, or pajamas, depending on the surgery)" ]
+            },
+
+            {
+              "title": "Transportation",
+              "rows": ["Pick-up after surgery", "Transportation to follow-up appointments and back", "Drop-off after stay (LA Metropolitan Area, including LAX)"]
+            },
+
+            {
+              "title": "Entertainment",
+              "rows": ["4K TV", "Wi-Fi", "Cable TV"]
+            }
+          ],
+          "extra_charge": [
+            {
+              "title": "Extra room fees",
+              "image": {
+                "src": "/svg/door.svg",
+                "width": 40,
+                "height": 66
+              },
+              "rows": [
+                {
+                  "title": "Overnight guest (breakfast included)",
+                  "text": "$300/night"
+                },
+                {
+                  "title": "Late checkout (11:00 AM - 7:00 PM)*",
+                  "text": "$500"
+                },
+                {
+                  "title": "Early check-in (6:00 AM - 11:00 AM)*",
+                  "text": "$350"
+                },
+                "* Subject to availability"
+              ]
+            },
+            {
+              "title": "Treatment fees**",
+              "image": {
+                "src": "/svg/treatment.svg",
+                "width": 54,
+                "height": 66
+              },
+              "rows": [
+                {
+                  "title": "Hyperbaric oxygen therapy",
+                  "text": "$250/hour"
+                },
+                {
+                  "title": "Intravenous therapy",
+                  "text": "$50/bag of fluid"
+                },
+                {
+                  "title": "Lymphatic drainage massage",
+                  "text": "$300/session"
+                },
+                "** Upon physician's request"
+              ]
+            },
+            {
+              "title": "Transportation",
+              "image": {
+                "src": "/svg/electric-car.png",
+                "width": 100,
+                "height": 52
+              },
+              "rows": [
+                {
+                  "title": "Private transportation on top of included into the room rate",
+                  "text": "$150/hour"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "title": "Serai Room",
+        "properties": [ "405 sqft", "100 sqft patio", "first floor"],
+        "href": "/rooms/serai",
+        "images": {}
+      },
+      {
+        "title": "Cahaya Room",
+        "properties": [ "400 sqft", "350 sqft deck", "second floor"],
+        "href": "/rooms/cahaya",
+        "images": {}
+      },
+      {
+        "title": "Kirana Room",
+        "properties": [ "400 sqft", "570 sqft deck", "second floor"],
+        "href": "/rooms/kirana",
+        "images": {}
+      },
+      {
+        "title": "Pelangi Room",
+        "properties": [ "600 sqft", "1,110 sqft deck", "penthouse", "third floor"],
+        "href": "/rooms/pelangi",
+        "images": {}
+      }
+    ],
     "privacy": {
         "booking": {
           "textHtml": "<p> Last updated July 26, 2023 </p> <h1> BOOKING AND STAY POLICY </h1> <p> The below Booking and Stay Policy applies to your stay at our property located at 9653 Highridge Dr., Beverly Hills, CA 900210 (the “Property”), which may be booked by you on our website <a href=\"\"> https://www.nestrecovery.me </a> (the “Website”). “We” or “Nest Recovery” refers to Nest Recovery LLC, a California limited liability company with registered office at 236 South Gale Drive, Unit B, Beverly Hills, California, 90211. </p> <p> When making a booking by clicking the “Book” button on the Website, you agree to our Terms and Conditions located at <a href=\"\"> https://www.nestrecovery.me </a> /terms, this Booking and Stay Policy and the use of your Personal Information as set out in the Privacy Policy located at <a href=\"\"> https://www.nestrecovery.me </a> /privacy and California Privacy Policy located at <a href=\"/\"> https://www.nestrecovery.me/ </a> <a href=\"/californiaprivacy\">californiaprivacy</a>. </p> <p> If you do not wish to agree to the above terms and conditions, please refrain from using the Website to book your stay at the Property. </p> <h2> 1. General </h2> <p> Nest Recovery is here to provide you with excellent post-surgery care services and seamless recovery experience available. The list of post-surgery wellness recovery services we offer (the “Services”) may vary depending on your needs and may include: </p> <ul> <li> <p> Caring aftercare recovery and wellness services. The goal of the Nest Recovery post surgery care program is to tend to your every need so you can focus on healing. Our entire staff is dedicated and invested in your wellness. </p> </li> <li> <p> Professional care services. Our professional licensed nurses are here to help with monitoring vitals, wound care, and helping you with other individual needs. </p> </li> <li> <p> Private rooms. Nest Recovery Property was designed to be a comfortable and luxurious retreat where you can recover from post-surgery procedures. We have designed the retreat with your privacy and utmost comfort in mind. </p> </li> <li> <p> Transportation services. Pick-up after your surgery, transportation to and from appointments with your surgeon and transportation from Nest Recovery after your stay with us are included in your stay at no extra charge. </p> </li> <li> <p> Healthy meals. We offer a variety of light post-op meals as well as a healthy breakfast menu, snacks and beverages further down the road of your recovery. </p> </li> </ul> <h2> 2. Recovery </h2> <p> Your care is under the supervision of trained staff members, however, you are responsible for taking your own medications. We are not liable if you misuse or abuse your medications. You are encouraged and reminded to take your medications as prescribed; however, it is your responsibility to take your medications as prescribed. </p> <h2> 3. Transportation </h2>  <p> Your stay at Nest Recovery includes the following transportation services at no extra charge: </p> <ul> <li> <p> transportation to Nest Recovery after your surgery, </p> </li> <li> <p> transportation to and from all appointments with your surgeon during your stay at Nest Recovery, </p> </li> <li> <p> transportation from Nest Recovery to the address of your choice within the Los Angeles Metropolitan Area after your stay. </p> </li> </ul> <p> If you choose to stay at Nest Recovery before your surgery, transportation from Nest Recovery to your surgery is also included at no extra charge. </p> <p> If you wish to retain transportation services for the purposes other than the ones listed above, the private service is available at the rates available on our Website. </p> <p> Please note, the transportation services to and from the appointments with your surgeon are only meant for the direct transfer between the Nest Recovery facility and your surgeon’s office and for the time of your appointment. The driver will deliver you to the surgeon’s office by the time of your appointment and will expect for you to arrive in 15 minutes after your appointment ends. If you are running over, please know there will be a private transportation charge applied (hourly private transportation rates are available on our Website). </p> <p> The managers of Nest Recovery will decide which car to use for each transportation based on availability. </p> <h2> 4. Meals, snacks and beverages </h2> <p> The first day after your surgery you are provided with light post-op meals. When you are ready for more substantial food, you will be offered healthy breakfasts as well as light snacks and beverages throughout the day. All our menus are designed based on post-surgery recommendations.  We encourage you to take advantage of the variety of restaurants in the area for your lunches and dinners. Nest Recovery’s primary location offers access to some of the world's finest restaurants. offering delivery via various apps. </p> <h2> 5. Booking </h2> <p> An online reservation option is available to you on the Website. The reservation is guaranteed until the day of your arrival at the Property. After that time, it will no longer be guaranteed and may be canceled. </p> <p> Reservations should be prepaid with Visa, MasterCard, Discover, American Express or prepaid debit cards. We will charge your card the cost of a one-night stay within one (1) day after we have confirmed your reservation (the “Prepayment Deposit”). We have the right to cancel your reservation if we do not receive the Prepayment Deposit. We will send you a cancellation confirmation via email immediately after canceling your booking. </p> <p> The below rules apply to the Reservation Policy: </p> <ul> <li> <p> You have to be 18 years old to book a stay and be present at check-in; </p> </li> <li> <p> A valid photo ID is required upon check-in; </p> </li> <li> <p> All requests to reserve a room must include the first and last name of all adults occupying the room and a valid credit card for a guarantee of arrival; </p> </li> <li> <p> The room rates are subject to change, please check the Website for current room rates; </p> </li>  <li> <p> When booking, please keep maximum occupancy rules in mind - two people maximum per room, with an extra charge applied for the second person (a rollaway bed may be provided upon request, subject to availability.) </p> </li> </ul> <h2> 6. Check-in / Check-out / Security Deposit </h2> <p> You can check-in any time from 2PM local time. Upon check-in, a charge will be made on your card for the total amount due for your stay at the Property, as well as an additional $300 pre-authorization hold on a card as a guarantee for additional charges, damages, breakages and fines (the “Security Deposit”). </p> <p> Please note that the Security Deposit refund upon check-out is additionally subject to deductions resulting from our check-out inspection of the room. The Security Deposit is refunded depending upon your bank’s policy, in 3-10 business days after the check-out under the condition that the room is in good order and we do not have any claims. The costs of damages or cleaning beyond what would be expected after responsible usage of the room will be deducted from the Security Deposit, and the refunded amount will be the remainder of the Security Deposit. exclusive additional charges and fines. </p> <p> Please note that check-in can not be completed until full payment of the amount due for the stay and Security Deposit pre-authorization for the room has been received and approved. </p> <p> During the check-in process, we will provide you with any information, which may be required during your stay. Always ask for anything that would make your stay more enjoyable and convenient. </p> <p> You can check-out any time up until 11AM by local time. Later check-out times may be requested although we may not always be able to accommodate late changes and will depend on availability and on how busy we are. Please note that a more detailed inspection of the room is usually made after the check-out time and we reserve the right to make charges for any damages or breakages found before the room is occupied again. </p> <p> Please be aware that the bed linen, robes and towels are NOT gifts and should remain in the room. </p> <p> We shall not be responsible for lost or forgotten personal things at the Property upon check-out. </p> <h2> 7. Cancellation Policy </h2> <p> Please carefully read our cancellation policy, rarely can we make any exceptions to this. Our team is instructed to follow this policy and rules. To save any misunderstanding, we would be grateful if you can observe the following: </p> <ul> <li> <p> If you cancel the reservation more than 48 hours in advance, the total amount of the Prepayment Deposit will be refunded. </p> </li> <li> <p> If you cancel the reservation less than 48 hours in advance, the Prepayment Deposit is non-refundable. </p> </li> <li> <p> If you arrive at the Property, check-in and decide to leave early, the nights not spent 48 hours after the cancellation occurs, are 100% refunded. </p> </li> <li> <p> In case of a no-show, the total price of the reservation will be charged and is non-refundable. </p> </li> </ul> <p> There are only two ways in which we can acknowledge cancellation of the guest’s reservation: </p> <p> (i) The guest must send a cancellation request stating the reservation number via email to the following address: <a href=\"mailto:info@nestrecovery.me\"> info@nestrecovery.me </a> . All cancellations are confirmed via email immediately after the reservation has been canceled, or </p> <p> (ii) The guest must call Nest Recovery at (424)282-5171. All cancellations are confirmed via email immediately after the call. If you did not receive the cancellation confirmation, please contact us immediately. </p> <p> If you need to change your visit dates, please notify us as soon as possible, and we will do our best to accommodate your change. </p> <h2> 8. Smoking Policy, Restrictions and Damages </h2> <p> Smoking Policy </p> <p> Our Property is a non-smoking property. This applies to both traditional smoking methods and all electronic delivery systems, including vapes, vaporizers, vape pens, hookah pens, electronic cigarettes (e-cigarettes or e-cigs), e-pipes, and any variations of the foregoing regardless of the product’s name. Any smoking in the rooms or strong lingering smoking scents in rooms will result in a $5,000 room cleaning fee. </p> <p> Restrictions </p> <p> PLEASE NOTE: </p> <p> Nest Recovery may immediately terminate your right to stay at the Property and the provision of Services, if: </p> <ul> <li> <p> More guests stay in the room than agreed; </p> </li> <li> <p> Excessive noise is made in the evening hours or at night. You are asked to respect the privacy of the neighbors and to not make any excessive noise between the hours of 9PM and 08AM by local time; </p> </li> <li> <p> Damages other than normal wear and tear and usage are incurred to the room or the Property. </p> </li> </ul> <p> Accommodation for additional guests may be requested and approved subject to availability, in which case a charge for each additional guest per night will be charged. Please check the Website for information on the current rates. We reserve the right to cancel any reservation, without refund, if an unconfirmed number of people stay in the Property. </p> <p> Unfortunately, the Property does not allow any pets. A $2,000 fine will be claimed if pets will be accommodated in the Property. </p> <p> Damages </p> <p> During your stay, the room with all equipment and furniture should be treated with care and kept in order. Immediate notification to our team will be expected of any damages or breakages in the Property. </p>  <p> You are financially responsible for any damage to the Property. This includes losses caused by you (or a third party negligent actions and behavior. A summary check of the room will be made at check-out time. However, a more detailed review of the condition of the room and all equipment and facilities will be made soon after check-out and before another guest occupies the room. You are responsible for any damages or breakages found that are over and above normal wear and tear and usage. In this case, a detailed statement of damage along with an invoice for the repair or replacement cost will be sent to you by e-mail immediately. </p> <p> Any costs, damages and fines will be deducted from the security deposit immediately if this is still possible and you explicitly agree to such deductions. Any costs will be claimed by return if they are greater than the security deposit or where the security deposit has already been returned. Please note that immediate notification after check-out of any damages to, breakages in or issues with the apartment is expected. </p> <p> Out team can then take any necessary action to resolve any issues and make sure all the equipment and facilities are working and provided as expected. </p> <h2> 9. Extending your stay </h2> <p> After you have booked your stay with us, you can extend your stay (depending on availability) by simply letting us know before you arrive. <br/> If you are already staying with us and you would like to stay longer, please let us know at least 24 hours before your check-out date. We will do our best to accommodate your new plans and this can include relocating you to a similar room should this be necessary. </p> <h2> 10. Parking policy </h2> <p> Please note that by parking a vehicle at our facility, you are doing so on your own accord. We do not take responsibility or accept liability for damage, accident or loss to your vehicle or personal property. </p>"
