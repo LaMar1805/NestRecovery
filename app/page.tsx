@@ -138,13 +138,13 @@ export default function Home() {
                 gallery={
                 <div className={'section__image'}>
                     <ImageLoader quality={70}
-                        style={{
-                            maxWidth: '100%',
-                            objectFit: "cover",
-                            // objectPosition: "40% center",
-                            width: '100%',
-                            height: '100%',
-                        }}
+                        // style={{
+                        //     maxWidth: '100%',
+                        //     objectFit: "cover",
+                        //     // objectPosition: "40% center",
+                        //     width: '100%',
+                        //     height: '100%',
+                        // }}
                         alt={'Breathtaking canyon views'}
                         src={contactImg}/>
                 </div>}
