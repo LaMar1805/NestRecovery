@@ -67,7 +67,7 @@ export default function Home() {
     const images = [slideImg,slideImg2,slideImg3];
     const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
     const screenSlider = images.map((item, index) =>
-        <ImageLoader key={index} quality={80}
+        <ImageLoader key={index} quality={75}
             placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
             // sizes={'100vw'}
             style={{
@@ -82,7 +82,9 @@ export default function Home() {
     const cardsSlider = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
         image={<Image
             quality={75}
-            placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`} key={index} sizes={"(max-width: 768px) 100vw, (max-width: 1199) 33vw, (min-width: 1200)  "} src={item} alt={''}/>} />)
+            placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`} key={index}
+            // sizes={"(max-width: 768px) 100vw, (max-width: 1199) 33vw, (min-width: 1200)  "}
+            src={item} alt={''}/>} />)
 
   return (
       <main className={'page-index'}>
@@ -135,7 +137,7 @@ export default function Home() {
                 </div>}
                 gallery={
                 <div className={'section__image'}>
-                    <ImageLoader quality={80}
+                    <ImageLoader quality={70}
                         style={{
                             maxWidth: '100%',
                             objectFit: "cover",
