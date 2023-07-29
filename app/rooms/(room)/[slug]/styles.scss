@@ -231,6 +231,11 @@
 	}
   }
 }
+  .swiper-slide {
+	&:hover {
+	  cursor: pointer;
+	}
+  }
   .section__gallery_wrapper, .section__thumbs  {
 	grid-column: 1/-1;
   }
