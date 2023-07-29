@@ -6,7 +6,7 @@ import { Swiper as SwiperCore } from 'swiper/types';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { ReactNode, useRef } from "react";
+import { ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import { Arrow } from "@/components/ui/Elements";
 
 // @ts-ignore
@@ -21,6 +21,17 @@ const Slider = ({items, spaceBetween = 0, loop = false,  perView = 1, pagination
 	autoplay?: any
 }) => {
 	const swiperRef = useRef<SwiperCore>();
+	const [ready, setReady] = useState(false);
+	const arImg = useMemo(() => {
+		let ar = [<SwiperSlide key={1} className={'section-screen__slide'} >{items[0]}</SwiperSlide>]
+		if(ready) {
+			ar = items.map((item:ReactNode, index: number) => <SwiperSlide className={'section-screen__slide'} key={index}>{item}</SwiperSlide>)
+		}
+		return ar
+	}, [ready])
+	useEffect(() => {
+		setReady(true);
+	},[])
 	// const [ready, setReady] = useState(false);
 	return (
 		<>
@@ -52,7 +63,7 @@ const Slider = ({items, spaceBetween = 0, loop = false,  perView = 1, pagination
 				// watchOverflow={true}
 			>
 
-				{items.map((item:ReactNode, index: number) => <SwiperSlide className={'section-screen__slide'} key={index}>{item}</SwiperSlide>)}
+				{arImg}
 
 			</Swiper>
 			{navigation && (<>

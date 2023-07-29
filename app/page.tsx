@@ -102,7 +102,8 @@ export default function Home() {
             <Section
                 container={false}
                 variant={'section-gallery grid'}
-                gallery={<div className={'section__gallery'}><Slider items={cardsSlider} breakpoints={{320: {
+                gallery={<div className={'section__gallery'}>
+                    <Slider items={cardsSlider} breakpoints={{320: {
                         loop: true,
                         slidesPerView: 1,
                         spaceBetween: 20,
