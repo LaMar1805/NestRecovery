@@ -80,11 +80,12 @@ export default function Home() {
             src={item} alt={''} priority={index === 0}/>
     )
     const cardsSlider = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
-        image={<Image
-            quality={75}
-            placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`} key={index}
-            // sizes={"(max-width: 768px) 100vw, (max-width: 1199) 33vw, (min-width: 1200)  "}
-            src={item} alt={''}/>} />)
+        image={
+            <ImageLoader key={index} quality={75}
+                // placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
+                // sizes={'100vw'}
+
+                src={item} alt={''} priority={false}/>} />)
 
   return (
       <main className={'page-index'}>
