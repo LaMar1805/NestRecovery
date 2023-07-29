@@ -26,6 +26,7 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 	const [firstSwiper, setFirstSwiper] = useState(null);
 
 
+	// @ts-ignore
 	return (
 		<>
 		<div className={'section__gallery_wrapper grid'}>
@@ -35,7 +36,8 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 					modules={[Navigation,FreeMode, Pagination, Autoplay, Thumbs, Controller]}
 					thumbs={{ swiper: thumbsSwiper }}
 					spaceBetween={spaceBetween}
-					onSwiper={(swiper) => setFirstSwiper}
+					// @ts-ignore
+					onSwiper={(swiper) => setFirstSwiper(swiper)}
 					loop={true}
 
 					// navigation={firstSwiper.navigation}
@@ -77,7 +79,8 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 
 			{thumbs &&	<div className={'section__thumbs'}> <Swiper
 				modules={[FreeMode, Pagination, Thumbs, Controller]}
-				onSwiper={() => setThumbsSwiper}
+				// @ts-ignore
+				onSwiper={setThumbsSwiper}
 				slidesPerView={6}
 				spaceBetween={30}
 				loop={true}
