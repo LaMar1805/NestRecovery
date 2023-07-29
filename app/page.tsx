@@ -81,7 +81,7 @@ export default function Home() {
     )
     const cardsSlider = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
         image={item} />)
-    cardsSlider.push(<CardImage image={""} style={'card-benefit'} svg={<FallBackImgSvg />} key={123}/>);
+    cardsSlider.push(<CardImage  image={""} style={'card-benefit'} svg={<FallBackImgSvg />} key={123}/>);
 
   return (
       <main className={'page-index'}>
@@ -100,9 +100,29 @@ export default function Home() {
             />
 
             <Section
-                container
+                container={false}
                 variant={'section-gallery grid'}
-                gallery={cardsSlider}
+                gallery={<div className={'section__gallery'}><Slider items={cardsSlider} breakpoints={{320: {
+                        loop: true,
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                        navigation: false
+                    },
+                    720: {
+                        loop: false,
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+
+                    1200: {
+                        loop: false,
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                        freeMode: false,
+                        pagination: false,
+
+                        centeredSlides: false
+                    }}} /></div>}
             />
 
             <Section
