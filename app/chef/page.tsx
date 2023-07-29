@@ -8,7 +8,6 @@ import slideImg3 from "@/assets/images/chef/slider_3@2x.png"
 import sectImg from "@/assets/images/chef/chef_2_1@2x.png"
 import sectImg2 from "@/assets/images/chef/chef_2_2@2x.png"
 import sectImg3 from "@/assets/images/chef/chef_2_3@2x.png"
-import SliderViewport from "@/components/Slider/SliderViewport";
 import fallbackImg from "@/assets/images/chef/chefj@2x.png";
 import svgImg from "@/assets/svg/jordan_grandviergne.svg";
 import CardImage from "@/components/Cards/CardImage";
@@ -29,14 +28,7 @@ export default function ChefPage() {
     const cardsImages = [sectImg,sectImg2,sectImg3];
 
     const img = cardsImages.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
-        image={<ImageLoader quality={80}
-            placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
-            sizes={'100vw'}    style={{
-            maxWidth: '100%',
-            objectFit: "cover",
-            width: '100%',
-            height: '100%',
-        }} key={index}  src={item} alt={''}/>} />)
+        image={item}/>)
   return (
         <main className={'page-chef'}>
             <Section
@@ -85,7 +77,7 @@ export default function ChefPage() {
                         <p>Immerse yourself in the culinary wonders of Beverly Hills as you embark on your path to rejuvenation and renewal.</p>
                 </div>}
                 gallery={<div className={'section__gallery'}>
-                    <SliderViewport breakpoints={{
+                    <Slider breakpoints={{
                         // when window width is >= 320px
                         320: {
                             slidesPerView: 1,
@@ -96,7 +88,7 @@ export default function ChefPage() {
                             slidesPerView: 3,
                             spaceBetween: 30
                         }
-                    }} cardStyle={'card-nurses'} push={false} items={img}/>
+                    }} items={img}/>
                 </div>}
                 variant={'section-gallery chef-two grid'}
             />

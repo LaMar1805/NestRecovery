@@ -10,7 +10,6 @@ import slideCardImg from "@/assets/images/index/1.png"
 import slideCardImg2 from "@/assets/images/index/2.png"
 import slideCardImg3 from "@/assets/images/index/3.png"
 import contactImg from "@/assets/images/Still-3 1.png"
-import SliderViewport from "@/components/Slider/SliderViewport";
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 import { DefList } from "@/components/ui/Elements";
 import CardImage from "@/components/Cards/CardImage";
@@ -18,6 +17,7 @@ import React from "react";
 import { Metadata } from "next";
 import ImageLoader from "@/components/ImageLoader";
 import imgVideo from "@/public/website_promo_6.png";
+import { FallBackImgSvg } from "@/components/Icons";
 export const metadata: Metadata = {
     title: 'EXPERT MEDICAL CARE IN THE COMFORT OF A LUXURY RETREAT',
     description: '',
@@ -80,12 +80,8 @@ export default function Home() {
             src={item} alt={''} priority={index === 0}/>
     )
     const cardsSlider = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
-        image={
-            <ImageLoader key={index} quality={75}
-                // placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
-                // sizes={'100vw'}
-
-                src={item} alt={''} priority={false}/>} />)
+        image={item} />)
+    cardsSlider.push(<CardImage style={'card-benefit'} svg={<FallBackImgSvg />} key={123}/>);
 
   return (
       <main className={'page-index'}>
@@ -106,7 +102,7 @@ export default function Home() {
             <Section
                 container
                 variant={'section-gallery grid'}
-                gallery={<SliderViewport  cardStyle={'card-benefit'} items={cardsSlider}/>}
+                gallery={cardsSlider}
             />
 
             <Section

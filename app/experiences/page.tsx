@@ -1,17 +1,16 @@
 import Section from "@/components/layout/Section";
 import Slider from "@/components/Slider/Slider";
-import slideImg from "@/assets/images/exp/screen@2x.png"
-import slideImg2 from "@/assets/images/exp/exp_sl_6@2x.png"
-import slideImg3 from "@/assets/images/exp/exp_sl_7@2x.png";
-import imgIn from "@/assets/images/exp/exp_sl_8@2x.png";
-import imgIn2 from "@/assets/images/exp/innercircle@2x.png";
-import imgIn3 from "@/assets/images/exp/exp_sl_9@2x.png";
-import imgRec from "@/assets/images/exp/recovery@2x.png";
-import imgRec2 from "@/assets/images/exp/recovery_2@2x.png";
-
-import chef from "@/assets/images/exp/chef_1@2x.png"
-import SliderViewport from "@/components/Slider/SliderViewport";
+import slideImg from "@/assets/images/exp/screen.png"
+import slideImg2 from "@/assets/images/exp/exp_sl_6.png"
+import slideImg3 from "@/assets/images/exp/exp_sl_7.png";
+import imgIn from "@/assets/images/exp/exp_sl_8.png";
+import imgIn2 from "@/assets/images/exp/innercircle.png";
+import imgIn3 from "@/assets/images/exp/exp_sl_9.png";
+import imgRec from "@/assets/images/exp/recovery.png";
+import imgRec2 from "@/assets/images/exp/recovery_2.png";
+import chef from "@/assets/images/exp/chef_1.png"
 import ImageLoader from "@/components/ImageLoader";
+import CardImage from "@/components/Cards/CardImage";
 
 export default function ExperiencesPage() {
 
@@ -19,29 +18,17 @@ export default function ExperiencesPage() {
     const imgs = [imgIn, imgIn2, imgIn3];
     const imgrs = [imgRec, imgRec2];
     const screenSlider = images.map((item, index) => <ImageLoader key={index}  quality={80}
-        placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
-        sizes={'100vw'}   style={{
+
+         style={{
         // maxWidth: '100%',
         objectFit: "cover",
         width: '100%',
         // height: '100%',
     }} src={item} alt={''}  priority={index === 0}/> );
     const imgt = imgs.map((item, index) => <ImageLoader key={index} quality={80}
-        placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
-        sizes={'100vw'}    style={{
-        maxWidth: '100%',
-        objectFit: "cover",
-        width: '100%',
-        height: '100%',
-    }}  src={item} alt={''}  priority={index === 0}/> );
+        src={item} alt={''}  priority={index === 0}/>  );
     const imgr = imgrs.map((item, index) => <ImageLoader key={index} quality={80}
-        placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
-        sizes={'100vw'}   style={{
-        maxWidth: '100%',
-        objectFit: "cover",
-        width: '100%',
-        height: '100%',
-    }} src={item} alt={''}  priority={index === 0}/> );
+        src={item} alt={''}  priority={index === 0}/> );
 
   return (
         <main className={'page-experiences'}>
@@ -66,7 +53,7 @@ export default function ExperiencesPage() {
                 </div>}
                 variant={'section-gallery grid'}
                 gallery={<div className={'section__gallery'}>
-                    <SliderViewport cardStyle={'card-exp-recovery'} breakpoints={{
+                    <Slider breakpoints={{
                         // when window width is >= 320px
                         320: {
                             slidesPerView: 1,
@@ -75,12 +62,12 @@ export default function ExperiencesPage() {
                         },
                         1200: {
                             loop: true,
-                            slidesPerView: 1,
-                            spaceBetween: 0,
+                            slidesPerView: 2,
+                            spaceBetween: 40,
                             pagination: false,
                             centeredSlides: false
                         }
-                    }} push={false} items={imgr}/>
+                    }} items={imgr}/>
             </div>}
             />
             <Section
@@ -97,17 +84,19 @@ export default function ExperiencesPage() {
                         320: {
                             loop: true,
                             slidesPerView: 1,
-                            spaceBetween: 0,
+                            spaceBetween: 20,
                             navigation: false
                         },
 
 
                         1200: {
-                            loop: true,
-                            slidesPerView: 3,
-                            spaceBetween: 60,
+                            loop: false,
+                            slidesPerView: "auto",
+                            spaceBetween: 40,
                             freeMode: false,
                             pagination: false,
+                            width: 460,
+                            height: 350,
                             centeredSlides: false
                         }
                     }} />

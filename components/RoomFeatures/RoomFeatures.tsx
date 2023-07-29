@@ -9,7 +9,7 @@ function RoomFeatures(props: { currentFeatures: any[]}) {
 				</div>
 				<div className={styles.room_features__icons}>
 					{props.currentFeatures.map((value:{ index: number; src: string, width: number, height: number }) =>
-						<Image key={value.index} src={value.src} width={value.width} height={value.height} alt={""}/>)}
+						<Image  key={value.index} src={value.src} width={value.width} height={value.height} alt={""}/>)}
 				</div>
 	</div>;
 }

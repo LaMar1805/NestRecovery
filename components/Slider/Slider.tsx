@@ -44,7 +44,7 @@ const Slider = ({items, spaceBetween = 0, loop = false,  perView = 1, pagination
 
 				// watchSlidesProgress={true}
 				// autoHeight={true}
-				style={{maxWidth: '100%', width: '100%'}}
+				// style={{maxWidth: '100%', width: '100%'}}
 				pagination={{ enabled: pagination, clickable: true, bulletClass: 'custom__bullet', bulletActiveClass: 'custom_bullet_active' }}
 				slidesPerView={perView}
 				// centeredSlides={true}

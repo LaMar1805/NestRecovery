@@ -9,7 +9,7 @@ import slideImg3 from "@/assets/images/care__nurses/care_sl_4@2x.png";
 import slideImgSection from "@/assets/images/care__nurses/care__nurses@2x.png";
 import slideImgSection2 from "@/assets/images/care__nurses/care__nurses_2@2x.png";
 import slideImgSection3 from "@/assets/images/care__nurses/care__nurses_3@2x.png";
-import SliderViewport from "@/components/Slider/SliderViewport";
+
 import { CareTherapySvg } from "@/components/Icons";
 import CardImage from "@/components/Cards/CardImage";
 import React from "react";
@@ -31,17 +31,7 @@ export default function CarePage() {
         }}
         src={item} priority={index === 0} alt={''}/>);
     const img = imagesSect.map((item, index) => <CardImage style={'card-nurses'} key={index+100}
-        image={<ImageLoader key={index} quality={80}
-            placeholder={"blur"} width={item.width} height={item.height} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
-            sizes={'100vw'}
-        //     style={{
-        //     maxWidth: '100%',
-        //     objectFit: "cover",
-        //     width: '100%',
-        //     background: 'none',
-        //     // height: 'auto',
-        // }}
-            src={item} alt={''}/>} />)
+        image={item} />)
     // const img = testData.data.careNurses;
 
   return (
@@ -68,7 +58,7 @@ export default function CarePage() {
                     <p>If recommended by your doctor, your care will be complemented with Sequential Compression Device and Oxygen Concentrator at no extra charge or IV at $50 per fluid bag.</p> </div>}
                 variant={'section-gallery grid'}
                 gallery={<div className={'section__gallery'}>
-                    <SliderViewport   breakpoints={{
+                    <Slider   breakpoints={{
                         // when window width is >= 320px
                         320: {
                             slidesPerView: 1,
@@ -80,7 +70,7 @@ export default function CarePage() {
                             slidesPerView: 3,
                             spaceBetween: 30
                         }
-                    }} cardStyle={'card-nurses'}  push={false} items={img}/>
+                    }}  items={img}/>
             </div>}
             />
             <Section

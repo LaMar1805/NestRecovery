@@ -41,7 +41,9 @@ main {
     margin: 0 1rem;
   }
 }
-
+.swiper {
+  z-index: 20;
+}
 .layout-header {
 
   height: 200px;

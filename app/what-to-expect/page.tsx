@@ -7,7 +7,6 @@ import wteImg from "@/assets/images/whattoexpect/wte_@2x.png";
 import wteCardImg from "@/assets/images/whattoexpect/wte_1@2x.png";
 import wteCardImg2 from "@/assets/images/whattoexpect/wte_2@2x.png";
 import wteCardImg3 from "@/assets/images/whattoexpect/wte_3@2x.png";
-import SliderViewport from "@/components/Slider/SliderViewport";
 import Slider from "@/components/Slider/Slider";
 import CardImage from "@/components/Cards/CardImage";
 import React from "react";
@@ -15,9 +14,7 @@ import ImageLoader from "@/components/ImageLoader";
 export default function WhatToExpectPage() {
     const cardImg = [wteCardImg, wteCardImg2, wteCardImg3];
     const img = cardImg.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
-        image={<ImageLoader quality={80}
-            placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
-            sizes={'100vw'} key={index} style={{width: "100%", background: 'none'}} src={item} alt={''}/>} />)
+        image={item} />)
 
     const sectSlider = testData.data.wteThree.map((item, index) => <ImageLoader sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
         maxWidth: '100%',
@@ -70,7 +67,7 @@ export default function WhatToExpectPage() {
                     </div>
                 </div>}
                 gallery={<div className={'section__gallery'}>
-                    <SliderViewport  breakpoints={{
+                    <Slider  breakpoints={{
                         // when window width is >= 320px
                         320: {
                             slidesPerView: 1,
@@ -82,7 +79,7 @@ export default function WhatToExpectPage() {
                             slidesPerView: 3,
                             spaceBetween: 30
                         }
-                    }} cardStyle={'card-nurses'} push={false} items={img}/>
+                    }}  items={img}/>
                 </div>}
                 variant={'section-gallery wte-three grid'}
             />
