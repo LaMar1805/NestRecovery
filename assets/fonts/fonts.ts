@@ -14,7 +14,7 @@ const font = localFont({
 	}
 
 	],
-	display: 'swap',
+	display: 'auto',
 	variable: '--futura-book'
 })
 

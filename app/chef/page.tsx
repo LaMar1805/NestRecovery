@@ -2,9 +2,15 @@ import Image from 'next/image'
 import Section from "@/components/layout/Section";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
-import slideImg from "@/assets/images/chef/slider@2x.png"
-import slideImg2 from "@/assets/images/chef/slider_2@2x.png"
-import slideImg3 from "@/assets/images/chef/slider_3@2x.png"
+import slideImg from "@/public/images/chef/slider@2x.png"
+import slideImg2 from "@/public/images/chef/slider_2@2x.png"
+import slideImg3 from "@/public/images/chef/slider_3@2x.png"
+import slideMobImg from "@/public/images/chef/slider-mobile@2x.png"
+import slideMobImg2 from "@/public/images/chef/slider_2-mobile@2x.png"
+import slideMobImg3 from "@/public/images/chef/slider_3-mobile@2x.png"
+
+
+
 import sectImg from "@/assets/images/chef/chef_2_1@2x.png"
 import sectImg2 from "@/assets/images/chef/chef_2_2@2x.png"
 import sectImg3 from "@/assets/images/chef/chef_2_3@2x.png"
@@ -17,14 +23,8 @@ import ImageLoader from "@/components/ImageLoader";
 export default function ChefPage() {
 
     const images = [slideImg,slideImg2,slideImg3];
-    const screenSlider = images.map((item, index) => <ImageLoader key={index}  quality={80}
-        placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=10`}
-        sizes={'100vw'}  priority={index === 0}   style={{
-        // maxWidth: '100%',
-        objectFit: "cover",
-        width: '100%',
-        // height: '100%',
-    }} src={item} alt={''}/> );
+    const imagesMob = [slideMobImg,slideMobImg2,slideMobImg3];
+
     const cardsImages = [sectImg,sectImg2,sectImg3];
 
     const img = cardsImages.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
@@ -41,7 +41,11 @@ export default function ChefPage() {
                 gallery={<Slider autoplay={{
                     delay: 20000,
                     disableOnInteraction: false,
-                }} items={screenSlider} perView={1} spaceBetween={0}/>}
+                }} style={{
+                    // maxWidth: '100%',
+                    // objectFit: "",
+                    // width: '100%',
+                }} items={images}  itemsMob={imagesMob} spaceBetween={10}/>}
             />
             <Section
                 container={false}
@@ -57,7 +61,7 @@ export default function ChefPage() {
                 gallery={<div className={'section__gallery'}>
                     <div className={'card'}>
                         <div className={'card__image'}>
-                            <ImageLoader src={fallbackImg} sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
+                            <ImageLoader src={fallbackImg} style={{
                                 maxWidth: '100%',
                                 objectFit: "cover",
                                 width: '100%',
@@ -83,12 +87,17 @@ export default function ChefPage() {
                             slidesPerView: 1,
                             spaceBetween: 0
                         },
+                        720: {
+                            loop: false,
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
                         // when window width is >= 480px
-                        1800: {
+                        1400: {
                             slidesPerView: 3,
                             spaceBetween: 30
                         }
-                    }} items={img}/>
+                    }} element={false} items={img}/>
                 </div>}
                 variant={'section-gallery chef-two grid'}
             />

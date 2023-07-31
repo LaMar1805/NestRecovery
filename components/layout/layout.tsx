@@ -7,8 +7,8 @@ import { Analytics } from '@vercel/analytics/react';
 const Layout = ({
 	children,
 }: {
-	children: React.ReactNode
-}) => {
+	children: React.ReactNode}) => {
+
 	const envDev = process.env.NODE_ENV !== "development"
 	return (
 		<>
@@ -22,7 +22,7 @@ const Layout = ({
 		<Header/>
 			{children}
 		<Footer/>
-			<Analytics />
+			{envDev && (	<Analytics />)}
 		</>
 	)
 }

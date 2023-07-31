@@ -9,7 +9,6 @@ import RoomFeatures from "@/components/RoomFeatures/RoomFeatures";
 import AccordionList from "@/components/Accordion/Accordion";
 import { DefList } from "@/components/ui/Elements";
 import Image from "next/image";
-import Slider from "@/components/Slider/Slider";
 import SliderWithThumbs from "@/components/Slider/SliderWithThumbs";
 
 
@@ -28,13 +27,12 @@ export default function RoomPage({ params: {slug} }: { params: { slug: string } 
 		currentFeatures.push(features.get(value))
 	});
 
-	const imgt = room.images.gallery && room.images.gallery.map((item, index) => <ImageLoader key={index} quality={80}
-		placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
+	const imgt = room.images.gallery && room.images.gallery.map((item, index) => <ImageLoader key={index}
 		   style={{
 
 		objectFit: "cover",
 		width: '100%',
-	}}  src={item} alt={''}  priority={index === 0}/> );
+	}}  src={item} alt={''}  /> );
 
 	// @ts-ignore
 	return (
@@ -49,9 +47,7 @@ export default function RoomPage({ params: {slug} }: { params: { slug: string } 
 				<Link href={'https://hotels.cloudbeds.com/reservation/y3Nqxi'} className={'button button-big'}>Book</Link>
 				</div>}
 				gallery={
-					<div className={'section__image'}>{room.images.screen && <ImageLoader quality={80}
-						placeholder={"blur"} blurDataURL={room.images.screen && `/_next/image?url=${encodeURI(room.images.screen?.src)}&w=${640}&q=30`}
-						// sizes={'100vw'}
+					<div className={'section__image'}>{room.images.screen && <ImageLoader
 						style={{
 							maxWidth: '100%',
 							objectFit: "cover",
@@ -59,7 +55,10 @@ export default function RoomPage({ params: {slug} }: { params: { slug: string } 
 							width: '100%',
 							// height: '100%',
 						}}
-					src={room.images.screen?.src} width={room.images.screen?.width} height={room.images.screen?.height} alt={''} priority={true}/>}</div>}
+					src={{src: room.images.screen?.src,
+						width: room.images.screen?.width,
+						height:room.images.screen?.height
+					}} alt={''}/>}</div>}
 			/>
 			<Section
 				variant={'section-content grid'}

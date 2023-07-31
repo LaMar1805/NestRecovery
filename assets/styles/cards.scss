@@ -116,6 +116,10 @@
 	  }
 	}
 	.card__image:last-child {
+	  svg {
+		align-self: center;
+		height: 90%;
+	  }
 	  &:after {
 		content: none;
 	  }
@@ -130,6 +134,8 @@
 	}
 	@media screen and (max-width: 1199px){
 	  max-width: 360px;
+	  flex: 1;
+	  aspect-ratio: 334/471;
 	  img {
 		aspect-ratio: 360/400;
 	  }

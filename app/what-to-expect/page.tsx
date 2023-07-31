@@ -16,15 +16,13 @@ export default function WhatToExpectPage() {
     const img = cardImg.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
         image={item} />)
 
-    const sectSlider = testData.data.wteThree.map((item, index) => <ImageLoader sizes="(max-width: 768px) 50vw, (max-width: 1399px) 75vw, 100vw"      style={{
-        maxWidth: '100%',
-        objectFit: "cover",
-        width: '100%',
-        height: '100%',
-    }} key={index}
-        width={item.image.width}
-        height={item.image.height}
-        src={item.image.src} alt={''}/> );
+    const sectSlider = testData.data.wteThree.map((item, index) => <ImageLoader key={index}
+
+        src={{
+            src: item.image.src,
+            width: item.image.width,
+            height: item.image.height
+        }} alt={''}/> );
 
   return (
         <main className={'page-what-to-expect'}>

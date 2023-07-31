@@ -43,14 +43,14 @@ export default function AboutPage() {
                 gallery={<div className={'section__gallery'}>
                     <div className={'card'}>
                         <div className={'card__image'}>
-                            <ImageLoader quality={80}
-                                placeholder={"blur"} width={fallbackImg.width} height={fallbackImg.height} blurDataURL={`/_next/image?url=${encodeURI(fallbackImg.src)}&w=${640}&q=30`}
-                                sizes={'100vw'}   style={{
-                                maxWidth: '100%',
-                                objectFit: "cover",
-                                width: '100%',
-                                height: '100%',
-                            }} src={fallbackImg} alt={''}/>
+                            <ImageLoader
+                            //     style={{
+                            //     maxWidth: '100%',
+                            //     objectFit: "cover",
+                            //     width: '100%',
+                            //     height: '100%',
+                            // }}
+                                src={fallbackImg} alt={''}/>
                         </div>
                         <div className={'card__footer'}>
                                 <Image src={svgImg} alt={''}/>

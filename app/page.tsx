@@ -3,17 +3,20 @@ import Section from "@/components/layout/Section";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
 import testData from "@/assets/testData.json"
-import slideImg from "@/assets/images/index/Ofich2Dg1.png"
-import slideImg2 from "@/assets/images/index/index_sl_1.png"
-import slideImg3 from "@/assets/images/index/index_sl_2.png"
-import slideCardImg from "@/assets/images/index/1.png"
-import slideCardImg2 from "@/assets/images/index/2.png"
-import slideCardImg3 from "@/assets/images/index/3.png"
-import contactImg from "@/assets/images/Still-3 1.png"
+import slideImg from "@/public/images/index/Ofich2Dg1@2x.png"
+import slideImg2 from "@/public/images/index/index_sl_1@2x.png"
+import slideImg3 from "@/public/images/index/index_sl_2@2x.png"
+import slideMobImg from "@/public/images/index/Ofich2Dg1-mobile@2x.png"
+import slideMobImg2 from "@/public/images/index/index_sl_1-mobile@2x.png"
+import slideMobImg3 from "@/public/images/index/index_sl_2-mobile@2x.png"
+import slideCardImg from "@/assets/images/index/1@2x.png"
+import slideCardImg2 from "@/assets/images/index/2@2x.png"
+import slideCardImg3 from "@/assets/images/index/3@2x.png"
+import contactImg from "@/assets/images/Still-3 1@2x.png"
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 import { DefList } from "@/components/ui/Elements";
 import CardImage from "@/components/Cards/CardImage";
-import React from "react";
+import React, { useMemo } from "react";
 import { Metadata } from "next";
 import ImageLoader from "@/components/ImageLoader";
 import imgVideo from "@/public/website_promo_6.png";
@@ -42,17 +45,17 @@ export const metadata: Metadata = {
         // images: [
         //     {
         //         alt: 'asdasd',
-        //         url: `${process.env.baseUrl}/_next/static/media/Ofich2Dg1.d322e2ca.png`,
+        //         url: `${process.env.baseUrl}/_next/static/media/Ofich2Dg1.d322e2ca@2x.png`,
         //         height: 412,
         //         width: 1400,
         //     },
         //     {
-        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_1.55a7db97.png`,
+        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_1.55a7db97@2x.png`,
         //         height: 412,
         //         width: 1400,
         //     },
         //     {
-        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_2.ae2c9303.png`,
+        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_2.ae2c9303@2x.png`,
         //         height: 412,
         //         width: 1400,
         //
@@ -63,25 +66,21 @@ export const metadata: Metadata = {
     },
 }
 export default function Home() {
-
+    const imagesImages = [slideImg,slideImg2,slideImg3];
+    const imagesMobImages = [slideMobImg,slideMobImg2,slideMobImg3];
     const images = [slideImg,slideImg2,slideImg3];
+
     const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
-    const screenSlider = images.map((item, index) =>
-        <ImageLoader key={index} quality={75}
-            placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
-            sizes={'100vw'}
-            style={{
-                // maxWidth: '100%',
-                objectFit: "cover",
-                // objectPosition: "40% center",
-                width: '100%',
-                // height: '100%',
-            }}
-            src={item} alt={''} priority={index === 0}/>
-    )
-    const cardsSlider = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} 	key={index+100}
-        image={item} />)
-    cardsSlider.push(<CardImage  image={""} style={'card-benefit'} svg={<FallBackImgSvg />} key={123}/>);
+
+    const cardsSlider  = useMemo(() =>{
+        const ar = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} key={index+100}
+            image={item} />)
+            ar.push(<CardImage  image={""} style={'card-benefit'} svg={<FallBackImgSvg />} key={123}/>);
+        return ar
+    }, [])
+
+
+
 
   return (
       <main className={'page-index'}>
@@ -93,17 +92,19 @@ export default function Home() {
                             <Link href={'https://hotels.cloudbeds.com/reservation/y3Nqxi'} className={'button button-big'}>Book</Link>
                         </div>}
                 title={<h1 className={'section__title'}>Expert medical care in the comfort of a luxury retreat</h1>}
-                gallery={<Slider autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: false,
-                }}  items={screenSlider} perView={1} spaceBetween={0}/>}
+                gallery={<div className={'section__gallery'}>
+                    <Slider autoplay={{
+                        delay: 5000,
+                        disableOnInteraction: false,
+                    }}  items={imagesImages} itemsMob={imagesMobImages} perView={1} spaceBetween={0}/>
+                    </div>}
             />
 
             <Section
                 container={false}
                 variant={'section-gallery grid'}
                 gallery={<div className={'section__gallery'}>
-                    <Slider items={cardsSlider} breakpoints={{320: {
+                    <Slider element={false} items={cardsSlider} breakpoints={{320: {
                         loop: true,
                         slidesPerView: 1,
                         spaceBetween: 20,
@@ -155,7 +156,7 @@ export default function Home() {
                 </div>}
                 gallery={
                 <div className={'section__image'}>
-                    <ImageLoader quality={70}
+                    <ImageLoader
                         // style={{
                         //     maxWidth: '100%',
                         //     objectFit: "cover",

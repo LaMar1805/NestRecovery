@@ -3,9 +3,12 @@ import Section from "@/components/layout/Section";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
 import testData from "@/assets/testData.json"
-import slideImg from "@/assets/images/care__nurses/care@2x.png";
-import slideImg2 from "@/assets/images/care__nurses/care_sl_3@2x.png";
-import slideImg3 from "@/assets/images/care__nurses/care_sl_4@2x.png";
+import slideImg from "@/public/images/care__nurses/care@2x.png";
+import slideImg2 from "@/public/images/care__nurses/care_sl_3@2x.png";
+import slideImg3 from "@/public/images/care__nurses/care_sl_4@2x.png";
+import slideMobImg from "@/public/images/care__nurses/care-mobile@2x.png";
+import slideMobImg2 from "@/public/images/care__nurses/care_sl_3-mobile@2x.png";
+import slideMobImg3 from "@/public/images/care__nurses/care_sl_4-mobile@2x.png";
 import slideImgSection from "@/assets/images/care__nurses/care__nurses@2x.png";
 import slideImgSection2 from "@/assets/images/care__nurses/care__nurses_2@2x.png";
 import slideImgSection3 from "@/assets/images/care__nurses/care__nurses_3@2x.png";
@@ -18,20 +21,11 @@ import ImageLoader from "@/components/ImageLoader";
 export default function CarePage() {
 
     const images = [slideImg,slideImg2,slideImg3];
+    const imagesMob = [slideMobImg,slideMobImg2,slideMobImg3];
     const imagesSect = [slideImgSection3, slideImgSection,slideImgSection2];
-    const screenSlider = images.map((item, index) =>   <ImageLoader key={index} quality={80}
-        placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(item.src)}&w=${640}&q=30`}
-        sizes={'100vw'}
-        style={{
-            // maxWidth: '100%',
-            objectFit: "cover",
-            // objectPosition: "40% center",
-            width: '100%',
-            // height: '100%',
-        }}
-        src={item} priority={index === 0} alt={''}/>);
+
     const img = imagesSect.map((item, index) => <CardImage style={'card-nurses'} key={index+100}
-        image={item} />)
+        image={item} />);
     // const img = testData.data.careNurses;
 
   return (
@@ -47,7 +41,7 @@ export default function CarePage() {
                 gallery={<Slider autoplay={{
                     delay: 20000,
                     disableOnInteraction: false,
-                }} items={screenSlider} loop={true} perView={1} spaceBetween={0}/>}
+                }} items={images} itemsMob={imagesMob} loop={true} perView={1} spaceBetween={0}/>}
             />
 
             <Section
@@ -58,19 +52,24 @@ export default function CarePage() {
                     <p>If recommended by your doctor, your care will be complemented with Sequential Compression Device and Oxygen Concentrator at no extra charge or IV at $50 per fluid bag.</p> </div>}
                 variant={'section-gallery grid'}
                 gallery={<div className={'section__gallery'}>
-                    <Slider   breakpoints={{
+                    <Slider element={false}  breakpoints={{
                         // when window width is >= 320px
                         320: {
                             slidesPerView: 1,
                             spaceBetween: 10,
 
                         },
+                        720: {
+                            loop: false,
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
                         // when window width is >= 480px
                         1200: {
                             slidesPerView: 3,
                             spaceBetween: 30
                         }
-                    }}  items={img}/>
+                    }} items={img}/>
             </div>}
             />
             <Section
@@ -83,14 +82,13 @@ export default function CarePage() {
                 gallery={<div className={'section__gallery'}>
                     <div className={'card'}>
                         <div className={'card__image'}>
-                            <ImageLoader src={testData.data.therapy[0].image.src} quality={80}
-                                placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(testData.data.therapy[0].image.src)}&w=${640}&q=30`}
-                                sizes={'100vw'}  style={{
-                                maxWidth: '100%',
-                                objectFit: "cover",
-                                // width: '100%',
-                                // height: '100%',
-                            }} alt={''} width={testData.data.therapy[0].image.width} height={testData.data.therapy[0].image.height}/>
+                            <ImageLoader src={{
+                                src: testData.data.therapy[0].image.src,
+                                height: testData.data.therapy[0].image.height,
+                                width: testData.data.therapy[0].image.width
+
+                            }}
+                               alt={''} />
                         </div>
                     </div>
                     <div className={'card'}>
@@ -106,14 +104,12 @@ export default function CarePage() {
                 title={<h2 className={'section__title'}>{testData.data.massage.title}</h2>}
                 text={<div className={'section__text'}>
                     <div dangerouslySetInnerHTML={{__html: testData.data.massage.text}}/>
-                        <ImageLoader src={testData.data.massage.image[0].image.src} quality={80}
-                            placeholder={"blur"} blurDataURL={`/_next/image?url=${encodeURI(testData.data.massage.image[0].image.src)}&w=${640}&q=30`}
-                            sizes={'100vw'}    style={{
-                            maxWidth: '100%',
-                            objectFit: "cover",
-                            // width: '100%',
-                            // height: '100%',
-                        }} alt={''} width={testData.data.massage.image[0].image.width} height={testData.data.massage.image[0].image.height}/>
+                        <ImageLoader src={{
+                            src: testData.data.massage.image[0].image.src,
+                            height: testData.data.massage.image[0].image.height,
+                            width: testData.data.massage.image[0].image.width
+
+                        }}  alt={''} />
 
                 </div>}
                 variant={'section-gallery section-massage grid'}
