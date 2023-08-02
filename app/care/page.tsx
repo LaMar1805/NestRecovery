@@ -1,4 +1,4 @@
-import Image from 'next/image'
+
 import Section from "@/components/layout/Section";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";

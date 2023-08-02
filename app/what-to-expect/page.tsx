@@ -7,17 +7,20 @@ import wteImg from "@/assets/images/whattoexpect/wte_@2x.png";
 import wteCardImg from "@/assets/images/whattoexpect/wte_1@2x.png";
 import wteCardImg2 from "@/assets/images/whattoexpect/wte_2@2x.png";
 import wteCardImg3 from "@/assets/images/whattoexpect/wte_3@2x.png";
+import wteCardImg4 from "@/public/images/whattoexpect/wte_4@2x.png";
+import wteCardImg5 from "@/public/images/whattoexpect/wte_5@2x.png";
+import wteCardImg6 from "@/public/images/whattoexpect/wte_6@2x.png";
 import Slider from "@/components/Slider/Slider";
 import CardImage from "@/components/Cards/CardImage";
 import React from "react";
 import ImageLoader from "@/components/ImageLoader";
 export default function WhatToExpectPage() {
     const cardImg = [wteCardImg, wteCardImg2, wteCardImg3];
+    const cardImg2 = [wteCardImg4, wteCardImg5, wteCardImg6];
     const img = cardImg.map((item, index) => <CardImage style={'card-nurses'} 	key={index+100}
         image={item} />)
 
     const sectSlider = testData.data.wteThree.map((item, index) => <ImageLoader key={index}
-
         src={{
             src: item.image.src,
             width: item.image.width,
@@ -29,12 +32,15 @@ export default function WhatToExpectPage() {
             <Section
                 variant={'section-screen'}
                 container={false}
-                gallery={<div className={'section__gallery'} style={{height: "80px"}}><Image    placeholder="blur" priority={true}  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"      style={{
+                gallery={
+                <div className={'section__gallery'} style={{height: "80px"}}>
+                    <Image    placeholder="blur" priority={true}  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"      style={{
                     maxWidth: '100%',
                     objectFit: "cover",
                     width: '100%',
                     height: '100%',
-                }} src={slideImg} alt={''} /></div>}
+                }} src={slideImg} alt={''} />
+            </div>}
             />
             <Section
                 title={<h1 className={'section__title'}>What to expect</h1>}
@@ -77,7 +83,7 @@ export default function WhatToExpectPage() {
                             slidesPerView: 3,
                             spaceBetween: 30
                         }
-                    }}  items={img}/>
+                    }}  items={cardImg}/>
                 </div>}
                 variant={'section-gallery wte-three grid'}
             />
@@ -94,7 +100,7 @@ export default function WhatToExpectPage() {
                 variant={'section-gallery wte-four grid'}
                 gallery={<div className={'section__gallery_wrapper'}>
                     <div className={'section__gallery'}>
-                        <Slider items={sectSlider} loop={true} navigation={true} breakpoints={{
+                        <Slider items={cardImg2} loop={true} navigation={true} breakpoints={{
                             // when window width is >= 320px
                             320: {
                                 slidesPerView: 1,

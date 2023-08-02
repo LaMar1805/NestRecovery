@@ -68,7 +68,6 @@ export const metadata: Metadata = {
 export default function Home() {
     const imagesImages = [slideImg,slideImg2,slideImg3];
     const imagesMobImages = [slideMobImg,slideMobImg2,slideMobImg3];
-    const images = [slideImg,slideImg2,slideImg3];
 
     const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
 
@@ -78,9 +77,6 @@ export default function Home() {
             ar.push(<CardImage  image={""} style={'card-benefit'} svg={<FallBackImgSvg />} key={123}/>);
         return ar
     }, [])
-
-
-
 
   return (
       <main className={'page-index'}>

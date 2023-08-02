@@ -1,14 +1,12 @@
 'use client'
 import { ImageProps } from "next/image";
 import  Image  from "next/image";
-import React, { EventHandler, useCallback, useEffect, useState } from "react";
+import React, { EventHandler,  useEffect, useState } from "react";
 import useWindowDimensions from "@/components/utils";
-import { useCookies } from 'react-cookie';
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 const ImageLoader = ({src, srcMobile, action, alt, style = {}}: {style?: {}, src: StaticImport | ImageProps | any, srcMobile?: StaticImport | ImageProps  | any,alt: string, action?: EventHandler<any> }) => {
-	const [cookies, setCookie, removeCookie] = useCookies(['device']);
-	console.log('sl', style)
+
 	const windowDimensions = useWindowDimensions()
 	const [imgReady, setimgReady] = useState(false);
 	const [img, setImg] = useState({
@@ -16,10 +14,6 @@ const ImageLoader = ({src, srcMobile, action, alt, style = {}}: {style?: {}, src
 		state: true,
 		view: undefined
 	})
-
-	const handleLoadStarted = () => {
-		// console.log(getCookie())
-	}
 	const handleLoad =( img :HTMLImageElement) => {
 
 		// console.log(windowDimensions)
@@ -30,11 +24,6 @@ const ImageLoader = ({src, srcMobile, action, alt, style = {}}: {style?: {}, src
 
 		const newImg = () => {
 			let val = deviceOrientation && windowDimensions.width && windowDimensions.width < 768;
-			console.log('src', src)
-			// console.log('need', windowDimensions)
-			console.log('srcMobile', srcMobile)
-			// console.log('deviceOrientation', deviceOrientation && windowDimensions.width && windowDimensions.width < 768)
-			// console.log('windowDimensions.width', windowDimensions.width)
 
 			if(val) return srcMobile ? srcMobile : src
 			if(val !== undefined) return src
@@ -43,7 +32,6 @@ const ImageLoader = ({src, srcMobile, action, alt, style = {}}: {style?: {}, src
 
 		// @ts-ignore
 		setImg((prevState) => ({
-			// view: windowDimensions.type,
 			...prevState,
 			state: false,
 			view: deviceOrientation,
