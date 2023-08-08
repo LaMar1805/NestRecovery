@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
+	reactStrictMode: false,
 	// experimental: {
 	// 	serverActions: true,
 	// },
@@ -11,6 +11,7 @@ const nextConfig = {
 
 
 	env: {
+		REACT_APP_CLOUDINARY_CLOUD_NAME: 'dpiuthi6q',
 		baseUrl: process.env.NODE_ENV === "development" ? 'http://localhost:3000' : 'https://www.nestrecovery.me'
 	}
 }

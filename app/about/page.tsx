@@ -6,6 +6,7 @@ import fallbackImg from "@/assets/images/founder.jpg";
 import svgImg from "@/assets/svg/lena_kaminski.svg";
 import ImageLoader from "@/components/ImageLoader";
 import imgVideo from "@/public/nest_promo_1.png";
+import CloudinaryVideoCustom from "@/components/VideoPlayer/CloudinaryVideoCustom";
 export default function AboutPage() {
   return (
         <main className={'page-about'}>
@@ -13,12 +14,13 @@ export default function AboutPage() {
                 variant={'section-screen'}
                 container={false}
                 title={<h1 className={'section__title'}>About Nest Recovery</h1>}
-                gallery={
-                <VideoPlayer poster={<Image priority={true} style={{
-                    zIndex: 4,
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover"}} src={imgVideo}  alt={''} quality={10}/>} auto={false} src={'/nest_promo_1.mp4'} />
+                gallery={<CloudinaryVideoCustom           id="demo-player"
+                    publicId="nest/1/xpnmkaj6siuou68rmrvf"/>
+                // <VideoPlayer poster={<Image priority={true} style={{
+                //     zIndex: 4,
+                //     width: "100%",
+                //     height: "100%",
+                //     objectFit: "cover"}} src={imgVideo}  alt={''} quality={10}/>} auto={false} src={'/nest_promo_1.mp4'} />
             }
             />
             <Section
