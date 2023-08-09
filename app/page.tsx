@@ -9,18 +9,19 @@ import slideImg3 from "@/public/images/index/index_sl_2@2x.png"
 import slideMobImg from "@/public/images/index/Ofich2Dg1-mobile@2x.png"
 import slideMobImg2 from "@/public/images/index/index_sl_1-mobile@2x.png"
 import slideMobImg3 from "@/public/images/index/index_sl_2-mobile@2x.png"
-import slideCardImg from "@/assets/images/index/1@2x.png"
-import slideCardImg2 from "@/assets/images/index/2@2x.png"
-import slideCardImg3 from "@/assets/images/index/3@2x.png"
+import slideCardImg from "@/public/images/index/1@2x.png"
+import slideCardImg2 from "@/public/images/index/2@2x.png"
+import slideCardImg3 from "@/public/images/index/3@2x.png"
 import contactImg from "@/assets/images/Still-3 1@2x.png"
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 import { DefList } from "@/components/ui/Elements";
 import CardImage from "@/components/Cards/CardImage";
-import React, { useMemo } from "react";
+import React from "react";
 import { Metadata } from "next";
 import ImageLoader from "@/components/ImageLoader";
 import imgVideo from "@/public/website_promo_6.png";
 import { FallBackImgSvg } from "@/components/Icons";
+
 export const metadata: Metadata = {
     title: 'EXPERT MEDICAL CARE IN THE COMFORT OF A LUXURY RETREAT',
     description: '',
@@ -68,16 +69,12 @@ export const metadata: Metadata = {
 export default function Home() {
     const imagesImages = [slideImg,slideImg2,slideImg3];
     const imagesMobImages = [slideMobImg,slideMobImg2,slideMobImg3];
-
     const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
 
-    const cardsSlider  = useMemo(() =>{
-        const ar = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} key={index+100}
-            image={item} />)
-            ar.push(<CardImage  image={""} style={'card-benefit'} svg={<FallBackImgSvg />} key={123}/>);
-        return ar
-    }, [])
-
+    const ar = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} key={index+100}
+        image={item} />);
+    ar.push(<CardImage  image={""} style={'card-benefit'} svg={<FallBackImgSvg />} key={123}/>);
+    console.log(ar)
   return (
       <main className={'page-index'}>
             <Section
@@ -89,7 +86,7 @@ export default function Home() {
                         </div>}
                 title={<h1 className={'section__title'}>Expert medical care in the comfort of a luxury retreat</h1>}
                 gallery={<div className={'section__gallery'}>
-                    <Slider autoplay={{
+                    <Slider element={true} autoplay={{
                         delay: 5000,
                         disableOnInteraction: false,
                     }}  items={imagesImages} itemsMob={imagesMobImages} perView={1} spaceBetween={0}/>
@@ -100,7 +97,7 @@ export default function Home() {
                 container={false}
                 variant={'section-gallery grid'}
                 gallery={<div className={'section__gallery'}>
-                    <Slider element={false} items={cardsSlider} breakpoints={{320: {
+                    <Slider element={false} items={ar} itemsMob={ar} breakpoints={{320: {
                         loop: true,
                         slidesPerView: 1,
                         spaceBetween: 20,
@@ -120,7 +117,8 @@ export default function Home() {
                         pagination: false,
 
                         centeredSlides: false
-                    }}} /></div>}
+                    }}} />
+            </div>}
             />
 
             <Section
@@ -153,15 +151,8 @@ export default function Home() {
                 gallery={
                 <div className={'section__image'}>
                     <ImageLoader
-                        // style={{
-                        //     maxWidth: '100%',
-                        //     objectFit: "cover",
-                        //     // objectPosition: "40% center",
-                        //     width: '100%',
-                        //     height: '100%',
-                        // }}
                         alt={'Breathtaking canyon views'}
-                        src={contactImg}/>
+                        src={contactImg} srcMobile={contactImg}/>
                 </div>}
             />
         </main>

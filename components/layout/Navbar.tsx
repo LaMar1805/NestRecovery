@@ -5,7 +5,8 @@ import { Navbar } from "@/components/ui/Elements";
 import testData from "@/assets/testData.json";
 import useWindowDimensions from "@/components/utils";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+
 export default function HeaderNavbar({children}:{children: ReactNode | ReactElement | undefined}) {
 	const pathname = usePathname()
 
@@ -47,12 +48,14 @@ export default function HeaderNavbar({children}:{children: ReactNode | ReactElem
 				{children}
 				<Navbar style={''} items={linkAr.slice(3, 6)}/>
 				</>)
-	} else return (
+	} else {
+		return (
 			<>
-			<div className={`logoMobile header__menu ${animate === 0  ? '' : animate === 2 ? 'animate__scale_out' : 'animate__scale_in'}`}>
-				{open && <Navbar style={''} items={linkAr}/>}</div>
-			<div className={`logoMobile ${animate === 0  ? '' : animate === 1 ? 'animate__scale_out' : 'animate__scale_in'}`}>{children}</div>
+				<div className={`logoMobile header__menu ${animate === 0  ? '' : animate === 2 ? 'animate__scale_out' : 'animate__scale_in'}`}>
+					{open && <Navbar style={''} items={linkAr}/>}</div>
+				<div className={`logoMobile ${animate === 0  ? '' : animate === 1 ? 'animate__scale_out' : 'animate__scale_in'}`}>{children}</div>
 
-		<Burger />
-	</>);
+				<Burger />
+			</>);
+	}
 }

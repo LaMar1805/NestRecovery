@@ -1,4 +1,3 @@
-
 import Section from "@/components/layout/Section";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
@@ -9,9 +8,9 @@ import slideImg3 from "@/public/images/care__nurses/care_sl_4@2x.png";
 import slideMobImg from "@/public/images/care__nurses/care-mobile@2x.png";
 import slideMobImg2 from "@/public/images/care__nurses/care_sl_3-mobile@2x.png";
 import slideMobImg3 from "@/public/images/care__nurses/care_sl_4-mobile@2x.png";
-import slideImgSection from "@/assets/images/care__nurses/care__nurses@2x.png";
-import slideImgSection2 from "@/assets/images/care__nurses/care__nurses_2@2x.png";
-import slideImgSection3 from "@/assets/images/care__nurses/care__nurses_3@2x.png";
+import slideImgSection from "@/public/images/care__nurses/care__nurses@2x.png";
+import slideImgSection2 from "@/public/images/care__nurses/care__nurses_2@2x.png";
+import slideImgSection3 from "@/public/images/care__nurses/care__nurses_3@2x.png";
 
 import { CareTherapySvg } from "@/components/Icons";
 import CardImage from "@/components/Cards/CardImage";
@@ -69,7 +68,7 @@ export default function CarePage() {
                             slidesPerView: 3,
                             spaceBetween: 30
                         }
-                    }} items={img}/>
+                    }} items={img} itemsMob={img} />
             </div>}
             />
             <Section
@@ -83,6 +82,11 @@ export default function CarePage() {
                     <div className={'card'}>
                         <div className={'card__image'}>
                             <ImageLoader src={{
+                                src: testData.data.therapy[0].image.src,
+                                height: testData.data.therapy[0].image.height,
+                                width: testData.data.therapy[0].image.width
+
+                            }} srcMobile={{
                                 src: testData.data.therapy[0].image.src,
                                 height: testData.data.therapy[0].image.height,
                                 width: testData.data.therapy[0].image.width
@@ -105,6 +109,11 @@ export default function CarePage() {
                 text={<div className={'section__text'}>
                     <div dangerouslySetInnerHTML={{__html: testData.data.massage.text}}/>
                         <ImageLoader src={{
+                            src: testData.data.massage.image[0].image.src,
+                            height: testData.data.massage.image[0].image.height,
+                            width: testData.data.massage.image[0].image.width
+
+                        }}  srcMobile={{
                             src: testData.data.massage.image[0].image.src,
                             height: testData.data.massage.image[0].image.height,
                             width: testData.data.massage.image[0].image.width

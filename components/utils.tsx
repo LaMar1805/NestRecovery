@@ -9,25 +9,30 @@ type WindowDimentions = {
 	width: number | undefined;
 	height: number | undefined;
 	type: string | undefined;
+	state: Promise<boolean> | boolean | undefined;
 };
 
+export const isServer = typeof window === 'undefined';
 const useWindowDimensions = (): WindowDimentions => {
 	const [windowDimensions, setWindowDimensions] = useState<WindowDimentions>({
 		width: undefined,
 		height: undefined,
-		type: undefined
+		type: undefined,
+		state: undefined
 	});
 	useEffect(() => {
 		function handleResize(): void {
 			setWindowDimensions({
 				width: window.innerWidth,
 				height: window.innerHeight,
-				type: screen.orientation.type,
+				type: screen.orientation.type ||  window.innerWidth > window.innerHeight,
+				state: (screen.orientation.type.includes('portrait') || window.innerWidth < window.innerHeight)
 			});
 		}
 		handleResize();
+
 		window.addEventListener('resize', handleResize);
-		window.addEventListener('orientationchange', handleResize);
+		screen.orientation.addEventListener('change', handleResize);
 		return (): void => window.removeEventListener('resize', handleResize);
 	}, []); // Empty array ensures that effect is only run on mount
 
@@ -35,8 +40,6 @@ const useWindowDimensions = (): WindowDimentions => {
 };
 
 export default useWindowDimensions;
-
-export const isServer = typeof window === 'undefined';
 
 export function useIntersectionObserver(ref: MutableRefObject<Element | null>, options: IntersectionObserverInit = {}, forward: boolean = true) {
 	const [element, setElement] = useState<Element | null>(null);

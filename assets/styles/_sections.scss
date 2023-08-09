@@ -66,17 +66,22 @@
   }
 
   .swiper-slide.section-screen__slide {
-	min-block-size: 300px;
+	//min-block-size: 300px;
+	img {
+	  object-fit: cover;
+	  width: 100%;
+	}
 	display: flex;
-	min-height: calc(100vh - 360px);
+	//min-height: calc(100vh - 360px);
 	@media screen and (max-width: 1089px){
-	  min-height: 250px;
+	  //min-height: 250px;
+
 	}
   }
   &.with-footer {
 	.swiper-slide.section-screen__slide {
 	  max-height: calc(100vh - 470px);
-	  min-block-size: 300px;
+	  //min-block-size: 300px;
 
 	}
   }

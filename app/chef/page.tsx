@@ -10,7 +10,6 @@ import slideMobImg2 from "@/public/images/chef/slider_2-mobile@2x.png"
 import slideMobImg3 from "@/public/images/chef/slider_3-mobile@2x.png"
 
 
-
 import sectImg from "@/assets/images/chef/chef_2_1@2x.png"
 import sectImg2 from "@/assets/images/chef/chef_2_2@2x.png"
 import sectImg3 from "@/assets/images/chef/chef_2_3@2x.png"
@@ -61,7 +60,7 @@ export default function ChefPage() {
                 gallery={<div className={'section__gallery'}>
                     <div className={'card'}>
                         <div className={'card__image'}>
-                            <ImageLoader src={fallbackImg} style={{
+                            <ImageLoader src={fallbackImg}  srcMobile={fallbackImg} style={{
                                 maxWidth: '100%',
                                 objectFit: "cover",
                                 width: '100%',

@@ -1,21 +1,38 @@
 'use client'
-import React, {  useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { PlaySvg, StopSvg } from "@/components/Icons";
 import styles from './VideoPlayer.module.scss';
-import MemoVidPlayer from "@/components/VideoPlayer/MemoVid";
 import { useInView } from "react-intersection-observer";
-const VideoPlayer = ({src, title, auto = true, poster, muted = true}:{src:string, title?: string, auto?: boolean, poster?:  React.ReactElement, muted?: boolean}) => {
+import ReactPlayer from "react-player";
 
+const VideoPlayerC = ({src, title, auto = true, poster, muted = true}:{src:string, title?: string, auto?: boolean, poster?:  React.ReactElement, muted?: boolean}) => {
+
+    const [loaded, setLoaded] = useState(false);
     const videoRef = useRef<any>(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
     const [srcVid, setsrcVid] = useState("");
+    const [state, setState] = useState({
+        url: null,
+        pip: false,
+        playing: false,
+        controls: true,
+        light: false,
+        volume: 0,
+        muted: false,
+        seeking: false,
+        played: 0,
+        loaded: 0,
+        duration: 0,
+        playbackRate: 1,
+        loop: false
 
+    })
 
     // console.log(fetchVideo())
     const { ref, inView } = useInView({ threshold: 1 });
     useEffect(() => {
-
+        setLoaded(true);
         if (inView && srcVid === "") {
             setsrcVid(src);
             setIsPlaying(() => auto);
@@ -36,21 +53,25 @@ const VideoPlayer = ({src, title, auto = true, poster, muted = true}:{src:string
     }
     const canPlay = () => {
         // console.log('can play')
+        console.log(videoRef)
     }
     const handlePause = () => {
-        setIsPlaying(false);
-        // console.log('pause');
-        videoRef.current.pause();
+
+        setState((prevState) => ({
+            ...prevState,
+            playing: false
+        }));
 
     }
     const handlePlay = () => {
-        if(videoRef.current) {
-            setIsPlaying(true);
-            videoRef.current.play();
-        }
+        setState((prevState) => ({
+            ...prevState,
+            playing: true
+        }));
     };
     const togglePlay = () => {
-        if(isPlaying) {
+        // console.log(state.playing)
+        if(state.playing) {
             handlePause()
         } else {
             handlePlay()
@@ -70,29 +91,41 @@ const VideoPlayer = ({src, title, auto = true, poster, muted = true}:{src:string
         setProgress(progress);
     };
 
-  return (
+    return (
       <div className={'video_player'} ref={ref}>
           {srcVid !== "" &&  <div className={'video_player_controls'} data-playing={isPlaying} onClick={togglePlay}>
-              <a className={isPlaying ? styles.video_player__button : styles.video_player__button_playing} onClick={togglePlay}> {!isPlaying ? <PlaySvg /> : <StopSvg />}</a>
+              <a className={state.playing ? styles.video_player__button : styles.video_player__button_playing} onClick={togglePlay}> {!state.playing ? <PlaySvg /> : <StopSvg />}</a>
           </div>}
           {title && <h3 className={'video_player__title'}>{title}</h3>}
-          <div className={'video_player_media'}>
+          {loaded && <div className={'video_player_media'}>
+<Suspense>
+              <ReactPlayer
 
-              <MemoVidPlayer
                   inView={inView}
-                  isPlaying={isPlaying}
-                  muted={muted}
+                  onReady={() => setLoaded(true)}
+
+                  muted={true}
+                  playbackRate={state.playbackRate}
+                  loop={state.loop}
+                  width={'100%'}
+                  height={'100%'}
+                  className='react-player'
                   auto={auto}
-                  // poster={poster}
-                  handleProgress={handleProgress}
-                  onCanPlay={canPlay}
-                  src={srcVid}
+                  playing={state.playing}
+                  poster={poster}
+                  // handleProgress={handleProgress}
+                  onPlay={() => setState(prevState => ({
+                  ...prevState,
+                          playing: true
+
+                  }))}
+                  url={srcVid}
                   ref={videoRef}
                   />
-             <div className={'video_player_fallback_img'} style={{ width: "100%"}}>{poster}</div>
-          </div>
+</Suspense>
+          </div>}
       </div>
 
 )
 }
-export default VideoPlayer
+export default VideoPlayerC

@@ -14,6 +14,7 @@ import Slider from "@/components/Slider/Slider";
 import CardImage from "@/components/Cards/CardImage";
 import React from "react";
 import ImageLoader from "@/components/ImageLoader";
+
 export default function WhatToExpectPage() {
     const cardImg = [wteCardImg, wteCardImg2, wteCardImg3];
     const cardImg2 = [wteCardImg4, wteCardImg5, wteCardImg6];
@@ -55,7 +56,7 @@ export default function WhatToExpectPage() {
                 variant={'section-gallery wte-two grid'}
                 gallery={<div className={'section__gallery_wrapper'}>
                     <div className={'section__gallery'}>
-                        <ImageLoader src={wteImg} alt={''} />
+                        <ImageLoader src={wteImg} srcMobile={wteImg} alt={''} />
                     </div>
                 </div>}
             />
@@ -83,7 +84,7 @@ export default function WhatToExpectPage() {
                             slidesPerView: 3,
                             spaceBetween: 30
                         }
-                    }}  items={cardImg}/>
+                    }}  items={cardImg} itemsMob={cardImg} />
                 </div>}
                 variant={'section-gallery wte-three grid'}
             />
@@ -100,7 +101,7 @@ export default function WhatToExpectPage() {
                 variant={'section-gallery wte-four grid'}
                 gallery={<div className={'section__gallery_wrapper'}>
                     <div className={'section__gallery'}>
-                        <Slider items={cardImg2} loop={true} navigation={true} breakpoints={{
+                        <Slider items={cardImg2} itemsMob={cardImg2} loop={true} navigation={true} breakpoints={{
                             // when window width is >= 320px
                             320: {
                                 slidesPerView: 1,

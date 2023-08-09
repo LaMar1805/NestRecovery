@@ -14,7 +14,6 @@ import imgRec from "@/assets/images/exp/recovery@2x.png";
 import imgRec2 from "@/assets/images/exp/recovery_2@2x.png";
 import chef from "@/assets/images/exp/chef_1@2x.png"
 import ImageLoader from "@/components/ImageLoader";
-import CardImage from "@/components/Cards/CardImage";
 
 export default function ExperiencesPage() {
 
@@ -61,7 +60,7 @@ export default function ExperiencesPage() {
                             pagination: false,
                             centeredSlides: false
                         }
-                    }} items={imgrs}/>
+                    }} items={imgrs} itemsMob={imgrs} />
             </div>}
             />
             <Section
@@ -73,7 +72,7 @@ export default function ExperiencesPage() {
                 variant={'section-gallery section-innercircle grid'}
                 gallery={<div className={'section__gallery_wrapper'}>
                     <div className={'section__gallery'}>
-                    <Slider items={[...imgs, ...imgs,...imgs]} navigation={true} style={{
+                    <Slider items={[...imgs, ...imgs,...imgs]} itemsMob={[...imgs, ...imgs,...imgs]} navigation={true} style={{
                         width: "460px",
                         height: "360px",
                         maxWidth: "460px"
@@ -112,7 +111,7 @@ export default function ExperiencesPage() {
                 </div>}
                 variant={'section-gallery section-chef grid'}
                 gallery={                    <div className={'section__gallery'}>
-                    <ImageLoader src={chef}  style={{
+                    <ImageLoader src={chef}  srcMobile={chef}  style={{
                         maxWidth: '100%',
                         objectFit: "cover",
                         width: '100%',

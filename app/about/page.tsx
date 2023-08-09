@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import Section from "@/components/layout/Section";
 import Link from "next/link";
-import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 import fallbackImg from "@/assets/images/founder.jpg";
 import svgImg from "@/assets/svg/lena_kaminski.svg";
 import ImageLoader from "@/components/ImageLoader";
-import imgVideo from "@/public/nest_promo_1.png";
-import CloudinaryVideoCustom from "@/components/VideoPlayer/CloudinaryVideoCustom";
+import VideoPlayerC from "@/components/VideoPlayer/VideoPlayer";
+import { Suspense } from "react";
+
 export default function AboutPage() {
   return (
         <main className={'page-about'}>
@@ -14,14 +14,13 @@ export default function AboutPage() {
                 variant={'section-screen'}
                 container={false}
                 title={<h1 className={'section__title'}>About Nest Recovery</h1>}
-                gallery={<CloudinaryVideoCustom           id="demo-player"
-                    publicId="nest/1/xpnmkaj6siuou68rmrvf"/>
-                // <VideoPlayer poster={<Image priority={true} style={{
-                //     zIndex: 4,
-                //     width: "100%",
-                //     height: "100%",
-                //     objectFit: "cover"}} src={imgVideo}  alt={''} quality={10}/>} auto={false} src={'/nest_promo_1.mp4'} />
-            }
+                gallery={<Suspense>
+                <VideoPlayerC poster={<Image priority={true} style={{
+                    zIndex: 4,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover"}}   alt={''} quality={10} width={1920} height={1080} src={'https://res.cloudinary.com/dpiuthi6q/image/upload/v1691528179/nest/viid/3460624ebb3ebd9ee29616fd1da4fbda.jpg'}/>} auto={false} src={'https://vz-e4c6a631-24a.b-cdn.net/d63ce74f-f167-499e-94ca-d6ef72d71de6/playlist.m3u8?v=1691622133'} />
+                </Suspense>}
             />
             <Section
                 container={false}
@@ -52,7 +51,7 @@ export default function AboutPage() {
                             //     width: '100%',
                             //     height: '100%',
                             // }}
-                                src={fallbackImg} alt={''}/>
+                                src={fallbackImg} srcMobile={fallbackImg} alt={''}/>
                         </div>
                         <div className={'card__footer'}>
                                 <Image src={svgImg} alt={''}/>
