@@ -19,7 +19,7 @@ export default function AboutPage() {
                     zIndex: 4,
                     width: "100%",
                     height: "100%",
-                    objectFit: "cover"}}   alt={''} quality={10} width={1920} height={1080} src={'https://res.cloudinary.com/dpiuthi6q/image/upload/v1691528179/nest/viid/3460624ebb3ebd9ee29616fd1da4fbda.jpg'}/>} auto={false} src={'https://vz-e4c6a631-24a.b-cdn.net/d63ce74f-f167-499e-94ca-d6ef72d71de6/playlist.m3u8?v=1691622133'} />
+                    objectFit: "cover"}}   alt={''} quality={10} width={1920} height={1080} src={'https://res.cloudinary.com/dpiuthi6q/image/upload/v1691528179/nest/viid/3460624ebb3ebd9ee29616fd1da4fbda.jpg'}/>} auto={true} src={'https://vz-e4c6a631-24a.b-cdn.net/d63ce74f-f167-499e-94ca-d6ef72d71de6/playlist.m3u8?v=1691622133'} />
                 </Suspense>}
             />
             <Section

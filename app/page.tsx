@@ -13,10 +13,10 @@ import slideCardImg from "@/public/images/index/1@2x.png"
 import slideCardImg2 from "@/public/images/index/2@2x.png"
 import slideCardImg3 from "@/public/images/index/3@2x.png"
 import contactImg from "@/assets/images/Still-3 1@2x.png"
-import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
+import VideoPlayerC from "@/components/VideoPlayer/VideoPlayer";
 import { DefList } from "@/components/ui/Elements";
 import CardImage from "@/components/Cards/CardImage";
-import React from "react";
+import React, { Suspense } from "react";
 import { Metadata } from "next";
 import ImageLoader from "@/components/ImageLoader";
 import imgVideo from "@/public/website_promo_6.png";
@@ -127,15 +127,26 @@ export default function Home() {
                 title={<h2 className={'section__title'}>9653 Highridge Dr<strong>Beverly Hills, CA 90210</strong></h2>}
                 text={<div className={'section__text'}><strong>10 minutes</strong> away from multiple top plastic surgery clinics in the LA area</div>}
                 gallery={
-                    <VideoPlayer muted={true}  poster={<Image  style={{
-                        zIndex: 4,
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover"
-                    }} src={imgVideo}
-                        width={1280}
-                        height={720}
-                        alt={''} quality={10}/>}   title={'Breathtaking canyon views'} src={'/website_promo_6.mp4'} />
+                    <Suspense>
+                        <VideoPlayerC poster={<Image  style={{
+                            zIndex: 4,
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover"
+                        }} src={imgVideo}
+                            width={1280}
+                            height={720}
+                            alt={''} quality={10}/>}  auto={false} src={'https://vz-e4c6a631-24a.b-cdn.net/d63ce74f-f167-499e-94ca-d6ef72d71de6/playlist.m3u8?v=1691622133'} />
+                    </Suspense>
+                    // <VideoPlayer muted={true}  poster={<Image  style={{
+                    //     zIndex: 4,
+                    //     width: "100%",
+                    //     height: "100%",
+                    //     objectFit: "cover"
+                    // }} src={imgVideo}
+                    //     width={1280}
+                    //     height={720}
+                    //     alt={''} quality={10}/>}   title={'Breathtaking canyon views'} src={'/website_promo_6.mp4'} />
                }
             />
 
