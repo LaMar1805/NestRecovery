@@ -56,7 +56,6 @@ const Slider = ({items, itemsMob, element = true, spaceBetween = 0, loop = false
 		}
 		);
 		setReady(true);
-		console.log(newItems)
 		return newItems
 		}
 
