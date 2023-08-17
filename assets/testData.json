@@ -54,7 +54,7 @@
         "href": "/rooms/cinta",
         "images": {
           "screen": {
-            "src": "/images/rooms/cinta/cinta.png",
+            "src": "/images/rooms/serai/serai@2x.png",
             "width": 2800,
             "height": 840
           },
@@ -189,25 +189,549 @@
         "title": "Serai Room",
         "properties": [ "405 sqft", "100 sqft patio", "first floor"],
         "href": "/rooms/serai",
-        "images": {}
+        "images": {
+          "screen": {
+            "src": "/images/rooms/serai/serai@2x.png",
+            "width": 2800,
+            "height": 840
+          },
+          "gallery": [
+            {
+              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
+              "width": 3860,
+              "height": 2560
+            }
+          ]
+        },
+        "full_data": {
+          "features": ["bed", "patio", "closet", "fridge", "shower"],
+          "room_includes": [
+            {
+              "title": "Occupancy",
+              "rows": ["Single stay"]
+            },
+            {
+              "title": "Bathroom Features",
+              "rows": ["Hairdryer", "Robe + slippers"]
+            },
+            {
+              "title": "Food and Beverages",
+              "rows": ["Post-op meals", "Breakfast", "Snacks + juice bar"]
+            },
+            {
+              "title": "Recovery",
+              "rows": ["24/7 licensed nursing care", "Upon physician's request, Sequential Compression Device", "Upon physician's request, Oxygen Concentrator", "Recovery clothing (gown, robe, or pajamas, depending on the surgery)" ]
+            },
+
+            {
+              "title": "Transportation",
+              "rows": ["Pick-up after surgery", "Transportation to follow-up appointments and back", "Drop-off after stay (LA Metropolitan Area, including LAX)"]
+            },
+
+            {
+              "title": "Entertainment",
+              "rows": ["4K TV", "Wi-Fi", "Cable TV"]
+            }
+          ],
+          "extra_charge": [
+            {
+              "title": "Extra room fees",
+              "image": {
+                "src": "/svg/door.svg",
+                "width": 40,
+                "height": 66
+              },
+              "rows": [
+                {
+                  "title": "Overnight guest (breakfast included)",
+                  "text": "$300/night"
+                },
+                {
+                  "title": "Late checkout (11:00 AM - 7:00 PM)*",
+                  "text": "$500"
+                },
+                {
+                  "title": "Early check-in (6:00 AM - 11:00 AM)*",
+                  "text": "$350"
+                },
+                "* Subject to availability"
+              ]
+            },
+            {
+              "title": "Treatment fees**",
+              "image": {
+                "src": "/svg/treatment.svg",
+                "width": 54,
+                "height": 66
+              },
+              "rows": [
+                {
+                  "title": "Hyperbaric oxygen therapy",
+                  "text": "$250/session"
+                },
+                {
+                  "title": "Intravenous therapy",
+                  "text": "$50/bag of fluid"
+                },
+                {
+                  "title": "Lymphatic drainage massage",
+                  "text": "$300/session"
+                },
+                "** Upon physician's request"
+              ]
+            },
+            {
+              "title": "Transportation",
+              "image": {
+                "src": "/svg/electric-car.png",
+                "width": 100,
+                "height": 52
+              },
+              "rows": [
+                {
+                  "title": "Private transportation on top of included into the room rate",
+                  "text": "$150/hour"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "title": "Cahaya Room",
         "properties": [ "400 sqft", "350 sqft deck", "second floor"],
         "href": "/rooms/cahaya",
-        "images": {}
+        "images": {
+          "screen": {
+            "src": "/images/rooms/cahaya/cahaya@2x.png",
+            "width": 2800,
+            "height": 840
+          },
+          "gallery": [
+            {
+              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
+              "width": 3860,
+              "height": 2560
+            }
+          ]
+        },
+        "full_data": {
+          "features": ["bed", "deck", "closet", "fridge", "shower"],
+          "room_includes": [
+            {
+              "title": "Occupancy",
+              "rows": ["Single stay"]
+            },
+            {
+              "title": "Bathroom Features",
+              "rows": ["Hairdryer", "Robe + slippers"]
+            },
+            {
+              "title": "Food and Beverages",
+              "rows": ["Post-op meals", "Breakfast", "Snacks + juice bar"]
+            },
+            {
+              "title": "Recovery",
+              "rows": ["24/7 licensed nursing care", "Upon physician's request, Sequential Compression Device", "Upon physician's request, Oxygen Concentrator", "Recovery clothing (gown, robe, or pajamas, depending on the surgery)" ]
+            },
+
+            {
+              "title": "Transportation",
+              "rows": ["Pick-up after surgery", "Transportation to follow-up appointments and back", "Drop-off after stay (LA Metropolitan Area, including LAX)"]
+            },
+
+            {
+              "title": "Entertainment",
+              "rows": ["4K TV", "Wi-Fi", "Cable TV"]
+            }
+          ],
+          "extra_charge": [
+            {
+              "title": "Extra room fees",
+              "image": {
+                "src": "/svg/door.svg",
+                "width": 40,
+                "height": 66
+              },
+              "rows": [
+                {
+                  "title": "Overnight guest (breakfast included)",
+                  "text": "$300/night"
+                },
+                {
+                  "title": "Late checkout (11:00 AM - 7:00 PM)*",
+                  "text": "$500"
+                },
+                {
+                  "title": "Early check-in (6:00 AM - 11:00 AM)*",
+                  "text": "$350"
+                },
+                "* Subject to availability"
+              ]
+            },
+            {
+              "title": "Treatment fees**",
+              "image": {
+                "src": "/svg/treatment.svg",
+                "width": 54,
+                "height": 66
+              },
+              "rows": [
+                {
+                  "title": "Hyperbaric oxygen therapy",
+                  "text": "$250/session"
+                },
+                {
+                  "title": "Intravenous therapy",
+                  "text": "$50/bag of fluid"
+                },
+                {
+                  "title": "Lymphatic drainage massage",
+                  "text": "$300/session"
+                },
+                "** Upon physician's request"
+              ]
+            },
+            {
+              "title": "Transportation",
+              "image": {
+                "src": "/svg/electric-car.png",
+                "width": 100,
+                "height": 52
+              },
+              "rows": [
+                {
+                  "title": "Private transportation on top of included into the room rate",
+                  "text": "$150/hour"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "title": "Kirana Room",
         "properties": [ "400 sqft", "570 sqft deck", "second floor"],
         "href": "/rooms/kirana",
-        "images": {}
+        "images": {
+          "screen": {
+            "src": "/images/rooms/kirana/kirana@2x.png",
+            "width": 2800,
+            "height": 840
+          },
+          "gallery": [
+            {
+              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
+              "width": 3860,
+              "height": 2560
+            }
+          ]
+        },
+        "full_data": {
+          "features": ["bed", "deck", "closet", "fridge", "shower"],
+          "room_includes": [
+            {
+              "title": "Occupancy",
+              "rows": ["Single stay"]
+            },
+            {
+              "title": "Bathroom Features",
+              "rows": ["Hairdryer", "Robe + slippers"]
+            },
+            {
+              "title": "Food and Beverages",
+              "rows": ["Post-op meals", "Breakfast", "Snacks + juice bar"]
+            },
+            {
+              "title": "Recovery",
+              "rows": ["24/7 licensed nursing care", "Upon physician's request, Sequential Compression Device", "Upon physician's request, Oxygen Concentrator", "Recovery clothing (gown, robe, or pajamas, depending on the surgery)" ]
+            },
+
+            {
+              "title": "Transportation",
+              "rows": ["Pick-up after surgery", "Transportation to follow-up appointments and back", "Drop-off after stay (LA Metropolitan Area, including LAX)"]
+            },
+
+            {
+              "title": "Entertainment",
+              "rows": ["4K TV", "Wi-Fi", "Cable TV"]
+            }
+          ],
+          "extra_charge": [
+            {
+              "title": "Extra room fees",
+              "image": {
+                "src": "/svg/door.svg",
+                "width": 40,
+                "height": 66
+              },
+              "rows": [
+                {
+                  "title": "Overnight guest (breakfast included)",
+                  "text": "$300/night"
+                },
+                {
+                  "title": "Late checkout (11:00 AM - 7:00 PM)*",
+                  "text": "$500"
+                },
+                {
+                  "title": "Early check-in (6:00 AM - 11:00 AM)*",
+                  "text": "$350"
+                },
+                "* Subject to availability"
+              ]
+            },
+            {
+              "title": "Treatment fees**",
+              "image": {
+                "src": "/svg/treatment.svg",
+                "width": 54,
+                "height": 66
+              },
+              "rows": [
+                {
+                  "title": "Hyperbaric oxygen therapy",
+                  "text": "$250/session"
+                },
+                {
+                  "title": "Intravenous therapy",
+                  "text": "$50/bag of fluid"
+                },
+                {
+                  "title": "Lymphatic drainage massage",
+                  "text": "$300/session"
+                },
+                "** Upon physician's request"
+              ]
+            },
+            {
+              "title": "Transportation",
+              "image": {
+                "src": "/svg/electric-car.png",
+                "width": 100,
+                "height": 52
+              },
+              "rows": [
+                {
+                  "title": "Private transportation on top of included into the room rate",
+                  "text": "$150/hour"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "title": "Pelangi Room",
         "properties": [ "600 sqft", "1,110 sqft deck", "penthouse", "third floor"],
         "href": "/rooms/pelangi",
-        "images": {}
+        "images": {
+          "screen": {
+            "src": "/images/rooms/pelangi/pelangi@2x.png",
+            "width": 2800,
+            "height": 840
+          },
+          "gallery": [
+            {
+              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
+              "width": 3860,
+              "height": 2560
+            },
+            {
+              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
+              "width": 3860,
+              "height": 2560
+            }
+          ]
+        },
+        "full_data": {
+          "features": ["bed", "deck", "view", "fire_pit", "closet", "fridge", "shower"],
+          "room_includes": [
+            {
+              "title": "Occupancy",
+              "rows": ["Single stay"]
+            },
+            {
+              "title": "Bathroom Features",
+              "rows": ["Hairdryer", "Robe + slippers"]
+            },
+            {
+              "title": "Food and Beverages",
+              "rows": ["Post-op meals", "Breakfast", "Snacks + juice bar"]
+            },
+            {
+              "title": "Recovery",
+              "rows": ["24/7 licensed nursing care", "Upon physician's request, Sequential Compression Device", "Upon physician's request, Oxygen Concentrator", "Recovery clothing (gown, robe, or pajamas, depending on the surgery)" ]
+            },
+
+            {
+              "title": "Transportation",
+              "rows": ["Pick-up after surgery", "Transportation to follow-up appointments and back", "Drop-off after stay (LA Metropolitan Area, including LAX)"]
+            },
+
+            {
+              "title": "Entertainment",
+              "rows": ["4K TV", "Wi-Fi", "Cable TV"]
+            }
+          ],
+          "extra_charge": [
+            {
+              "title": "Extra room fees",
+              "image": {
+                "src": "/svg/door.svg",
+                "width": 40,
+                "height": 66
+              },
+              "rows": [
+                {
+                  "title": "Overnight guest (breakfast included)",
+                  "text": "$300/night"
+                },
+                {
+                  "title": "Late checkout (11:00 AM - 7:00 PM)*",
+                  "text": "$500"
+                },
+                {
+                  "title": "Early check-in (6:00 AM - 11:00 AM)*",
+                  "text": "$350"
+                },
+                "* Subject to availability"
+              ]
+            },
+            {
+              "title": "Treatment fees**",
+              "image": {
+                "src": "/svg/treatment.svg",
+                "width": 54,
+                "height": 66
+              },
+              "rows": [
+                {
+                  "title": "Hyperbaric oxygen therapy",
+                  "text": "$250/session"
+                },
+                {
+                  "title": "Intravenous therapy",
+                  "text": "$50/bag of fluid"
+                },
+                {
+                  "title": "Lymphatic drainage massage",
+                  "text": "$300/session"
+                },
+                "** Upon physician's request"
+              ]
+            },
+            {
+              "title": "Transportation",
+              "image": {
+                "src": "/svg/electric-car.png",
+                "width": 100,
+                "height": 52
+              },
+              "rows": [
+                {
+                  "title": "Private transportation on top of included into the room rate",
+                  "text": "$150/hour"
+                }
+              ]
+            }
+          ]
+        }
       }
     ],
     "privacy": {
