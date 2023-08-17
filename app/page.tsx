@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Section from "@/components/layout/Section";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
@@ -9,9 +8,9 @@ import slideImg3 from "@/public/images/index/index_sl_2@2x.png"
 import slideMobImg from "@/public/images/index/Ofich2Dg1-mobile@2x.png"
 import slideMobImg2 from "@/public/images/index/index_sl_1-mobile@2x.png"
 import slideMobImg3 from "@/public/images/index/index_sl_2-mobile@2x.png"
-import slideCardImg from "@/public/images/index/1@2x.png"
-import slideCardImg2 from "@/public/images/index/2@2x.png"
-import slideCardImg3 from "@/public/images/index/3@2x.png"
+import slideCardImg from "@/public/images/index/1.png"
+import slideCardImg2 from "@/public/images/index/2.png"
+import slideCardImg3 from "@/public/images/index/3.png"
 import contactImg from "@/assets/images/Still-3 1@2x.png"
 import VideoPlayerC from "@/components/VideoPlayer/VideoPlayer";
 import { DefList } from "@/components/ui/Elements";
@@ -20,6 +19,7 @@ import React, { Suspense } from "react";
 import { Metadata } from "next";
 import ImageLoader from "@/components/ImageLoader";
 import { FallBackImgSvg } from "@/components/Icons";
+import { cookies } from "next/headers";
 
 export const metadata: Metadata = {
     title: 'Expert medical care in the comfort of a luxury retreat',
@@ -66,6 +66,10 @@ export const metadata: Metadata = {
     },
 }
 export default function Home() {
+
+    const cookieStore = cookies()
+    const device = cookieStore.get('device');
+    console.log('device', device?.value)
     const imagesImages = [slideImg,slideImg2,slideImg3];
     const imagesMobImages = [slideMobImg,slideMobImg2,slideMobImg3];
     const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
@@ -88,7 +92,7 @@ export default function Home() {
                     <Slider element={true} autoplay={{
                         delay: 5000,
                         disableOnInteraction: false,
-                    }}  items={imagesImages} itemsMob={imagesMobImages} perView={1} spaceBetween={0}/>
+                    }}  items={device?.value !== 'mobile' ? imagesImages: imagesMobImages}  perView={1} spaceBetween={0}/>
                     </div>}
             />
 
@@ -96,7 +100,8 @@ export default function Home() {
                 container={false}
                 variant={'section-gallery grid'}
                 gallery={<div className={'section__gallery'}>
-                    <Slider element={false} items={ar} itemsMob={ar} breakpoints={{320: {
+
+                    <Slider element={false} items={ar} breakpoints={{320: {
                         loop: true,
                         slidesPerView: 1,
                         spaceBetween: 20,
@@ -127,15 +132,7 @@ export default function Home() {
                 text={<div className={'section__text'}><strong>10 minutes</strong> away from multiple top plastic surgery clinics in the LA area</div>}
                 gallery={
                     <Suspense>
-                        <VideoPlayerC poster={<Image  style={{
-                            zIndex: 4,
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover"
-                        }} src={'https://vz-59c0616c-d60.b-cdn.net/7a653335-5206-4697-9f2e-29c2b4d6c6a8/preview.webp?v=1692318995'}
-                            width={1280}
-                            height={720}
-                            alt={''} quality={10}/>}  auto={true} title={'Breathtaking canyon views'} btn={true} muted={true} src={'https://vz-59c0616c-d60.b-cdn.net/7a653335-5206-4697-9f2e-29c2b4d6c6a8/playlist.m3u8?v=1692318995'} />
+                        <VideoPlayerC auto={true} title={'Breathtaking canyon views'} btn={true} muted={true} src={'https://vz-59c0616c-d60.b-cdn.net/7a653335-5206-4697-9f2e-29c2b4d6c6a8/playlist.m3u8?v=1692318995'} />
                     </Suspense>
                     // <VideoPlayer muted={true}  poster={<Image  style={{
                     //     zIndex: 4,

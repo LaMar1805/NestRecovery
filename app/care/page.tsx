@@ -16,9 +16,11 @@ import { CareTherapySvg } from "@/components/Icons";
 import CardImage from "@/components/Cards/CardImage";
 import React from "react";
 import ImageLoader from "@/components/ImageLoader";
+import { cookies } from "next/headers";
 
 export default function CarePage() {
-
+    const cookieStore = cookies()
+    const device = cookieStore.get('device');
     const images = [slideImg,slideImg2,slideImg3];
     const imagesMob = [slideMobImg,slideMobImg2,slideMobImg3];
     const imagesSect = [slideImgSection3, slideImgSection,slideImgSection2];
@@ -40,7 +42,7 @@ export default function CarePage() {
                 gallery={<Slider autoplay={{
                     delay: 20000,
                     disableOnInteraction: false,
-                }} items={images} itemsMob={imagesMob} loop={true} perView={1} spaceBetween={0}/>}
+                }}  items={device?.value !== 'mobile' ? images: imagesMob}  loop={true} perView={1} spaceBetween={0}/>}
             />
 
             <Section

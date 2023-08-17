@@ -14,6 +14,7 @@ import imgRec from "@/assets/images/exp/recovery@2x.png";
 import imgRec2 from "@/assets/images/exp/recovery_2@2x.png";
 import chef from "@/assets/images/exp/chef_1@2x.png"
 import ImageLoader from "@/components/ImageLoader";
+import { cookies } from "next/headers";
 
 export default function ExperiencesPage() {
 
@@ -21,7 +22,8 @@ export default function ExperiencesPage() {
     const imagesMob = [slideMobImg,slideMobImg2,slideMobImg3];
     const imgs = [imgIn, imgIn2, imgIn3];
     const imgrs = [imgRec, imgRec2];
-
+    const cookieStore = cookies()
+    const device = cookieStore.get('device');
 
   return (
         <main className={'page-experiences'}>
@@ -35,7 +37,7 @@ export default function ExperiencesPage() {
                 gallery={<Slider autoplay={{
                     delay: 20000,
                     disableOnInteraction: false,
-                }} items={images} itemsMob={imagesMob} perView={1} spaceBetween={0}/>}
+                }} items={device?.value !== 'mobile' ? images: imagesMob}  perView={1} spaceBetween={0}/>}
             />
 
             <Section

@@ -8,7 +8,6 @@ import { MutableRefObject, useEffect, useRef, useState } from 'react';
 type WindowDimentions = {
 	width: number | undefined;
 	height: number | undefined;
-	type: string | undefined;
 	state: Promise<boolean> | boolean | undefined;
 };
 
@@ -17,7 +16,6 @@ const useWindowDimensions = (): WindowDimentions => {
 	const [windowDimensions, setWindowDimensions] = useState<WindowDimentions>({
 		width: undefined,
 		height: undefined,
-		type: undefined,
 		state: undefined
 	});
 	useEffect(() => {
@@ -25,14 +23,12 @@ const useWindowDimensions = (): WindowDimentions => {
 			setWindowDimensions({
 				width: window.innerWidth,
 				height: window.innerHeight,
-				type: screen.orientation?.type ?? 'portrait-primary',
-				state: (screen.orientation?.type.includes('portrait') || window.innerWidth < window.innerHeight)
+				state: window.innerWidth < window.innerHeight
 			});
 		}
 		handleResize();
 
 		window.addEventListener('resize', handleResize);
-		screen.orientation.addEventListener('change', handleResize);
 		return (): void => window.removeEventListener('resize', handleResize);
 	}, []); // Empty array ensures that effect is only run on mount
 

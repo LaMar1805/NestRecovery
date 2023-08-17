@@ -6,7 +6,7 @@ import { Swiper as SwiperCore } from 'swiper/types';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import React, { ReactNode, Suspense, useEffect, useId, useRef, useState } from "react";
+import React, { Suspense, useMemo, useRef, useState } from "react";
 import { Arrow } from "@/components/ui/Elements";
 import ImageLoader from "@/components/ImageLoader";
 
@@ -27,11 +27,8 @@ const Slider = ({items, itemsMob, element = true, spaceBetween = 0, loop = false
 	const swiperRef = useRef<SwiperCore>();
 	const [ready, setReady] = useState(false);
 	const [indexImg, setIndexImg] = useState(0);
-	const [imgs, setImgs] = useState([]);
-	const id = useId()
 
 	const handleImgLoaded = () => {
-
 		if(indexImg <= items.length) {
 			setIndexImg((prevState) => {
 				return prevState + 1
@@ -39,50 +36,77 @@ const Slider = ({items, itemsMob, element = true, spaceBetween = 0, loop = false
 
 		}
 	}
-
-	useEffect(() => {
-		if(element && indexImg <= items.length) {
+	const memoizedSlides = useMemo(() => {
+		const newItems = items.map((item, index) => {
 			setReady(false);
-			let data:any[] = []
-
-			data = items.slice(0, indexImg).map((item, index) => <SwiperSlide key={index}
+				console.log()
+			if(element) 	setIndexImg(() => items.length)
+			if(index <= indexImg && element ) return <SwiperSlide key={index}
 				className={'section-screen__slide'}>
-				{element ? <ImageLoader
+				<ImageLoader
 					handleAction={handleImgLoaded}
 					src={item}
-					srcMobile={itemsMob && itemsMob[index]}
+
 					alt={''}
+					init={index === 0}
 
-					style={{ ...style }}/> : items[index]}
+					style={{ ...style }}/>
+			</SwiperSlide>
 
-			</SwiperSlide>)
-			setReady(true);
-			// @ts-ignore
-			setImgs(data);
 		}
-		if(element && indexImg == 0) {
-			setReady(false);
-			let data = items.slice(0, 1).map((item, index) => <SwiperSlide key={index}
-				className={'section-screen__slide'}>
-				{element ? <ImageLoader
-					handleAction={handleImgLoaded}
-					src={item}
-					srcMobile={itemsMob && itemsMob[index]}
-					alt={''}
-
-					style={{ ...style }}/> : items[index]}
-
-			</SwiperSlide>)
-			// @ts-ignore
-			setImgs(data);
-			setReady(true);
+		);
+		setReady(true);
+		console.log(newItems)
+		return newItems
 		}
 
+	, [indexImg]);
 
-	},[indexImg])
+	// useEffect(() => {
+	// 	if(element && indexImg <= items.length) {
+	// 		setReady(false);
+	// 		let data:any[] = []
+	//
+	// 		data = items.slice(0, indexImg).map((item, index) => <SwiperSlide key={index}
+	// 			className={'section-screen__slide'}>
+	// 			{element ? <ImageLoader
+	// 				handleAction={handleImgLoaded}
+	// 				src={item}
+	// 				srcMobile={itemsMob && itemsMob[index]}
+	// 				alt={''}
+	// 				init={index === 0}
+	//
+	// 				style={{ ...style }}/> : items[index]}
+	//
+	// 		</SwiperSlide>)
+	// 		setReady(true);
+	// 		// @ts-ignore
+	// 		setImgs(data);
+	// 	}
+	// 	if(element && indexImg == 0) {
+	// 		setReady(false);
+	// 		let data = items.slice(0, 1).map((item, index) => <SwiperSlide key={index}
+	// 			className={'section-screen__slide'}>
+	// 			{element ? <ImageLoader
+	// 				handleAction={handleImgLoaded}
+	// 				src={item}
+	// 				srcMobile={itemsMob && itemsMob[index]}
+	// 				alt={''}
+	//
+	// 				style={{ ...style }}/> : items[index]}
+	//
+	// 		</SwiperSlide>)
+	// 		// @ts-ignore
+	// 		setImgs(data);
+	// 		setReady(true);
+	// 	}
+	//
+	//
+	// },[indexImg])
+
 	return (
 		<>
-
+		<Suspense>
 			<Swiper
 				autoplay={autoplay}
 				modules={[Navigation, Pagination, Autoplay]}
@@ -107,9 +131,10 @@ const Slider = ({items, itemsMob, element = true, spaceBetween = 0, loop = false
 				// watchOverflow={true}
 			>
 
-				<Suspense>
-					{element ? imgs : items.map((item:ReactNode, index: number) => <SwiperSlide className={'section-screen__slide'} key={index}>{item}</SwiperSlide>)}
-				</Suspense>
+					{element && memoizedSlides.map((item) => item)}
+					{!element && items.map((item, index) => <SwiperSlide key={index}
+						className={'section-screen__slide'}>{item}</SwiperSlide>)}
+
 
 			</Swiper>
 			{navigation && (<>
@@ -117,7 +142,7 @@ const Slider = ({items, itemsMob, element = true, spaceBetween = 0, loop = false
 				<Arrow action={() => swiperRef.current?.slidePrev()} style={'backward'} />
 
 			</>)}
-
+		</Suspense>
 		</>)
 
 }

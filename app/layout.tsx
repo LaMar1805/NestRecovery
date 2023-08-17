@@ -1,8 +1,9 @@
 import '@/assets/styles/styles.scss'
 import type { Metadata } from 'next'
-import {font} from "@/assets/fonts/fonts";
+import { font } from "@/assets/fonts/fonts";
 import Layout from "@/components/layout/layout";
 import { Suspense } from "react";
+
 export const metadata: Metadata = {
   title: {
     template: '%s | Nest Recovery',
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+
 }: {
   children: React.ReactNode
 }) {

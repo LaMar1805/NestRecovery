@@ -18,9 +18,11 @@ import svgImg from "@/assets/svg/jordan_grandviergne.svg";
 import CardImage from "@/components/Cards/CardImage";
 import React from "react";
 import ImageLoader from "@/components/ImageLoader";
+import { cookies } from "next/headers";
 
 export default function ChefPage() {
-
+    const cookieStore = cookies()
+    const device = cookieStore.get('device');
     const images = [slideImg,slideImg2,slideImg3];
     const imagesMob = [slideMobImg,slideMobImg2,slideMobImg3];
 
@@ -44,7 +46,7 @@ export default function ChefPage() {
                     // maxWidth: '100%',
                     // objectFit: "",
                     // width: '100%',
-                }} items={images}  itemsMob={imagesMob} spaceBetween={10}/>}
+                }}  items={device?.value !== 'mobile' ? images: imagesMob}  spaceBetween={10}/>}
             />
             <Section
                 container={false}

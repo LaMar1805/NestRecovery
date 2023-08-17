@@ -1,53 +1,22 @@
-'use client'
 import Image, { ImageProps } from "next/image";
-import React, { useEffect, useState } from "react";
-import useWindowDimensions, { isServer } from "@/components/utils";
+import React from "react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-const ImageLoader = ({src, srcMobile, handleAction, alt, style = {}}: {style?: {}, src: StaticImport | ImageProps | any, srcMobile?: StaticImport | ImageProps  | any,alt: string, handleAction?: any }) => {
+const ImageLoader = ({src, srcMobile, handleAction, init = false, alt, style = {}}: {style?: {}, init?:boolean, src: StaticImport | ImageProps | any, srcMobile?: StaticImport | ImageProps  | any,alt: string, handleAction?: any }) => {
 
-	const windowDimensions = useWindowDimensions()
-	const [imgReady, setimgReady] = useState(false);
-	const [imag, setImag] = useState(undefined);
-
-	// @ts-ignore
-	const handleLoad = (e) => {
-
-		console.log('12334213', e)
-		setimgReady(true);
-
-		handleAction(e);
-
-	}
-	const handleImg = () => {
-		setimgReady(false);
-		if(!isServer && windowDimensions.type) {
-			if(windowDimensions.state) {
-				setImag(srcMobile ? srcMobile : src);
-			} else setImag(src)
-		}
-		setimgReady(true);
-	}
-	useEffect(() => {
-		handleImg();
-
-	}, [windowDimensions.state, imgReady])
-	// if(!imgReady) return <p>loading</p>
-	// @ts-ignore
-
-	return imgReady && <Image
+	return <Image
 
 		style={{ objectFit: "cover", ...style }}
 		// @ts-ignore
-		src={imag}
+		src={src}
 		// @ts-ignore
 		// width={img.image?.width}
 		// // @ts-ignore
 		// height={img.image?.height}
 		placeholder={"empty"}
 		// sizes={img.sizes}
-		// loading={"lazy"}
-		priority={false}
+		// loading={init ? "eager" : "lazy"}
+		// priority={init}
 		onLoad={handleAction}
 		// onClick={handleAction}
 		sizes={"100vw"}
