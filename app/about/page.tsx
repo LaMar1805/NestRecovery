@@ -15,11 +15,7 @@ export default function AboutPage() {
                 container={false}
                 title={<h1 className={'section__title'}>About Nest Recovery</h1>}
                 gallery={<Suspense>
-                <VideoPlayerC poster={<Image priority={true} style={{
-                    zIndex: 4,
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover"}}   alt={''} quality={10} width={1920} height={1080} src={'https://vz-59c0616c-d60.b-cdn.net/288586aa-5453-4518-98b6-fad98f70d902/preview.webp?v=1692319165'}/>} muted={false} auto={false} src={'https://vz-59c0616c-d60.b-cdn.net/288586aa-5453-4518-98b6-fad98f70d902/playlist.m3u8?v=1692319165'} />
+                <VideoPlayerC  muted={false} auto={false} src={'https://vz-59c0616c-d60.b-cdn.net/288586aa-5453-4518-98b6-fad98f70d902/playlist.m3u8?v=1692319165'} />
                 </Suspense>}
             />
             <Section
