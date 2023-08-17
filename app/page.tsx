@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         siteName: 'Nest Recovery',
         images: [
             {
-                alt: 'asdasd',
+                alt: testData.data.meta.home.title,
                 url: `${process.env.baseUrl}${testData.data.meta.home.image.src}`,
                 height: testData.data.meta.home.image.height,
                 width: testData.data.meta.home.image.width,
