@@ -82,13 +82,13 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 				modules={[FreeMode, Pagination, Thumbs, Controller]}
 				// @ts-ignore
 				onSwiper={setThumbsSwiper}
-				slidesPerView={6}
+				// slidesPerView={6}
 				spaceBetween={30}
 				loop={true}
 				// loop
 				centeredSlides={true}
 				// pagination={{ enabled: pagination, clickable: true, bulletClass: 'custom__bullet', bulletActiveClass: 'custom_bullet_active' }}
-				// watchSlidesProgress
+				watchSlidesProgress
 				// controller={{ control: firstSwiper }}
 				className={'swiper__thumbs'}
 				breakpoints={{
@@ -104,7 +104,7 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 					},
 
 					640: {
-						slidesPerView: 3,
+						slidesPerView: 4,
 						spaceBetween: 10,
 						centeredSlides: false,
 
