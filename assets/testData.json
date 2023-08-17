@@ -54,40 +54,25 @@
         "href": "/rooms/cinta",
         "images": {
           "screen": {
-            "src": "/images/rooms/serai/serai@2x.png",
+            "src": "/images/rooms/cinta/cinta@2x.png",
             "width": 2800,
             "height": 840
           },
           "gallery": [
             {
-              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/cinta/Still-71.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/cinta/Still-72.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
-              "width": 3860,
-              "height": 2560
-            },
-            {
-              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
-              "width": 3860,
-              "height": 2560
-            },
-            {
-              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
-              "width": 3860,
-              "height": 2560
-            },
-            {
-              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/cinta/Still-73.webp",
+              "width": 4000,
+              "height": 2666
             }
           ]
         },
@@ -197,34 +182,24 @@
           },
           "gallery": [
             {
-              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/serai/serai_1.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/serai/serai_2.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/serai/serai_3.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
-              "width": 3860,
-              "height": 2560
-            },
-            {
-              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
-              "width": 3860,
-              "height": 2560
-            },
-            {
-              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/serai/serai_4.webp",
+              "width": 4000,
+              "height": 2666
             }
           ]
         },
@@ -334,35 +309,36 @@
           },
           "gallery": [
             {
-              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/cahaya/cahaya_1.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/cahaya/cahaya_2.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/cahaya/cahaya_3.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/cahaya/cahaya_4.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/cahaya/cahaya_5.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/cahaya/cahaya_6.webp",
+              "width": 4000,
+              "height": 2666
             }
+
           ]
         },
         "full_data": {
@@ -471,34 +447,29 @@
           },
           "gallery": [
             {
-              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/kirana/kirana_1.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/kirana/kirana_2.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/kirana/kirana_3.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/kirana/kirana_4.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
-              "width": 3860,
-              "height": 2560
-            },
-            {
-              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/kirana/kirana_5.webp",
+              "width": 4000,
+              "height": 2666
             }
           ]
         },
@@ -608,34 +579,79 @@
           },
           "gallery": [
             {
-              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/pelangi/pelangi_1.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/pelangi/pelangi_2.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/pelangi/pelangi_3.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-71.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/pelangi/pelangi_4.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-72.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/pelangi/pelangi_5.webp",
+              "width": 4000,
+              "height": 2666
             },
             {
-              "src": "/images/rooms/cinta/gallery/Still-73.jpg",
-              "width": 3860,
-              "height": 2560
+              "src": "/images/rooms/pelangi/pelangi_6.webp",
+              "width": 4000,
+              "height": 2666
+            },
+            {
+              "src": "/images/rooms/pelangi/pelangi_7.webp",
+              "width": 4000,
+              "height": 2666
+            },
+            {
+              "src": "/images/rooms/pelangi/pelangi_8.webp",
+              "width": 4000,
+              "height": 2666
+            },
+            {
+              "src": "/images/rooms/pelangi/pelangi_9.webp",
+              "width": 4000,
+              "height": 2666
+            },
+            {
+              "src": "/images/rooms/pelangi/pelangi_10.webp",
+              "width": 4000,
+              "height": 2666
+            },
+            {
+              "src": "/images/rooms/pelangi/pelangi_11.webp",
+              "width": 4000,
+              "height": 2666
+            },
+            {
+              "src": "/images/rooms/pelangi/pelangi_12.webp",
+              "width": 4000,
+              "height": 2666
+            },
+            {
+              "src": "/images/rooms/pelangi/pelangi_13.webp",
+              "width": 4000,
+              "height": 2666
+            },
+            {
+              "src": "/images/rooms/pelangi/pelangi_14.webp",
+              "width": 4000,
+              "height": 2666
+            },
+            {
+              "src": "/images/rooms/pelangi/pelangi_15.webp",
+              "width": 4000,
+              "height": 2666
             }
           ]
         },

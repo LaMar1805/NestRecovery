@@ -135,7 +135,7 @@ export default function Home() {
                         }} src={'https://vz-59c0616c-d60.b-cdn.net/7a653335-5206-4697-9f2e-29c2b4d6c6a8/preview.webp?v=1692318995'}
                             width={1280}
                             height={720}
-                            alt={''} quality={10}/>}  auto={true} title={'Breathtaking canyon views'} muted={true} src={'https://vz-59c0616c-d60.b-cdn.net/7a653335-5206-4697-9f2e-29c2b4d6c6a8/playlist.m3u8?v=1692318995'} />
+                            alt={''} quality={10}/>}  auto={true} title={'Breathtaking canyon views'} btn={true} muted={true} src={'https://vz-59c0616c-d60.b-cdn.net/7a653335-5206-4697-9f2e-29c2b4d6c6a8/playlist.m3u8?v=1692318995'} />
                     </Suspense>
                     // <VideoPlayer muted={true}  poster={<Image  style={{
                     //     zIndex: 4,

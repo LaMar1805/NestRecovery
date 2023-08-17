@@ -3,14 +3,13 @@ import Link from "next/link";
 import React from "react";
 import testData from "@/assets/testData.json"
 import ImageLoader from "@/components/ImageLoader";
-import  "./styles.scss";
+import "./styles.scss";
 import NotFound from "@/app/not-found";
 import RoomFeatures from "@/components/RoomFeatures/RoomFeatures";
 import AccordionList from "@/components/Accordion/Accordion";
 import { DefList } from "@/components/ui/Elements";
 import Image from "next/image";
 import SliderWithThumbs from "@/components/Slider/SliderWithThumbs";
-
 
 
 export default function RoomPage({ params: {slug} }: { params: { slug: string } }) {
@@ -95,7 +94,7 @@ export default function RoomPage({ params: {slug} }: { params: { slug: string } 
 				container={false}
 				variant={'section-gallery section-room_gallery grid'}
 				gallery={imgt &&
-						<SliderWithThumbs thumbs={true} items={[...imgt, ...imgt, ...imgt, ...imgt, ...imgt, ...imgt, ...imgt]} navigation={false}
+						<SliderWithThumbs thumbs={true} items={[...imgt]} navigation={false}
 							pagination={true}
 							breakpoints={{
 							// when window width is >= 320px

@@ -294,11 +294,23 @@
   .swiper {
 	position: relative;
 	z-index: 50;
-
+	display: flex;
+	user-select: none;
   }
+
   .section__thumbs  {
 	position: relative;
 	overflow: hidden;
+	.swiper {
+		justify-content: center;
+	}
+	.swiper-wrapper {
+
+	  width: initial;
+	}
+	.section-screen__slide {
+	  flex: 1 100%;
+	}
 	//&:before {
 	//  content: '';
 	//  width: 132px;

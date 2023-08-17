@@ -3,17 +3,17 @@ const nextConfig = {
 	// experimental: {
 	// 	serverActions: true,
 	// },
-		images: {
-			remotePatterns: [
-				{
+	images: {
+		remotePatterns: [
+			{
 
-					hostname: 'vz-59c0616c-d60.b-cdn.net',
+				hostname: 'vz-59c0616c-d60.b-cdn.net',
 
-				},
-			],
-			deviceSizes: [440, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-			imageSizes: [16, 24, 32, 48, 64, 96, 128, 256, 384],
-		},
+			},
+		],
+		deviceSizes: [440, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+		imageSizes: [16, 24, 32, 48, 64, 96, 128, 256, 384],
+	},
 
 
 	env: {

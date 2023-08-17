@@ -1,12 +1,12 @@
 'use client'
 import React, { useEffect, useRef, useState } from "react";
-import { PlaySvg } from "@/components/Icons";
+import { PlaySvg, StopSvg } from "@/components/Icons";
 import styles from './VideoPlayer.module.scss';
 import { useInView } from "react-intersection-observer";
 import ReactPlayer from "react-player";
 import { OnProgressProps } from "react-player/base";
 
-const VideoPlayerC = ({src, title, auto = true, poster, muted = false}:{src:string, title?: string, auto?: boolean, poster?:  React.ReactElement, muted?: boolean}) => {
+const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = false}:{src:string, title?: string, auto?: boolean, btn?: boolean, poster?:  React.ReactElement, muted?: boolean}) => {
 
     const [loaded, setLoaded] = useState(false);
     const videoRef = useRef<any>(null);
@@ -91,9 +91,7 @@ const VideoPlayerC = ({src, title, auto = true, poster, muted = false}:{src:stri
     return (
       <div className={'video_player'} ref={ref}>
           {state.url !== "" &&  <div className={'video_player_controls'} data-playing={state.playing} onClick={togglePlay}>
-              <a className={state.playing ? styles.video_player__button : styles.video_player__button_playing} onClick={togglePlay}> {!state.playing ? <PlaySvg /> :
-              null
-                  // <StopSvg />
+              <a className={state.playing ? styles.video_player__button : styles.video_player__button_playing} onClick={togglePlay}> {!state.playing ? <PlaySvg /> : btn ? <StopSvg /> : null
               }</a>
           </div>}
           {title && <h3 className={'video_player__title'}>{title}</h3>}

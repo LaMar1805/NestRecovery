@@ -85,11 +85,10 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 				slidesPerView={6}
 				spaceBetween={30}
 				loop={true}
-				slidesOffsetAfter={2}
 				// loop
 				centeredSlides={true}
 				// pagination={{ enabled: pagination, clickable: true, bulletClass: 'custom__bullet', bulletActiveClass: 'custom_bullet_active' }}
-				watchSlidesProgress
+				// watchSlidesProgress
 				// controller={{ control: firstSwiper }}
 				className={'swiper__thumbs'}
 				breakpoints={{
