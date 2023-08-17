@@ -10,6 +10,7 @@ import slideMobImg2 from "@/public/images/chef/slider_2-mobile@2x.png"
 import slideMobImg3 from "@/public/images/chef/slider_3-mobile@2x.png"
 
 
+import testData from "@/assets/testData.json"
 import sectImg from "@/assets/images/chef/chef_2_1@2x.png"
 import sectImg2 from "@/assets/images/chef/chef_2_2@2x.png"
 import sectImg3 from "@/assets/images/chef/chef_2_3@2x.png"
@@ -19,7 +20,32 @@ import CardImage from "@/components/Cards/CardImage";
 import React from "react";
 import ImageLoader from "@/components/ImageLoader";
 import { cookies } from "next/headers";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+    title: testData.data.meta.chef.title,
+    description: testData.data.meta.chef.description,
+    twitter: {
+        title: testData.data.meta.chef.title,
+        images: [testData.data.meta.chef.image.src]
+    },
+    openGraph: {
+        title: testData.data.meta.chef.title,
+        description: testData.data.meta.chef.description,
+        url: new URL('https://www.nestrecovery.me'),
+        siteName: 'Nest Recovery',
+        images: [
+            {
+                alt: 'asdasd',
+                url: `${process.env.baseUrl}${testData.data.meta.chef.image.src}`,
+                height: testData.data.meta.chef.image.height,
+                width: testData.data.meta.chef.image.width,
+            }
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+}
 export default function ChefPage() {
     const cookieStore = cookies()
     const device = cookieStore.get('device');

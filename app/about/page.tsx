@@ -6,7 +6,33 @@ import svgImg from "@/assets/svg/lena_kaminski.svg";
 import ImageLoader from "@/components/ImageLoader";
 import VideoPlayerC from "@/components/VideoPlayer/VideoPlayer";
 import { Suspense } from "react";
+import { Metadata } from "next";
+import testData from "@/assets/testData.json";
 
+export const metadata: Metadata = {
+    title: testData.data.meta.about.title,
+    description: testData.data.meta.about.description,
+    twitter: {
+        title: testData.data.meta.about.title,
+        images: [testData.data.meta.about.image.src]
+    },
+    openGraph: {
+        title: testData.data.meta.about.title,
+        description: testData.data.meta.about.description,
+        url: new URL('https://www.nestrecovery.me'),
+        siteName: 'Nest Recovery',
+        images: [
+            {
+                alt: 'asdasd',
+                url: `${process.env.baseUrl}${testData.data.meta.about.image.src}`,
+                height: testData.data.meta.about.image.height,
+                width: testData.data.meta.about.image.width,
+            }
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+}
 export default function AboutPage() {
   return (
         <main className={'page-about'}>

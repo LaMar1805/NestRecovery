@@ -1,5 +1,106 @@
 {
   "data": {
+    "meta": {
+      "home": {
+        "title": "Post-surgery recovery in the heart of Beverly Hills",
+        "description": " Experience expert medical care in the comfort of a luxury retreat: 24/7 licensed nursing care, state-of-the-art medical equipment, spacious suites with modern amenities and private outdoor access, chef-prepared meals, and privacy on your terms.",
+        "image": {
+          "src": "/meta/default.png",
+          "width": 2000,
+          "height": 1061
+        }
+      },
+      "care": {
+        "title": "Professional support for post-op recovery - Nest Recovery Beverly Hills",
+        "description": "Your post-op stay at Nest Recovery includes 24/7 licensed nursing care. Whenever you need help, we are one button push away. Book your stay at the retreat with expert medical care today.",
+        "image": {
+          "src": "/meta/care.jpg",
+          "width": 2000,
+          "height": 1061
+        }
+      },
+      "chef": {
+        "title": "The ultimate French haute cuisine experience in Beverly Hills",
+        "description": "Closely collaborating with leading experts in nutritional science, Chef Grandviergne designed a breakfast menu that is not just healthy and beneficial for post-op recovery but also elevated to the highest peaks of elegant French cuisine.",
+        "image": {
+          "src": "/meta/chef.jpg",
+          "width": 2000,
+          "height": 1061
+        }
+      },
+      "experiences": {
+        "title": "Transform your recovery into vacation - Nest Recovery Beverly Hills",
+        "description": "Whether you prefer to heal discreetly in the tranquillity of your own accommodations or feel more social, we've got you covered. Enjoy recovery indulgence, or take advantage of our intimate setting for individuals on their healing journey.",
+        "image": {
+          "src": "/meta/exp.jpg",
+          "width": 2000,
+          "height": 1061
+        }
+      },
+       "about": {
+        "title": "Post-surgery recovery in the heart of Beverly Hills",
+        "description": "The post-surgery journey is a critical time requiring both expert care and a tranquil environment. We offer the perfect balance of world-class medical support and luxurious accommodations. Learn about our superior services here.",
+        "image": {
+          "src": "/meta/about.jpg",
+          "width": 2000,
+          "height": 1061
+        }
+      },
+      "what": {
+        "title": "What to expect from your post-surgery recovery - Nest Recovery",
+        "description": "The moment you book your visit, we start preparing for your arrival. We coordinate with your doctor to prepare all the details and pick you up after your surgery. Learn more about the expert medical care in the comfort of a luxury retreat.",
+        "image": {
+          "src": "/meta/what.jpg",
+          "width": 2000,
+          "height": 1061
+        }
+      },
+      "faq": {
+        "title": "FAQ | Nest Recovery Beverly Hills",
+        "description": "Get answers to frequently asked questions about staying at Nest Recovery, the surgeries we provide recovery for, check-in, check-out and cancellation policies, and the resources available locally.",
+        "image": {
+          "src": "/meta/default.png",
+          "width": 2000,
+          "height": 1061
+        }
+      },
+      "terms": {
+        "title": "Terms and Conditions | Nest Recovery Beverly Hills",
+        "description": "Users of nestrecovery.me website must acknowledge and accept these terms and conditions.",
+        "image": {
+          "src": "/meta/default.png",
+          "width": 2000,
+          "height": 1061
+        }
+      },
+      "booking": {
+        "title": "Booking and Stay Policy | Nest Recovery Beverly Hills",
+        "description": "Users booking their stay at Nest Recovery via nestrecovery.me website must acknowledge and accept this booking and stay policy.",
+        "image": {
+          "src": "/meta/default.png",
+          "width": 2000,
+          "height": 1061
+        }
+      },
+      "privacy": {
+        "title": "Privacy Policy | Nest Recovery Beverly Hills",
+        "description": "Users of nestrecovery.me website must acknowledge and accept this Privacy Policy outlining the details relating to the personally identifiable information they provide or the website collects and uses and their rights hereunder.",
+        "image": {
+          "src": "/meta/default.png",
+          "width": 2000,
+          "height": 1061
+        }
+      },
+      "californy": {
+        "title": "California Privacy Policy | Nest Recovery Beverly Hills",
+        "description": "California residents using nestrecovery.me website must acknowledge and accept this California Privacy Policy describing how Nest Recovery collects, uses, discloses, or otherwise processes their personal information.",
+        "image": {
+          "src": "/meta/default.png",
+          "width": 2000,
+          "height": 1061
+        }
+      }
+    },
     "rooms_features": {
       "bed": {
         "src": "/svg/bed.svg",

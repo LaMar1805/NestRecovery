@@ -7,6 +7,7 @@ import slideMobImg from "@/public/images/exp/screen-mobile@2x.png"
 import slideMobImg2 from "@/public/images/exp/exp_sl_6-mobile@2x.png"
 import slideMobImg3 from "@/public/images/exp/exp_sl_7-mobile@2x.png"
 
+import testData from "@/assets/testData.json"
 import imgIn from "@/assets/images/exp/exp_sl_8@2x.png";
 import imgIn2 from "@/assets/images/exp/innercircle@2x.png";
 import imgIn3 from "@/assets/images/exp/exp_sl_9@2x.png";
@@ -15,7 +16,32 @@ import imgRec2 from "@/assets/images/exp/recovery_2@2x.png";
 import chef from "@/assets/images/exp/chef_1@2x.png"
 import ImageLoader from "@/components/ImageLoader";
 import { cookies } from "next/headers";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+    title: testData.data.meta.experiences.title,
+    description: testData.data.meta.experiences.description,
+    twitter: {
+        title: testData.data.meta.experiences.title,
+        images: [testData.data.meta.experiences.image.src]
+    },
+    openGraph: {
+        title: testData.data.meta.experiences.title,
+        description: testData.data.meta.experiences.description,
+        url: new URL('https://www.nestrecovery.me'),
+        siteName: 'Nest Recovery',
+        images: [
+            {
+                alt: 'asdasd',
+                url: `${process.env.baseUrl}${testData.data.meta.experiences.image.src}`,
+                height: testData.data.meta.experiences.image.height,
+                width: testData.data.meta.experiences.image.width,
+            }
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+}
 export default function ExperiencesPage() {
 
     const images = [slideImg,slideImg2,slideImg3];

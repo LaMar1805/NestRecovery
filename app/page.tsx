@@ -22,45 +22,25 @@ import { FallBackImgSvg } from "@/components/Icons";
 import { cookies } from "next/headers";
 
 export const metadata: Metadata = {
-    title: 'Expert medical care in the comfort of a luxury retreat',
-    description: '',
+    title: testData.data.meta.home.title,
+    description: testData.data.meta.home.description,
     twitter: {
-        title: 'Expert medical care in the comfort of a luxury retreat',
-        images: [slideCardImg3.src, slideCardImg2.src, slideCardImg.src]
+        title: testData.data.meta.home.title,
+        images: [testData.data.meta.home.image.src]
     },
-
     openGraph: {
-        title: 'Expert medical care in the comfort of a luxury retreat',
-        description: '',
+        title: testData.data.meta.home.title,
+        description: testData.data.meta.home.description,
         url: new URL('https://www.nestrecovery.me'),
         siteName: 'Nest Recovery',
-        // videos: [
-        //     {
-        //         url:`${process.env.baseUrl}/website_promo_6.mp4`,
-        //         height: 720,
-        //         width: 1280,
-        //         type: 'video/mp4'
-        //     }
-        // ],
-        // images: [
-        //     {
-        //         alt: 'asdasd',
-        //         url: `${process.env.baseUrl}/_next/static/media/Ofich2Dg1.d322e2ca@2x.png`,
-        //         height: 412,
-        //         width: 1400,
-        //     },
-        //     {
-        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_1.55a7db97@2x.png`,
-        //         height: 412,
-        //         width: 1400,
-        //     },
-        //     {
-        //         url: `${process.env.baseUrl}/_next/static/media/index_sl_2.ae2c9303@2x.png`,
-        //         height: 412,
-        //         width: 1400,
-        //
-        //     }
-        // ],
+        images: [
+            {
+                alt: 'asdasd',
+                url: `${process.env.baseUrl}${testData.data.meta.home.image.src}`,
+                height: testData.data.meta.home.image.height,
+                width: testData.data.meta.home.image.width,
+            }
+        ],
         locale: 'en_US',
         type: 'website',
     },

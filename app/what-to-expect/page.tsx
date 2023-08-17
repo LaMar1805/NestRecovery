@@ -14,7 +14,32 @@ import Slider from "@/components/Slider/Slider";
 import CardImage from "@/components/Cards/CardImage";
 import React from "react";
 import ImageLoader from "@/components/ImageLoader";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+    title: testData.data.meta.what.title,
+    description: testData.data.meta.what.description,
+    twitter: {
+        title: testData.data.meta.what.title,
+        images: [testData.data.meta.what.image.src]
+    },
+    openGraph: {
+        title: testData.data.meta.what.title,
+        description: testData.data.meta.what.description,
+        url: new URL('https://www.nestrecovery.me'),
+        siteName: 'Nest Recovery',
+        images: [
+            {
+                alt: 'asdasd',
+                url: `${process.env.baseUrl}${testData.data.meta.what.image.src}`,
+                height: testData.data.meta.what.image.height,
+                width: testData.data.meta.what.image.width,
+            }
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+}
 export default function WhatToExpectPage() {
     const cardImg = [wteCardImg, wteCardImg2, wteCardImg3];
     const cardImg2 = [wteCardImg4, wteCardImg5, wteCardImg6];

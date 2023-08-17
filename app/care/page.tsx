@@ -17,7 +17,32 @@ import CardImage from "@/components/Cards/CardImage";
 import React from "react";
 import ImageLoader from "@/components/ImageLoader";
 import { cookies } from "next/headers";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+    title: testData.data.meta.care.title,
+    description: testData.data.meta.care.description,
+    twitter: {
+        title: testData.data.meta.care.title,
+        images: [testData.data.meta.care.image.src]
+    },
+    openGraph: {
+        title: testData.data.meta.care.title,
+        description: testData.data.meta.care.description,
+        url: new URL('https://www.nestrecovery.me'),
+        siteName: 'Nest Recovery',
+        images: [
+            {
+                alt: 'asdasd',
+                url: `${process.env.baseUrl}${testData.data.meta.care.image.src}`,
+                height: testData.data.meta.care.image.height,
+                width: testData.data.meta.care.image.width,
+            }
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+}
 export default function CarePage() {
     const cookieStore = cookies()
     const device = cookieStore.get('device');
