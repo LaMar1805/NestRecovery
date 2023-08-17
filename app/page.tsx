@@ -81,6 +81,7 @@ export default function Home() {
   return (
       <main className={'page-index'}>
             <Section
+
                 variant={'section-screen'}
                 container={false}
                 links={<div className={'grid section__footer grid'}>
