@@ -25,7 +25,6 @@ const Slider = ({items, itemsMob, element = true, spaceBetween = 0, loop = false
 	autoplay?: any
 }) => {
 	const swiperRef = useRef<SwiperCore>();
-	const [ready, setReady] = useState(false);
 	const [indexImg, setIndexImg] = useState(0);
 
 	const handleImgLoaded = () => {
@@ -38,7 +37,7 @@ const Slider = ({items, itemsMob, element = true, spaceBetween = 0, loop = false
 	}
 	const memoizedSlides = useMemo(() => {
 		const newItems = items.map((item, index) => {
-			setReady(false);
+
 				console.log()
 			if(element) 	setIndexImg(() => items.length)
 			if(index <= indexImg && element ) return <SwiperSlide key={index}
@@ -55,7 +54,6 @@ const Slider = ({items, itemsMob, element = true, spaceBetween = 0, loop = false
 
 		}
 		);
-		setReady(true);
 		return newItems
 		}
 
