@@ -19,19 +19,18 @@ import CardImage from "@/components/Cards/CardImage";
 import React, { Suspense } from "react";
 import { Metadata } from "next";
 import ImageLoader from "@/components/ImageLoader";
-import imgVideo from "@/public/website_promo_6.png";
 import { FallBackImgSvg } from "@/components/Icons";
 
 export const metadata: Metadata = {
-    title: 'EXPERT MEDICAL CARE IN THE COMFORT OF A LUXURY RETREAT',
+    title: 'Expert medical care in the comfort of a luxury retreat',
     description: '',
     twitter: {
-        title: "EXPERT MEDICAL CARE IN THE COMFORT OF A LUXURY RETREAT",
+        title: 'Expert medical care in the comfort of a luxury retreat',
         images: [slideCardImg3.src, slideCardImg2.src, slideCardImg.src]
     },
 
     openGraph: {
-        title: 'EXPERT MEDICAL CARE IN THE COMFORT OF A LUXURY RETREAT',
+        title: 'Expert medical care in the comfort of a luxury retreat',
         description: '',
         url: new URL('https://www.nestrecovery.me'),
         siteName: 'Nest Recovery',
@@ -74,7 +73,7 @@ export default function Home() {
     const ar = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} key={index+100}
         image={item} />);
     ar.push(<CardImage  image={""} style={'card-benefit'} svg={<FallBackImgSvg />} key={123}/>);
-    console.log(ar)
+    // console.log(ar)
   return (
       <main className={'page-index'}>
             <Section
@@ -133,10 +132,10 @@ export default function Home() {
                             width: "100%",
                             height: "100%",
                             objectFit: "cover"
-                        }} src={imgVideo}
+                        }} src={'https://vz-59c0616c-d60.b-cdn.net/7a653335-5206-4697-9f2e-29c2b4d6c6a8/preview.webp?v=1692318995'}
                             width={1280}
                             height={720}
-                            alt={''} quality={10}/>}  auto={false} src={'https://vz-e4c6a631-24a.b-cdn.net/d63ce74f-f167-499e-94ca-d6ef72d71de6/playlist.m3u8?v=1691622133'} />
+                            alt={''} quality={10}/>}  auto={true} title={'Breathtaking canyon views'} muted={true} src={'https://vz-59c0616c-d60.b-cdn.net/7a653335-5206-4697-9f2e-29c2b4d6c6a8/playlist.m3u8?v=1692318995'} />
                     </Suspense>
                     // <VideoPlayer muted={true}  poster={<Image  style={{
                     //     zIndex: 4,

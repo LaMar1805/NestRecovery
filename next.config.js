@@ -8,7 +8,7 @@ const nextConfig = {
 			remotePatterns: [
 				{
 
-					hostname: 'res.cloudinary.com',
+					hostname: 'vz-59c0616c-d60.b-cdn.net',
 
 				},
 			],
@@ -18,7 +18,6 @@ const nextConfig = {
 
 
 	env: {
-		REACT_APP_CLOUDINARY_CLOUD_NAME: 'dpiuthi6q',
 		baseUrl: process.env.NODE_ENV === "development" ? 'http://localhost:3000' : 'https://www.nestrecovery.me'
 	}
 }

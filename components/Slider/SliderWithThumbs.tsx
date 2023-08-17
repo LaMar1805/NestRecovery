@@ -1,6 +1,6 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, Thumbs, Controller, FreeMode, } from 'swiper/modules';
+import { Autoplay, Controller, FreeMode, Navigation, Pagination, Thumbs, } from 'swiper/modules';
 // import Swiper and modules styles
 import { Swiper as SwiperCore } from 'swiper/types';
 import 'swiper/css';
@@ -63,7 +63,8 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 
 				</Swiper>
 
-				{	// @ts-ignore
+				{		// @ts-ignore
+
 					firstSwiper?.params.navigation && (<>
 					<Arrow	// @ts-ignore
 						action={() => firstSwiper?.slideNext()} style={'forward'} />

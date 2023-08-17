@@ -23,7 +23,7 @@ const ImageLoader = ({src, srcMobile, handleAction, alt, style = {}}: {style?: {
 		setimgReady(false);
 		if(!isServer && windowDimensions.type) {
 			if(windowDimensions.state) {
-				setImag(srcMobile);
+				setImag(srcMobile ? srcMobile : src);
 			} else setImag(src)
 		}
 		setimgReady(true);
@@ -37,7 +37,7 @@ const ImageLoader = ({src, srcMobile, handleAction, alt, style = {}}: {style?: {
 
 	return imgReady && <Image
 
-		style={style}
+		style={{ objectFit: "cover", ...style }}
 		// @ts-ignore
 		src={imag}
 		// @ts-ignore

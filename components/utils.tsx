@@ -25,8 +25,8 @@ const useWindowDimensions = (): WindowDimentions => {
 			setWindowDimensions({
 				width: window.innerWidth,
 				height: window.innerHeight,
-				type: screen.orientation.type ||  window.innerWidth > window.innerHeight,
-				state: (screen.orientation.type.includes('portrait') || window.innerWidth < window.innerHeight)
+				type: screen.orientation?.type ?? 'portrait-primary',
+				state: (screen.orientation?.type.includes('portrait') || window.innerWidth < window.innerHeight)
 			});
 		}
 		handleResize();
