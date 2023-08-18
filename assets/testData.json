@@ -1121,8 +1121,8 @@
     },
     "menuLinks": [
       {
-        "text": "Home",
-        "link": "/"
+        "text": "Rooms",
+        "link": "/rooms"
       },
       {
         "text": "Care",
