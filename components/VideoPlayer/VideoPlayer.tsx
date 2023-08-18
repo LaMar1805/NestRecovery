@@ -110,9 +110,20 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = fal
                   fallback={poster}
                    playsinline={true}
                   onProgress={handleProgress}
-                    onPlay={handlePlay}
-                    onPause={handlePause}
-
+                onPlay={handlePlay}
+                onPause={handlePause}
+                config={{
+                    file: {
+                        forceHLS: true,
+                        forceSafariHLS: true,
+                        hlsOptions: {
+                            // abrMaxWithRealBitrate: true,
+                            minAutoBitrate: 2000000,
+                            capLevelToPlayerSize: true
+                        }
+                    }
+                    }
+                }
                   url={state.url}
                   ref={videoRef}
                   />
