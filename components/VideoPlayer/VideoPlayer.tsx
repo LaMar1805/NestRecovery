@@ -36,10 +36,11 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
         if (state.url === "") {
             setUrl();
             setLoaded(true);
-            muted ?  setMute(muted) : () => void
-            auto ? handlePlay() : handlePause();
+
         }
         if(inView) {
+            muted ?  setMute(muted) : () => void
+                auto ? handlePlay() : handlePause();
             auto ? handlePlay() : handlePause();
         } else {
             handlePause()
