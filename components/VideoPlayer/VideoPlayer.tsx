@@ -56,7 +56,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
 
     const setMute = (state:boolean) => {  setState((prevState) => ({
             ...prevState,
-            volume: state ? 0 : 1,
+            volume: state ? 1 : 0,
             muted: state
         }));
     }
