@@ -35,11 +35,10 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
     useEffect(() => {
 
 
-        if (!state.url) {
-            setUrl();
+        setUrl();
 
-            muted ?  setMute(true) : setMute(false)
-        }
+        muted ?  setMute(true) : setMute(false)
+
         muted ?  setMute(true) : setMute(false)
 
     }, []);
