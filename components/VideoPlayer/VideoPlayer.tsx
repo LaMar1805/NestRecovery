@@ -119,7 +119,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
           <div className={'video_player_media'}>
 
                <ReactPlayer
-
+                   ref={videoRef}
                   playbackRate={state.playbackRate}
                   loop={state.loop}
                   width={'100%'}
@@ -142,6 +142,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
                         forceHLS: true,
                         forceSafariHLS: true,
                         hlsOptions: {
+
                             // abrMaxWithRealBitrate: true,
                             minAutoBitrate: 2000000,
                             capLevelToPlayerSize: true
@@ -150,7 +151,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
                     }
                 }
                   url={state.url}
-                  ref={videoRef}
+
                    // autoPlay={state.playing}
 
                   />
