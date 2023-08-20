@@ -37,6 +37,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
 
         if (!state.url) {
             setUrl();
+
             muted ?  setMute(true) : setMute(false)
         }
         muted ?  setMute(true) : setMute(false)
@@ -57,10 +58,11 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
 
 
     const setUrl = () => {
+
         const playerInternal = videoRef.current.getInternalPlayer('hls')
         console.log(playerInternal?.bufferController?.hls.bufferController.media.canPlayType('application/vnd.apple.mpegurl'))
         let videoSrc = src;
-        playerInternal.supports('')
+
         //
         // First check for native browser HLS support
         //
@@ -104,7 +106,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
             playing: true,
 
         }));
-        const hls = videoRef.current.getInternalPlayer('hls')
+        // const hls = videoRef.current.getInternalPlayer('hls')
 
         // console.log(hls.bufferController.media.canPlayType('application/vnd.apple.mpegurl'))
     };
@@ -150,7 +152,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
                    volume={state.volume}
                   className='react-player'
                   playing={state.playing}
-                  // fallback={poster}
+                  fallback={poster}
                    playsinline={true}
                   onProgress={handleProgress}
                 onPlay={handlePlay}
@@ -163,7 +165,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
                         // forceHLS: true,
                         // @ts-ignore
                         // forceDisableHls: true,
-                        // forceSafariHLS: true,
+                        forceSafariHLS: !muted,
                         hlsOptions: {
                                 // debug: true,
                             // abrMaxWithRealBitrate: true,

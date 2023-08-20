@@ -257,7 +257,7 @@
 	  }
 
 	  .video_player_media {
-		aspect-ratio: 128/72;
+		//aspect-ratio: 128/72;
 		position: relative;
 		padding: 0.75rem 0 2.25rem;
 	  }
@@ -267,10 +267,21 @@
 	  .video_player__title {
 		font-size: 1.5rem;
 		bottom: 2rem;
+		left: 2rem;
+		right: 2rem;
+		z-index: 20;
+		text-align: center;
 	  }
 
 	  .video_player_controls {
-		bottom: 2rem;
+		bottom: 6rem;
+		left: 2rem;
+		right: 2rem;
+		z-index: 20;
+		text-align: center;
+		a:not([class*="playing"]) {
+		  display: none;
+		}
 	  }
 	}
   }

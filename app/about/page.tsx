@@ -4,10 +4,11 @@ import Link from "next/link";
 import fallbackImg from "@/assets/images/lena.png";
 import svgImg from "@/assets/svg/lena_kaminski.svg";
 import ImageLoader from "@/components/ImageLoader";
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import { Metadata } from "next";
 import testData from "@/assets/testData.json";
 import dynamic from "next/dynamic";
+import imgVideo from "@/public/nest_promo_1.png";
 
 const ComponentC = dynamic(() => import('@/components/VideoPlayer/VideoPlayer'), {ssr: false})
 export const metadata: Metadata = {
@@ -42,7 +43,15 @@ export default function AboutPage() {
                 container={false}
                 title={<h1 className={'section__title'}>About Nest Recovery</h1>}
                 gallery={<Suspense>
-                 <ComponentC  muted={false} auto={false} src={'https://vz-59c0616c-d60.b-cdn.net/288586aa-5453-4518-98b6-fad98f70d902/playlist.m3u8?v=1692319165'} />
+                 <ComponentC poster={<Image  style={{
+                     zIndex: 4,
+                     width: "100%",
+                     height: "100%",
+                     objectFit: "cover"
+                 }} src={imgVideo}
+                     width={1280}
+                     height={720}
+                     alt={''} quality={10}/>}  muted={false} auto={false} src={'https://vz-59c0616c-d60.b-cdn.net/288586aa-5453-4518-98b6-fad98f70d902/playlist.m3u8?v=1692319165'} />
                 </Suspense>}
             />
             <Section
