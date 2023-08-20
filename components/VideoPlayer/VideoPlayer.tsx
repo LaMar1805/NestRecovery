@@ -17,7 +17,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
         playing: false,
         controls: false,
         light: false,
-        volume: 0.8,
+        volume: 1,
         muted: true,
         seeking: false,
         played: 0,
@@ -35,18 +35,24 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
 
         if (state.url === "") {
             setUrl();
+            muted ?  setMute(true) : setMute(false)
             setLoaded(true);
 
         }
-        if(inView) {
-            muted ?  setMute(muted) : () => void
-                auto ? handlePlay() : handlePause();
-            auto ? handlePlay() : handlePause();
-        } else {
-            handlePause()
-        }
+
+    }, []);
+     useEffect(() => {
+
+         if(inView) {
+
+             auto ? handlePlay() : handlePause();
+
+         } else {
+             handlePause()
+         }
 
     }, [inView]);
+
     const setUrl = () => {
         setState((prevState) => ({
             ...prevState,
@@ -56,9 +62,10 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
 
     const setMute = (state:boolean) => {  setState((prevState) => ({
             ...prevState,
-            volume: state ? 1 : 0,
+            volume: state ? 0 : 1,
             muted: state
         }));
+        loaded && (videoRef.current.volume = state ? 0 : 1)
     }
     const handlePause = () => {
 
@@ -109,11 +116,11 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
                    muted={muted}
                    controls={state.controls}
                   height={'100%'}
-                   volume={1}
+                   volume={state.volume}
                   className='react-player'
                   playing={state.playing}
                   // fallback={poster}
-                   playsinline={true}
+                  //  playsinline={true}
                   onProgress={handleProgress}
                 onPlay={handlePlay}
                 onPause={handlePause}

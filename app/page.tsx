@@ -23,7 +23,7 @@ import Image from "next/image";
 import imgVideo from "@/public/website_promo_6.png"
 import dynamic from "next/dynamic";
 
-const ComponentC = dynamic(() => import('../components/VideoPlayer/VideoPlayer'), )
+const ComponentC = dynamic(() => import('../components/VideoPlayer/VideoPlayer'), {ssr: false})
 export const metadata: Metadata = {
     title: testData.data.meta.home.title,
     description: testData.data.meta.home.description,
@@ -116,7 +116,7 @@ export default function Home() {
                 text={<div className={'section__text'}><strong>10 minutes</strong> away from multiple top plastic surgery clinics in the LA area</div>}
                 gallery={
                     <Suspense>
-                        <ComponentC auto={true} poster={<Image  style={{
+                        <ComponentC poster={<Image  style={{
                                 zIndex: 4,
                                 width: "100%",
                                 height: "100%",
@@ -126,7 +126,7 @@ export default function Home() {
                                 height={720}
                                 alt={''} quality={10}/>}
 
-                                title={'Breathtaking canyon views'}  btn={true} muted={true} src={'https://vz-59c0616c-d60.b-cdn.net/7a653335-5206-4697-9f2e-29c2b4d6c6a8/playlist.m3u8?v=1692318995'} />
+                                title={'Breathtaking canyon views'}  btn={true} muted={true} auto={true} src={'https://vz-59c0616c-d60.b-cdn.net/7a653335-5206-4697-9f2e-29c2b4d6c6a8/playlist.m3u8?v=1692318995'} />
                     </Suspense>
                     // <VideoPlayer muted={true}  poster={<Image  style={{
                     //     zIndex: 4,

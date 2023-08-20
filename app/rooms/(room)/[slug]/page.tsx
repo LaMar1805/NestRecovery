@@ -94,7 +94,7 @@ export default function RoomPage({ params: {slug} }: { params: { slug: string } 
 				container={false}
 				variant={'section-gallery section-room_gallery grid'}
 				gallery={imgt &&
-						<SliderWithThumbs thumbs={true} items={[...imgt]} navigation={false}
+						<SliderWithThumbs thumbs={true} items={[...imgt, ...imgt, ...imgt, ...imgt]} navigation={false}
 							pagination={true}
 							breakpoints={{
 							// when window width is >= 320px
