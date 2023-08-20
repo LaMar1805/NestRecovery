@@ -2,7 +2,7 @@ import Image, { ImageProps } from "next/image";
 import React from "react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-const ImageLoader = ({src, srcMobile, handleAction, init = false, alt, style = {}}: {style?: {}, init?:boolean, src: StaticImport | ImageProps | any, srcMobile?: StaticImport | ImageProps  | any,alt: string, handleAction?: any }) => {
+const ImageLoader = ({src, srcMobile, handleAction, init = false, alt, style = {},...props}: {style?: {}, init?:boolean, src: StaticImport | ImageProps | any, srcMobile?: StaticImport | ImageProps  | any,alt: string, handleAction?: any }) => {
 
 	return <Image
 
@@ -25,6 +25,7 @@ const ImageLoader = ({src, srcMobile, handleAction, init = false, alt, style = {
 		// blurDataURL={`/_next/image?url=${src.src}&w=${640}&q=10`}
 		// @ts-ignore
 		// quality={90}
+		{...props}
 		alt={alt} />;
 
 }

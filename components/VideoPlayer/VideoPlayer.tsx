@@ -60,7 +60,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
     const setUrl = () => {
 
         const playerInternal = videoRef.current.getInternalPlayer('hls')
-        console.log(playerInternal?.bufferController?.hls.bufferController.media.canPlayType('application/vnd.apple.mpegurl'))
+        // console.log(playerInternal?.bufferController?.hls.bufferController.media.canPlayType('application/vnd.apple.mpegurl'))
         let videoSrc = src;
 
         //

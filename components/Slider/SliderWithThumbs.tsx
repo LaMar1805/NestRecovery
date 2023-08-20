@@ -38,7 +38,7 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 					spaceBetween={spaceBetween}
 					// @ts-ignore
 					onSwiper={(swiper) => setFirstSwiper(swiper)}
-					loop={true}
+
 
 					// navigation={firstSwiper.navigation}
 					// controller={{ control: secondSwiper }}
@@ -54,7 +54,7 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 						clickable: true}
 					}
 					slidesPerView={perView}
-					className={"swiper__full_slide"}
+					className={"swiper__full_slide mySwiper2"}
 					breakpoints={breakpoints}
 
 				>
@@ -79,25 +79,33 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 
 
 			{thumbs &&	<div className={'section__thumbs'}> <Swiper
-				modules={[FreeMode, Pagination, Thumbs, Controller]}
+				modules={[FreeMode, Pagination, Thumbs]}
 				// @ts-ignore
 				onSwiper={setThumbsSwiper}
 				// slidesPerView={6}
 				spaceBetween={30}
-				loop={true}
+
 				// loop
-				centeredSlides={true}
+				// centeredSlides={true}
 				// pagination={{ enabled: pagination, clickable: true, bulletClass: 'custom__bullet', bulletActiveClass: 'custom_bullet_active' }}
-				watchSlidesProgress
+
+
+				slidesPerView={2}
+				freeMode={true}
+				watchOverflow={true}
 				// controller={{ control: firstSwiper }}
-				className={'swiper__thumbs'}
+				className={'mySwiper'}
+
 				breakpoints={{
 					// when window width is >= 320px
 					320: {
-						loop: true,
-						slidesPerView: 2,
+						loop: false,
+						slidesPerView: 3,
 						spaceBetween: 10,
-						navigation: false,
+						freeMode: true,
+						watchSlidesProgress:true,
+						centeredSlides: false,
+						navigation: true,
 						pagination: {
 							dynamicBullets: true
 						}
@@ -111,12 +119,19 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 
 					},
 					1200: {
-						slidesPerView: 6,
+						// freeMode: false,
+						watchSlidesProgress:true,
+						loop: false,
+						slidesPerView: "auto",
 						spaceBetween: 20,
 						centeredSlides: false,
 					},
 					1400: {
-						slidesPerView: 8,
+						setWrapperSize: true,
+						freeMode: false,
+						watchSlidesProgress:true,
+						loop: false,
+						slidesPerView: "auto",
 						spaceBetween: 30,
 						centeredSlides: false,
 					},
@@ -125,6 +140,7 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 				}
 
 			>
+
 				{items.map((item:ReactNode, index: number) => <SwiperSlide  className={'section-screen__slide'} key={index}>{item}</SwiperSlide>)}
 			</Swiper>	</div>}
 

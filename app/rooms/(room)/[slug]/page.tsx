@@ -9,8 +9,10 @@ import RoomFeatures from "@/components/RoomFeatures/RoomFeatures";
 import AccordionList from "@/components/Accordion/Accordion";
 import { DefList } from "@/components/ui/Elements";
 import Image from "next/image";
-import SliderWithThumbs from "@/components/Slider/SliderWithThumbs";
 
+import dynamic from "next/dynamic";
+
+const SliderWithThumbs = dynamic(() => import('@/components/Slider/SliderWithThumbs'), {ssr: false})
 
 export default function RoomPage({ params: {slug} }: { params: { slug: string } }) {
 
@@ -29,9 +31,9 @@ export default function RoomPage({ params: {slug} }: { params: { slug: string } 
 	const imgt = room.images.gallery && room.images.gallery.map((item, index) => <ImageLoader key={index}
 		   style={{
 
-		objectFit: "cover",
+		// objectFit: "cover",
 		width: '100%',
-	}}  src={item} alt={''}  /> );
+	}} src={item} alt={''}  /> );
 
 	// @ts-ignore
 	return (
@@ -94,15 +96,16 @@ export default function RoomPage({ params: {slug} }: { params: { slug: string } 
 				container={false}
 				variant={'section-gallery section-room_gallery grid'}
 				gallery={imgt &&
-						<SliderWithThumbs thumbs={true} items={[...imgt, ...imgt, ...imgt, ...imgt]} navigation={false}
+						<SliderWithThumbs thumbs={true} items={imgt} navigation={false}
 							pagination={true}
 							breakpoints={{
 							// when window width is >= 320px
 							320: {
-								loop: true,
+								loop: false,
 								slidesPerView: 1,
 								spaceBetween: 0,
-								navigation: false
+								navigation: false,
+								// freeMode: true,
 							},
 
 
