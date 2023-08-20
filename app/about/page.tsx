@@ -42,7 +42,11 @@ export default function AboutPage() {
                 container={false}
                 title={<h1 className={'section__title'}>About Nest Recovery</h1>}
                 gallery={<Suspense>
-                 <ComponentC  muted={false} auto={false} src={'https://vz-59c0616c-d60.b-cdn.net/288586aa-5453-4518-98b6-fad98f70d902/playlist.m3u8?v=1692319165'} />
+                 <ComponentC  muted={false} auto={false}
+                     // src={'https://vz-59c0616c-d60.b-cdn.net/288586aa-5453-4518-98b6-fad98f70d902/playlist.m3u8?v=1692319165'}
+                     srcId={'288586aa-5453-4518-98b6-fad98f70d902'}
+                     src={'https://vz-59c0616c-d60.b-cdn.net/288586aa-5453-4518-98b6-fad98f70d902/play_720p.mp4'}
+                 />
                 </Suspense>}
             />
             <Section
