@@ -82,18 +82,13 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 				modules={[FreeMode, Pagination, Thumbs]}
 				// @ts-ignore
 				onSwiper={setThumbsSwiper}
-				// slidesPerView={6}
-				spaceBetween={30}
 
-				// loop
-				// centeredSlides={true}
-				// pagination={{ enabled: pagination, clickable: true, bulletClass: 'custom__bullet', bulletActiveClass: 'custom_bullet_active' }}
+				spaceBetween={30}
 
 
 				slidesPerView={2}
 				freeMode={true}
 				watchOverflow={true}
-				// controller={{ control: firstSwiper }}
 				className={'mySwiper'}
 
 				breakpoints={{

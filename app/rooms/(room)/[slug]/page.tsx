@@ -29,10 +29,11 @@ export default function RoomPage({ params: {slug} }: { params: { slug: string } 
 	});
 
 	const imgt = room.images.gallery && room.images.gallery.map((item, index) => <ImageLoader key={index}
-		   style={{
 
+		   style={{
+			// maxWidth: "100%"
 		// objectFit: "cover",
-		width: '100%',
+		// width: '100%',
 	}} src={item} alt={''}  /> );
 
 	// @ts-ignore
