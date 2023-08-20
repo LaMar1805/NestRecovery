@@ -17,8 +17,8 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
         playing: false,
         controls: false,
         light: false,
-        volume: 0,
-        muted: muted,
+        volume: 0.8,
+        muted: true,
         seeking: false,
         played: 0,
         loaded: 0,
@@ -32,10 +32,11 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
     const { ref, inView } = useInView({ threshold: 1 });
     useEffect(() => {
 
-        setLoaded(true);
-        if (inView && state.url === "") {
+
+        if (state.url === "") {
             setUrl();
-            muted && setMute();
+            setLoaded(true);
+            muted ?  setMute(muted) : () => void
             auto ? handlePlay() : handlePause();
         }
         if(inView) {
@@ -48,13 +49,14 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
     const setUrl = () => {
         setState((prevState) => ({
             ...prevState,
-            url: src
+            url: src as string
         }));
     };
 
-    const setMute = () => {  setState((prevState) => ({
+    const setMute = (state:boolean) => {  setState((prevState) => ({
             ...prevState,
-            muted: true
+            volume: state ? 0 : 1,
+            muted: state
         }));
     }
     const handlePause = () => {
@@ -66,6 +68,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
 
     }
     const handlePlay = () => {
+        // videoRef.current.muted = true;
         setState((prevState) => ({
             ...prevState,
             playing: true,
@@ -99,21 +102,23 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
 
                <ReactPlayer
 
-                  muted={state.muted}
                   playbackRate={state.playbackRate}
                   loop={state.loop}
                   width={'100%'}
+                   muted={muted}
                    controls={state.controls}
                   height={'100%'}
+                   volume={1}
                   className='react-player'
                   playing={state.playing}
-                  fallback={poster}
+                  // fallback={poster}
                    playsinline={true}
                   onProgress={handleProgress}
                 onPlay={handlePlay}
                 onPause={handlePause}
                 config={{
                     file: {
+                        forceVideo: true,
                         forceHLS: true,
                         forceSafariHLS: true,
                         hlsOptions: {
@@ -126,6 +131,8 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
                 }
                   url={state.url}
                   ref={videoRef}
+
+
                   />
 
           </div>}

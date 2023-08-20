@@ -23,7 +23,7 @@ import Image from "next/image";
 import imgVideo from "@/public/website_promo_6.png"
 import dynamic from "next/dynamic";
 
-const ComponentC = dynamic(() => import('../components/VideoPlayer/VideoPlayer'))
+const ComponentC = dynamic(() => import('../components/VideoPlayer/VideoPlayer'), )
 export const metadata: Metadata = {
     title: testData.data.meta.home.title,
     description: testData.data.meta.home.description,
