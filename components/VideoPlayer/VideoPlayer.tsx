@@ -12,12 +12,12 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
     const videoRef = useRef<any>(null);
 
     const [state, setState] = useState({
-        url: "",
+        url: src,
         pip: false,
         playing: false,
         controls: false,
         light: false,
-        volume: 1,
+        volume: 0,
         muted: true,
         seeking: false,
         played: 0,
@@ -33,36 +33,46 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
     useEffect(() => {
 
 
-        if (state.url === "") {
+        if (!state.url) {
             setUrl();
-            muted ?  setMute(true) : setMute(false)
+
             setLoaded(true);
-
+            muted ?  setMute(true) : setMute(false)
         }
-
+        setLoaded(true);
     }, []);
      useEffect(() => {
 
          if(inView) {
 
-             auto ? handlePlay() : handlePause();
+             handlePlay()
 
-         } else {
+         }
+         if(!inView)  {
              handlePause()
          }
 
     }, [inView]);
+    useEffect(() => {
+
+        console.log(state)
+        console.log(  videoRef.current)
+    }, [state.playing]);
 
     const setUrl = () => {
+        console.log(videoRef.current.getInternalPlayer())
+        //@ts-ignore
         setState((prevState) => ({
             ...prevState,
             url: src as string
         }));
     };
 
-    const setMute = (state:boolean) => {  setState((prevState) => ({
+    const setMute = (state:boolean) => {
+
+        setState((prevState) => ({
             ...prevState,
-            volume: state ? 0 : 1,
+            volume:  state ?  0 : 1,
             muted: state
         }));
         loaded && (videoRef.current.volume = state ? 0 : 1)
@@ -76,8 +86,8 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
 
     }
     const handlePlay = () => {
-        // videoRef.current.muted = true;
-        setState((prevState) => ({
+        videoRef.current.player.play
+            setState((prevState) => ({
             ...prevState,
             playing: true,
 
@@ -106,26 +116,28 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
               }</a>
           </div>}
           {title && <h3 className={'video_player__title'}>{title}</h3>}
-          {loaded && <div className={'video_player_media'}>
+          <div className={'video_player_media'}>
 
                <ReactPlayer
 
                   playbackRate={state.playbackRate}
                   loop={state.loop}
                   width={'100%'}
-                   muted={muted}
+                   muted={state.muted}
                    controls={state.controls}
                   height={'100%'}
                    volume={state.volume}
                   className='react-player'
                   playing={state.playing}
                   // fallback={poster}
-                  //  playsinline={true}
+                   playsinline={true}
                   onProgress={handleProgress}
                 onPlay={handlePlay}
                 onPause={handlePause}
+
                 config={{
                     file: {
+
                         forceVideo: true,
                         forceHLS: true,
                         forceSafariHLS: true,
@@ -139,11 +151,11 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
                 }
                   url={state.url}
                   ref={videoRef}
-
+                   // autoPlay={state.playing}
 
                   />
 
-          </div>}
+          </div>
       </div>
 
 )
