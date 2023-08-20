@@ -18,7 +18,13 @@ export default function TermsPage() {
 
     return (
         <main className={'page-index '}>
-
+            <div style={{position:"relative", paddingTop: "56.25%"}}>
+                <iframe src="https://iframe.mediadelivery.net/embed/147492/288586aa-5453-4518-98b6-fad98f70d902?autoplay=false&loop=false&muted=false&preload=true"
+                    loading="lazy"
+                    style={{border:"none", position:"absolute", top:0, height:"100%", width: "100%"}}
+                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
+                    allowFullScreen={true}></iframe>
+            </div>
             <Section
                 variant={'section-place grid'}
                 container={false}
