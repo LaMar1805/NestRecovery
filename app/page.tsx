@@ -14,7 +14,7 @@ import slideCardImg3 from "@/public/images/index/3.png"
 import contactImg from "@/assets/images/Still-3 1@2x.png"
 import { DefList } from "@/components/ui/Elements";
 import CardImage from "@/components/Cards/CardImage";
-import React from "react";
+import React, { Suspense } from "react";
 import { Metadata } from "next";
 import ImageLoader from "@/components/ImageLoader";
 import { FallBackImgSvg } from "@/components/Icons";
@@ -115,7 +115,7 @@ export default function Home() {
                 title={<h2 className={'section__title'}>9653 Highridge Dr<strong>Beverly Hills, CA 90210</strong></h2>}
                 text={<div className={'section__text'}><strong>10 minutes</strong> away from multiple top plastic surgery clinics in the LA area</div>}
                 gallery={
-
+                    <Suspense>
                         <ComponentC auto={true} poster={<Image  style={{
                                 zIndex: 4,
                                 width: "100%",
@@ -126,7 +126,7 @@ export default function Home() {
                                 height={720}
                                 alt={''} quality={10}/>}
                                 title={'Breathtaking canyon views'} btn={true} muted={true} src={'https://vz-59c0616c-d60.b-cdn.net/7a653335-5206-4697-9f2e-29c2b4d6c6a8/playlist.m3u8?v=1692318995'} />
-
+                    </Suspense>
                     // <VideoPlayer muted={true}  poster={<Image  style={{
                     //     zIndex: 4,
                     //     width: "100%",

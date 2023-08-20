@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 import ReactPlayer from "react-player";
 import { OnProgressProps } from "react-player/base";
 
-const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = false}:{src:string, title?: string, auto?: boolean, btn?: boolean, poster?:  React.ReactElement, muted?: boolean}) => {
+const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = true}:{src:string, title?: string, auto?: boolean, btn?: boolean, poster?:  React.ReactElement, muted?: boolean}) => {
 
     const [loaded, setLoaded] = useState(false);
     const videoRef = useRef<any>(null);
@@ -18,7 +18,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = fal
         controls: false,
         light: false,
         volume: 0,
-        muted: false,
+        muted: muted,
         seeking: false,
         played: 0,
         loaded: 0,
