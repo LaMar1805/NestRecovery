@@ -5,7 +5,7 @@ import styles from './VideoPlayer.module.scss';
 import { useInView } from "react-intersection-observer";
 import ReactPlayer from "react-player";
 import { OnProgressProps } from "react-player/base";
-import hls from 'hls.js'
+
 import Hls from 'hls.js'
 
 const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = true}:{src:string, title?: string, auto?: boolean, btn?: boolean, poster?:  React.ReactElement, muted?: boolean}) => {
@@ -31,15 +31,15 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
     })
 
     // console.log(fetchVideo())
-    const { ref, inView } = useInView({ threshold: 1, initialInView: false });
+    const { ref, inView } = useInView({ threshold: 1 });
     useEffect(() => {
-
-
-        setUrl();
-
         muted ?  setMute(true) : setMute(false)
 
-        muted ?  setMute(true) : setMute(false)
+
+        setUrl(src);
+
+
+
 
     }, []);
      useEffect(() => {
@@ -56,25 +56,32 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
     }, [inView]);
 
 
-    const setUrl = () => {
+    const setUrl = (source:string) => {
 
         const playerInternal = videoRef.current.getInternalPlayer('hls')
         // console.log(playerInternal?.bufferController?.hls.bufferController.media.canPlayType('application/vnd.apple.mpegurl'))
-        let videoSrc = src;
-
+        let videoSrc = source;
+        console.log(playerInternal?.bufferController?.hls.bufferController.media.canPlayType('application/vnd.apple.mpegurl'))
         //
         // First check for native browser HLS support
         //
         if (playerInternal?.bufferController?.hls.bufferController.media.canPlayType('application/vnd.apple.mpegurl')) {
             playerInternal.src = videoSrc;
-
+            console.log('apple')
             //
             // If no native HLS support, check if HLS.js is supported
             //
         } else if (Hls.isSupported()) {
+            console.log('hls')
             let hls = new Hls();
             hls.loadSource(videoSrc);
             hls.attachMedia(playerInternal);
+        } else {
+            setState((prevState) => ({
+                ...prevState,
+                url: src as string
+            }));
+
         }
         //@ts-ignore
 
@@ -99,7 +106,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
 
     }
     const handlePlay = () => {
-        videoRef.current.player.play
+
             setState((prevState) => ({
             ...prevState,
             playing: true,
@@ -150,7 +157,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
                    volume={state.volume}
                   className='react-player'
                   playing={state.playing}
-                  fallback={poster}
+                  // fallback={poster}
                    playsinline={true}
                   onProgress={handleProgress}
                 onPlay={handlePlay}
@@ -163,7 +170,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
                         // forceHLS: true,
                         // @ts-ignore
                         // forceDisableHls: true,
-                        forceSafariHLS: !muted,
+                        forceSafariHLS: !auto,
                         hlsOptions: {
                                 // debug: true,
                             // abrMaxWithRealBitrate: true,
