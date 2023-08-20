@@ -146,7 +146,6 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
                    controls={state.controls}
                   height={'100%'}
                    onReady={(player) => {
-                       console.log(player.getInternalPlayer('hls'))
                        setLoaded(true)
                    }}
                    volume={state.volume}
