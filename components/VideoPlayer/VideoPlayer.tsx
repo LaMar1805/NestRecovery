@@ -112,7 +112,6 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = fal
                   onProgress={handleProgress}
                 onPlay={handlePlay}
                 onPause={handlePause}
-
                 config={{
                     file: {
                         forceHLS: true,

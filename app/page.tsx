@@ -12,15 +12,18 @@ import slideCardImg from "@/public/images/index/1.png"
 import slideCardImg2 from "@/public/images/index/2.png"
 import slideCardImg3 from "@/public/images/index/3.png"
 import contactImg from "@/assets/images/Still-3 1@2x.png"
-import VideoPlayerC from "@/components/VideoPlayer/VideoPlayer";
 import { DefList } from "@/components/ui/Elements";
 import CardImage from "@/components/Cards/CardImage";
-import React, { Suspense } from "react";
+import React from "react";
 import { Metadata } from "next";
 import ImageLoader from "@/components/ImageLoader";
 import { FallBackImgSvg } from "@/components/Icons";
 import { cookies } from "next/headers";
+import Image from "next/image";
+import imgVideo from "@/public/website_promo_6.png"
+import dynamic from "next/dynamic";
 
+const ComponentC = dynamic(() => import('../components/VideoPlayer/VideoPlayer'))
 export const metadata: Metadata = {
     title: testData.data.meta.home.title,
     description: testData.data.meta.home.description,
@@ -49,7 +52,7 @@ export default function Home() {
 
     const cookieStore = cookies()
     const device = cookieStore.get('device');
-    console.log('device', device?.value)
+
     const imagesImages = [slideImg,slideImg2,slideImg3];
     const imagesMobImages = [slideMobImg,slideMobImg2,slideMobImg3];
     const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
@@ -112,9 +115,18 @@ export default function Home() {
                 title={<h2 className={'section__title'}>9653 Highridge Dr<strong>Beverly Hills, CA 90210</strong></h2>}
                 text={<div className={'section__text'}><strong>10 minutes</strong> away from multiple top plastic surgery clinics in the LA area</div>}
                 gallery={
-                    <Suspense>
-                        <VideoPlayerC auto={true} title={'Breathtaking canyon views'} btn={true} muted={true} src={'https://vz-59c0616c-d60.b-cdn.net/7a653335-5206-4697-9f2e-29c2b4d6c6a8/playlist.m3u8?v=1692318995'} />
-                    </Suspense>
+
+                        <ComponentC auto={true} poster={<Image  style={{
+                                zIndex: 4,
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "cover"
+                            }} src={imgVideo}
+                                width={1280}
+                                height={720}
+                                alt={''} quality={10}/>}
+                                title={'Breathtaking canyon views'} btn={true} muted={true} src={'https://vz-59c0616c-d60.b-cdn.net/7a653335-5206-4697-9f2e-29c2b4d6c6a8/playlist.m3u8?v=1692318995'} />
+
                     // <VideoPlayer muted={true}  poster={<Image  style={{
                     //     zIndex: 4,
                     //     width: "100%",
