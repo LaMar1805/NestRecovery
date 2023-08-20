@@ -5,6 +5,8 @@ import styles from './VideoPlayer.module.scss';
 import { useInView } from "react-intersection-observer";
 import ReactPlayer from "react-player";
 import { OnProgressProps } from "react-player/base";
+import hls from 'hls.js'
+import Hls from 'hls.js'
 
 const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = true}:{src:string, title?: string, auto?: boolean, btn?: boolean, poster?:  React.ReactElement, muted?: boolean}) => {
 
@@ -29,43 +31,52 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
     })
 
     // console.log(fetchVideo())
-    const { ref, inView } = useInView({ threshold: 1 });
+    const { ref, inView } = useInView({ threshold: 1, initialInView: false });
     useEffect(() => {
 
 
         if (!state.url) {
             setUrl();
-
-            setLoaded(true);
             muted ?  setMute(true) : setMute(false)
         }
-        setLoaded(true);
+        muted ?  setMute(true) : setMute(false)
+
     }, []);
      useEffect(() => {
 
-         if(inView) {
+         if(inView && auto) {
 
              handlePlay()
 
          }
-         if(!inView)  {
+         if(!inView  && auto)  {
              handlePause()
          }
 
     }, [inView]);
-    useEffect(() => {
 
-        console.log(state)
-        console.log(  videoRef.current)
-    }, [state.playing]);
 
     const setUrl = () => {
-        console.log(videoRef.current.getInternalPlayer())
+        const playerInternal = videoRef.current.getInternalPlayer('hls')
+
+        let videoSrc = src;
+
+        //
+        // First check for native browser HLS support
+        //
+        if (playerInternal?.bufferController?.hls.bufferController.media.canPlayType('application/vnd.apple.mpegurl')) {
+            playerInternal.src = videoSrc;
+
+            //
+            // If no native HLS support, check if HLS.js is supported
+            //
+        } else if (Hls.isSupported()) {
+            let hls = new Hls();
+            hls.loadSource(videoSrc);
+            hls.attachMedia(playerInternal);
+        }
         //@ts-ignore
-        setState((prevState) => ({
-            ...prevState,
-            url: src as string
-        }));
+
     };
 
     const setMute = (state:boolean) => {
@@ -75,7 +86,8 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
             volume:  state ?  0 : 1,
             muted: state
         }));
-        loaded && (videoRef.current.volume = state ? 0 : 1)
+
+        // loaded && (videoRef.current.volume = state ? 0 : 1)
     }
     const handlePause = () => {
 
@@ -92,6 +104,9 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
             playing: true,
 
         }));
+        const hls = videoRef.current.getInternalPlayer('hls')
+
+        // console.log(hls.bufferController.media.canPlayType('application/vnd.apple.mpegurl'))
     };
     const togglePlay = () => {
         if(state.playing) {
@@ -109,6 +124,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
     };
 
 
+    // @ts-ignore
     return (
       <div className={'video_player'} ref={ref}>
           {state.url !== "" &&  <div className={'video_player_controls'} data-playing={state.playing} onClick={togglePlay}>
@@ -119,6 +135,7 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
           <div className={'video_player_media'}>
 
                <ReactPlayer
+
                    ref={videoRef}
                   playbackRate={state.playbackRate}
                   loop={state.loop}
@@ -126,6 +143,10 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
                    muted={state.muted}
                    controls={state.controls}
                   height={'100%'}
+                   onReady={(player) => {
+                       console.log(player.getInternalPlayer('hls'))
+                       setLoaded(true)
+                   }}
                    volume={state.volume}
                   className='react-player'
                   playing={state.playing}
@@ -140,9 +161,11 @@ const VideoPlayerC = ({src, title, btn = false, auto = true, poster, muted = tru
 
                         forceVideo: true,
                         forceHLS: true,
+                        // @ts-ignore
+                        forceDisableHls: true,
                         forceSafariHLS: true,
                         hlsOptions: {
-
+                                // debug: true,
                             // abrMaxWithRealBitrate: true,
                             minAutoBitrate: 2000000,
                             capLevelToPlayerSize: true
