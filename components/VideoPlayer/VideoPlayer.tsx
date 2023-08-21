@@ -40,12 +40,15 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
 
         muted ?  setMute(true) : setMute(false)
 
-        if(width) {
+        if(width && width > 0) {
             let source = resolutionQuality(width);
+            // @ts-ignore
             console.log(source.length > 0)
+            // @ts-ignore
             if(source.length > 0) {
+                // @ts-ignore
                 setSourceC({source});
-
+                // @ts-ignore
                 setUrl(source)
             }
 
@@ -71,6 +74,7 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
 
 
     const setUrl = (source: string | []) => {
+        // @ts-ignore
         setState((prevState) => ({
             ...prevState,
             url: source
@@ -114,6 +118,7 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
             handlePlay()
         }
     }
+    // @ts-ignore
     const handleProgress = (state: OnProgressProps) => {
 
         if(state.played > 0.99) {
