@@ -4,6 +4,7 @@
  */
 'use client'
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
+import signUrl from "@/components/getToken";
 
 type WindowDimentions = {
 	width: number | undefined;
@@ -11,6 +12,11 @@ type WindowDimentions = {
 	state: Promise<boolean> | boolean | undefined;
 };
 
+export const token = () => {
+	var securityKey = "229248f0-f007-4bf9-ba1f-bbf1b4ad9d40";
+	var signedUrl = signUrl("https://token-tester.b-cdn.net/300kb.jpg", securityKey, 7200, "", false, "/", "CA,US", "JP");
+	return signedUrl
+}
 export const isServer = typeof window === 'undefined';
 const useWindowDimensions = (): WindowDimentions => {
 	const [windowDimensions, setWindowDimensions] = useState<WindowDimentions>({

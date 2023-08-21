@@ -50,6 +50,7 @@ export default function RoomPage({ params: {slug} }: { params: { slug: string } 
 				</div>}
 				gallery={
 					<div className={'section__image'}>{room.images.screen && <ImageLoader
+						layout={"fill"}
 						style={{
 							maxWidth: '100%',
 							objectFit: "cover",
