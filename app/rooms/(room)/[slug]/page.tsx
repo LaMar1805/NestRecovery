@@ -37,6 +37,7 @@ export default function RoomPage({ params: {slug} }: { params: { slug: string } 
 	}} src={item} alt={''}  /> );
 
 	// @ts-ignore
+
 	return (
 		<main className={'page-room'}>
 			<Section variant={'section-screen'}
@@ -50,6 +51,7 @@ export default function RoomPage({ params: {slug} }: { params: { slug: string } 
 				</div>}
 				gallery={
 					<div className={'section__image'}>{room.images.screen && <ImageLoader
+						// @ts-ignore
 						layout={"fill"}
 						style={{
 							maxWidth: '100%',
