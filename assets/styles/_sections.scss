@@ -221,11 +221,7 @@
   .video_player {
 	aspect-ratio: 128/72;
   }
-  @media screen and (max-width: 480px) {
-	.video_player__title {
-	  font-size: 1.5rem;
-	}
-  }
+
   @media screen and (max-width: 1199px) {
 	padding: 1.5rem 0 2.5rem;
 
@@ -288,6 +284,11 @@
 		  display: none;
 		}
 	  }
+	}
+  }
+  @media screen and (max-width: 480px) {
+	.video_player__title {
+	  font-size: 1.5rem;
 	}
   }
 }
