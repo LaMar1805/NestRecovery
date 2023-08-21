@@ -4,7 +4,7 @@
  */
 'use client'
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
-import signUrl from "@/components/getToken";
+
 
 type WindowDimentions = {
 	width: number | undefined;
@@ -12,32 +12,32 @@ type WindowDimentions = {
 	state: Promise<boolean> | boolean | undefined;
 };
 
-export const token = () => {
-	var securityKey = "229248f0-f007-4bf9-ba1f-bbf1b4ad9d40";
-	var signedUrl = signUrl("https://token-tester.b-cdn.net/300kb.jpg", securityKey, 7200, "", false, "/", "CA,US", "JP");
-	return signedUrl
-}
+
 export const isServer = typeof window === 'undefined';
-export const resolutionQuality = async (width:number) => {
+export const resolutionQuality =  (width:number) => {
 
-		const videoSize = [240, 360, 480, 720, 1080, 1440, 2160];
-		// console.log(width)
-		if(width) {
-			const resQuality = (it: number) => width / 4 * 3 < it
+	const videoSize = [ 240, 360, 480, 720, 1080, 1440, 2160 ];
+	// console.log(width)
+	if (width) {
+		const resQuality = (it: number) => width / 4 * 3 < it
 
-			const qlty = () => {
-				// console.log(videoSize.findIndex(resQuality))
-				if (videoSize.findIndex(resQuality) - 1 > 0) return videoSize[videoSize.findIndex(resQuality)]
-				// console.log(videoSize.length)
-				if (videoSize.findIndex(resQuality) - 1 < 0) return videoSize[videoSize.length - 1]
-				// console.log(videoSize[videoSize.length - 1])
-			}
-
-			let quality = qlty()
-			return `/video/promo_mp4/nest_promo_${quality}p`
+		const qlty = () => {
+			console.log(videoSize.findIndex(resQuality))
+			if (videoSize.findIndex(resQuality) > 0) return videoSize[videoSize.findIndex(resQuality)]
+			console.log(videoSize.length)
+			if (videoSize.findIndex(resQuality) - 1 < 0) return videoSize[videoSize.length - 1]
+			console.log(videoSize[videoSize.length - 1])
 		}
 
+		let quality = qlty()
+		console.log(quality)
+		return [
+			{ src: `/video/promo_mp4/nest_promo_${quality}p.mp4`, type: 'video/mp4' },
+			{ src: `/video/promo_mp4/nest_promo_${quality}p.webm`, type: 'video/webm' }
+		]
 
+
+	}
 }
 const useWindowDimensions = (): WindowDimentions => {
 	const [windowDimensions, setWindowDimensions] = useState<WindowDimentions>({

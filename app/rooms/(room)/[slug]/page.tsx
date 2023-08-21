@@ -12,7 +12,7 @@ import Image from "next/image";
 
 import dynamic from "next/dynamic";
 
-const SliderWithThumbs = dynamic(() => import('@/components/Slider/SliderWithThumbs'), {ssr: false})
+const SliderWithThumbs = dynamic(() => import('@/components/Slider/SliderWithThumbs'))
 
 export default function RoomPage({ params: {slug} }: { params: { slug: string } }) {
 

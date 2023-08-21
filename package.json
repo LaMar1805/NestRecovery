@@ -22,7 +22,7 @@
     "react-cookie": "^4.1.1",
     "react-dom": "18.2.0",
     "react-intersection-observer": "^9.5.2",
-    "react-player": "^2.12.0",
+    "react-player": "2.10.0",
     "react-youtube": "^10.1.0",
     "sharp": "^0.32.2",
     "swiper": "^10.0.3",
