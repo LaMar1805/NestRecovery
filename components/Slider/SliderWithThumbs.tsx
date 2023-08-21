@@ -63,8 +63,8 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 
 				</Swiper>
 
-				{		// @ts-ignore
-
+				{
+					// @ts-ignore
 					firstSwiper?.params.navigation && (<>
 					<Arrow	// @ts-ignore
 						action={() => firstSwiper?.slideNext()} style={'forward'} />

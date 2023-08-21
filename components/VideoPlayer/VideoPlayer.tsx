@@ -5,31 +5,11 @@ import styles from './VideoPlayer.module.scss';
 import { useInView } from "react-intersection-observer";
 import ReactPlayer from "react-player";
 import { OnProgressProps } from "react-player/base";
-import useWindowDimensions from "@/components/utils";
+import useWindowDimensions, { resolutionQuality } from "@/components/utils";
 
 const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, muted = true}:{src?:string, srcId?:string, title?: string, auto?: boolean, btn?: boolean, poster?:  React.ReactElement, muted?: boolean}) => {
     const {width} = useWindowDimensions();
 
-    function calcQuality() {
-        const videoSize = [240, 360, 480, 720, 1080, 1440, 2160];
-        // console.log(enUrl)
-        if(width) {
-            const resQuality = (it: number) => width / 4 * 3 < it
-
-            const qlty = () => {
-                console.log(videoSize.findIndex(resQuality))
-                if (videoSize.findIndex(resQuality) - 1 > 0) return videoSize[videoSize.findIndex(resQuality) - 1]
-                console.log(videoSize.length)
-                if (videoSize.findIndex(resQuality) - 1 < 0) return videoSize[videoSize.length - 1]
-            }
-            console.log(qlty())
-            let quality = qlty()
-            return `https://vz-59c0616c-d60.b-cdn.net/288586aa-5453-4518-98b6-fad98f70d902/play_${quality}p.mp4`
-        }
-    }
-
-    const [loaded, setLoaded] = useState(false);
-    const [playerInt, setplayerInt] = useState(null);
     const videoRef = useRef<any>(null);
 
     const [state, setState] = useState({
@@ -55,9 +35,14 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
         muted ?  setMute(true) : setMute(false)
 
         if(width) {
-            let source = calcQuality();
-            console.log(source)
-            setUrl(source);
+
+            resolutionQuality(width)
+                .then((res) => {
+                    // console.log(res)
+                    setUrl(res as string)
+             });
+            // console.log(state.url)
+
         }
 
 
@@ -78,9 +63,13 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
 
 
     const setUrl = (source: string) => {
+        // @ts-ignore
         setState((prevState) => ({
             ...prevState,
-            url: source as string
+            url: [
+                {src: `${source}.webm`, type: 'video/webm'},
+                {src: `${source}.mp4`, type: 'video/mp4'}
+            ]
         }));
         // if(playerInt) {
         //     // @ts-ignore
@@ -237,8 +226,8 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
                   height={'100%'}
                    onReady={(player) => {
                        // @ts-ignore
-                       setplayerInt(player)
-                       setLoaded(true)
+                       // setplayerInt(player)
+
                    }}
                    volume={state.volume}
                   className='react-player'

@@ -18,6 +18,27 @@ export const token = () => {
 	return signedUrl
 }
 export const isServer = typeof window === 'undefined';
+export const resolutionQuality = async (width:number) => {
+
+		const videoSize = [240, 360, 480, 720, 1080, 1440, 2160];
+		// console.log(width)
+		if(width) {
+			const resQuality = (it: number) => width / 4 * 3 < it
+
+			const qlty = () => {
+				// console.log(videoSize.findIndex(resQuality))
+				if (videoSize.findIndex(resQuality) - 1 > 0) return videoSize[videoSize.findIndex(resQuality)]
+				// console.log(videoSize.length)
+				if (videoSize.findIndex(resQuality) - 1 < 0) return videoSize[videoSize.length - 1]
+				// console.log(videoSize[videoSize.length - 1])
+			}
+
+			let quality = qlty()
+			return `/video/promo_mp4/nest_promo_${quality}p`
+		}
+
+
+}
 const useWindowDimensions = (): WindowDimentions => {
 	const [windowDimensions, setWindowDimensions] = useState<WindowDimentions>({
 		width: undefined,
