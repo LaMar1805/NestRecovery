@@ -153,7 +153,8 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
                   className='react-player'
                   playing={state.playing}
                   // fallback={poster}
-                  //  playsinline={true}
+
+                   playsinline={true}
                   onProgress={handleProgress}
                 onPlay={handlePlay}
                 onPause={handlePause}
