@@ -221,6 +221,11 @@
   .video_player {
 	aspect-ratio: 128/72;
   }
+  @media screen and (max-width: 480px) {
+	.video_player__title {
+	  font-size: 1.5rem;
+	}
+  }
   @media screen and (max-width: 1199px) {
 	padding: 1.5rem 0 2.5rem;
 
@@ -265,7 +270,7 @@
 	  grid-column: var(--full_centered);
 
 	  .video_player__title {
-		font-size: 1.25rem;
+		font-size: 2rem;
 		bottom: 2rem;
 		left: 2rem;
 		right: 2rem;

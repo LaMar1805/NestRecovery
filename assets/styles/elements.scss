@@ -43,6 +43,8 @@
     font-size: 40px;
     left: 2rem;
     z-index: 20;
+    filter: drop-shadow(2px 1px 4px #000000b0);
+    user-select: none;
   }
 
   .video_player_controls {
