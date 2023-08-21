@@ -4,7 +4,7 @@ import { PlaySvg, StopSvg } from "@/components/Icons";
 import styles from './VideoPlayer.module.scss';
 import { useInView } from "react-intersection-observer";
 import ReactPlayer from "react-player";
-import { OnProgressProps } from "react-player/base";
+import OnProgressProps from "react-player/base";
 import useWindowDimensions, { resolutionQuality } from "@/components/utils";
 
 const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, muted = true}:{src?:string, srcId?:string, title?: string, auto?: boolean, btn?: boolean, poster?:  React.ReactElement, muted?: boolean}) => {
