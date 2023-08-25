@@ -34,16 +34,14 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
 
     })
 
-    // console.log(fetchVideo())
     const { ref, inView } = useInView({ threshold: 1 });
-    useEffect(() => {
 
+    useEffect(() => {
         muted ?  setMute(true) : setMute(false)
 
         if(width && width > 0) {
             let source = resolutionQuality(width);
-            // @ts-ignore
-            console.log(source.length > 0)
+
             // @ts-ignore
             if(source.length > 0) {
                 // @ts-ignore
@@ -107,9 +105,6 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
             playing: true,
 
         }));
-        // const hls = videoRef.current.getInternalPlayer('hls')
-
-        // console.log(hls.bufferController.media.canPlayType('application/vnd.apple.mpegurl'))
     };
     const togglePlay = () => {
         if(state.playing) {

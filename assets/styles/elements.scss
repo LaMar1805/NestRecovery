@@ -38,7 +38,7 @@
   .video_player__title{
     position: absolute;
     text-transform: uppercase;
-    bottom: 0;
+    bottom: 1rem;
     color: white;
     font-size: 40px;
     left: 2rem;
@@ -50,7 +50,7 @@
 
   .video_player_controls {
     position: absolute;
-    bottom: 0;
+    bottom: 1rem;
     right: 2rem;
     z-index: 20;
   }
