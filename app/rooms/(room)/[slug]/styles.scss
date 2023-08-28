@@ -6,7 +6,9 @@
 		position: relative;
 		overflow: hidden;
 		min-height: 40lvh;
-		aspect-ratio: 2800/840;
+		@media (min-width: 1200px) {
+		  aspect-ratio: 2800/840;
+		}
 		@media (max-width: 1199px) {
 		  min-height: 248px;
 		}

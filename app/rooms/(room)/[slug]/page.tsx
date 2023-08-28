@@ -63,7 +63,7 @@ export default function RoomPage({ params: {slug} }: { params: { slug: string } 
 					src={{src: room.images.screen?.src,
 						width: room.images.screen?.width,
 						height:room.images.screen?.height
-					}} alt={''}/>}</div>}
+					}}   alt={''}/>}</div>}
 			/>
 			<Section
 				variant={'section-content grid'}

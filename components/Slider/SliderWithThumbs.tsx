@@ -24,7 +24,7 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 	const swiperRef = useRef<SwiperCore>();
 	const [thumbsSwiper, setThumbsSwiper] = useState(null);
 	const [firstSwiper, setFirstSwiper] = useState(null);
-
+	const fImg = [ ...items]
 
 	// @ts-ignore
 	return (
@@ -59,7 +59,12 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 
 				>
 
-					{items.map((item:ReactNode, index: number) => <SwiperSlide className={'section-screen__slide'} key={index}>{item}</SwiperSlide>)}
+					{fImg.map((item:any, index: number) => <SwiperSlide className={'section-screen__slide'} key={index}>{
+						() => {
+							item.props.sizes = "(max-width: 767px) 100vw, 940px";
+
+							return item
+						}}</SwiperSlide>)}
 
 				</Swiper>
 
@@ -136,7 +141,15 @@ const SliderWithThumbs = ({items, thumbs = false, spaceBetween = 0, loop = false
 
 			>
 
-				{items.map((item:ReactNode, index: number) => <SwiperSlide  className={'section-screen__slide'} key={index}>{item}</SwiperSlide>)}
+				{items.map((item:any, index: number) => <SwiperSlide  className={'section-screen__slide'} key={index}>
+					{() => ({
+					...item,
+
+					props: {
+						...item.props,
+						sizes: "(max-width: 767px) 100vw, 300px"
+					}})
+				}</SwiperSlide>)}
 			</Swiper>	</div>}
 
 		</>)
