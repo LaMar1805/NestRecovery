@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 import ReactPlayer from "react-player";
 import OnProgressProps from "react-player/base";
 import useWindowDimensions, { resolutionQuality } from "@/components/utils";
+import Loading from "@/app/loading";
 
 const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, muted = true}:{src?:string, srcId?:string, title?: string, auto?: boolean, btn?: boolean, poster?:  React.ReactElement, muted?: boolean}) => {
     console.log(src)
@@ -135,7 +136,7 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
           </div>}
           {title && <h3 className={'video_player__title'}>{title}</h3>}
           <div className={'video_player_media'}>
-
+              {loaded ?
                <ReactPlayer
                    ref={videoRef}
                   playbackRate={state.playbackRate}
@@ -149,7 +150,7 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
                    volume={state.volume}
                   className='react-player'
                   playing={state.playing}
-                  // fallback={poster}
+                  fallback={poster}
 
                    playsinline={true}
                   onProgress={handleProgress}
@@ -163,7 +164,7 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
                     }
                 }
                   url={state.url}
-                  />
+                  /> : <Loading/>}
 
           </div>
       </div>

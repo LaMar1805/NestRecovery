@@ -73,18 +73,19 @@ export default function Home() {
                         </div>}
                 title={<h1 className={'section__title'}>Expert medical care in the comfort of a luxury retreat</h1>}
                 gallery={<div className={'section__gallery'}>
+                    <Suspense>
                     <Slider element={true} autoplay={{
                         delay: 5000,
                         disableOnInteraction: false,
                     }}  items={device?.value !== 'mobile' ? imagesImages: imagesMobImages}  perView={1} spaceBetween={0}/>
-                    </div>}
+                    </Suspense></div>}
             />
 
             <Section
                 container={false}
                 variant={'section-gallery grid'}
                 gallery={<div className={'section__gallery'}>
-
+                    <Suspense>
                     <Slider element={false} items={ar} breakpoints={{320: {
                         loop: true,
                         slidesPerView: 1,
@@ -105,7 +106,7 @@ export default function Home() {
                         pagination: false,
 
                         centeredSlides: false
-                    }}} />
+                    }}} />    </Suspense>
             </div>}
             />
 
@@ -116,7 +117,8 @@ export default function Home() {
                 text={<div className={'section__text'}><strong>10 minutes</strong> away from multiple top plastic surgery clinics in the LA area</div>}
                 gallery={
                     <Suspense>
-                        <ComponentC poster={<Image  style={{
+                        <ComponentC
+                            poster={<Image  style={{
                                 zIndex: 4,
                                 width: "100%",
                                 height: "100%",
