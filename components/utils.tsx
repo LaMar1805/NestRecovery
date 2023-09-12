@@ -28,11 +28,9 @@ export const resolutionQuality =  (width:number) => {
 
 		let quality = qlty();
 		return [
-			{ src: `/video/promo_mp4/nest_promo_${quality}p.mp4`, type: 'video/mp4' },
-			{ src: `/video/promo_mp4/nest_promo_${quality}p.webm`, type: 'video/webm' }
+			{ src: `https://nestrecovery.b-cdn.net/nest_promo_${quality}p.webm`, type: 'video/webm' },
+			{ src: `https://nestrecovery.b-cdn.net/nest_promo_${quality}p.mp4`, type: 'video/mp4' }
 		]
-
-
 	}
 }
 const useWindowDimensions = (): WindowDimentions => {
