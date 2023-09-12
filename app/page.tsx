@@ -73,19 +73,19 @@ export default function Home() {
                         </div>}
                 title={<h1 className={'section__title'}>Expert medical care in the comfort of a luxury retreat</h1>}
                 gallery={<div className={'section__gallery'}>
-                    <Suspense>
+
                     <Slider element={true} autoplay={{
                         delay: 5000,
                         disableOnInteraction: false,
                     }}  items={device?.value !== 'mobile' ? imagesImages: imagesMobImages}  perView={1} spaceBetween={0}/>
-                    </Suspense></div>}
+                   </div>}
             />
 
             <Section
                 container={false}
                 variant={'section-gallery grid'}
                 gallery={<div className={'section__gallery'}>
-                    <Suspense>
+
                     <Slider element={false} items={ar} breakpoints={{320: {
                         loop: true,
                         slidesPerView: 1,
@@ -106,7 +106,7 @@ export default function Home() {
                         pagination: false,
 
                         centeredSlides: false
-                    }}} />    </Suspense>
+                    }}} />
             </div>}
             />
 
@@ -128,7 +128,7 @@ export default function Home() {
                                 height={720}
                                 alt={''} quality={10}/>}
 
-                                title={'Breathtaking canyon views'}  btn={true} muted={true} auto={true} src={'/website_promo_6.mp4'} />
+                                title={'Breathtaking canyon views'}  btn={true} muted={true} auto={true} src={'https://nestrecovery.b-cdn.net/website_promo_6.mp4'} />
                     </Suspense>
                     // <VideoPlayer muted={true}  poster={<Image  style={{
                     //     zIndex: 4,
