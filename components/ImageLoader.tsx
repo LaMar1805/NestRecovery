@@ -13,7 +13,7 @@ const ImageLoader = ({src, srcMobile, handleAction, init = false, alt, style = {
 		// width={img.image?.width}
 		// // @ts-ignore
 		// height={img.image?.height}
-		placeholder={"empty"}
+		// placeholder={"empty"}
 		// sizes={img.sizes}
 		// loading={init ? "eager" : "lazy"}
 		// priority={init}

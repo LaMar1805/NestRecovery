@@ -50,7 +50,7 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
             // @ts-ignore
             if(source.length > 0) {
                 // @ts-ignore
-                setSourceC({source});
+                // setSourceC({source});
                 // @ts-ignore
                 setUrl(source)
             }
