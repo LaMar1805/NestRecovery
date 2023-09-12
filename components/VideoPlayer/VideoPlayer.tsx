@@ -9,7 +9,7 @@ import useWindowDimensions, { resolutionQuality } from "@/components/utils";
 import Loading from "@/app/loading";
 
 const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, muted = true}:{src?:string, srcId?:string, title?: string, auto?: boolean, btn?: boolean, poster?:  React.ReactElement, muted?: boolean}) => {
-    console.log(src)
+
     const {width} = useWindowDimensions();
 
 
