@@ -8,7 +8,7 @@ import OnProgressProps from "react-player/base";
 import useWindowDimensions, { resolutionQuality } from "@/components/utils";
 
 const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, muted = true}:{src?:string, srcId?:string, title?: string, auto?: boolean, btn?: boolean, poster?:  React.ReactElement, muted?: boolean}) => {
-
+    console.log(src)
     const {width} = useWindowDimensions();
 
 
@@ -40,8 +40,12 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
         muted ?  setMute(true) : setMute(false)
 
         if(width && width > 0) {
-            let source = resolutionQuality(width);
-
+            let source;
+            if(!src) {
+                source = resolutionQuality(width);
+            } else {
+                source = src;
+            }
             // @ts-ignore
             if(source.length > 0) {
                 // @ts-ignore
@@ -49,14 +53,13 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
                 // @ts-ignore
                 setUrl(source)
             }
-
-
         }
 
         setLoaded(true)
 
 
     }, [width]);
+
      useEffect(() => {
 
          if(inView && auto) {
@@ -134,7 +137,6 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
           <div className={'video_player_media'}>
 
                <ReactPlayer
-
                    ref={videoRef}
                   playbackRate={state.playbackRate}
                   loop={state.loop}
@@ -156,16 +158,11 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
 
                 config={{
                     file: {
-
                         forceVideo: true,
-
                     }
                     }
                 }
                   url={state.url}
-
-                   // autoPlay={state.playing}
-
                   />
 
           </div>
