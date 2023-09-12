@@ -25,7 +25,6 @@ export const resolutionQuality =  (width:number) => {
 			if (videoSize.findIndex(resQuality) > 0) return videoSize[videoSize.findIndex(resQuality)];
 			if (videoSize.findIndex(resQuality) - 1 < 0) return videoSize[videoSize.length - 1];
 		}
-
 		let quality = qlty();
 		return [
 			{ src: `https://nestrecovery.b-cdn.net/nest_promo_${quality}p.webm`, type: 'video/webm' },
