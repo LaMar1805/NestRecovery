@@ -14,8 +14,8 @@ const VideoPlayerC = ({src, srcId, title, btn = false, auto = true, poster, mute
 
 
     const [loaded, setLoaded] = useState(false);
-    const [sourceC, setSourceC] = useState(null);
-    const [playerInt, setplayerInt] = useState(null);
+    // const [sourceC, setSourceC] = useState(null);
+    // const [playerInt, setplayerInt] = useState(null);
     const videoRef = useRef<any>(null);
 
     const [state, setState] = useState({
