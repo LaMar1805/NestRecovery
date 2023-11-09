@@ -14,7 +14,7 @@ const Layout = ({
 		<>
 			{envDev && (<>
 			<Script src="https://www.googletagmanager.com/gtag/js?id=G-X7K6VG59EG" />
-			<Script strategy={"afterInteractive"} id={'clarity'}
+			<Script strategy={"afterInteractive"} id={'ms_clarity'}
 					dangerouslySetInnerHTML={{ __html:`
 					  (function(c,l,a,r,i,t,y){
 					c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
