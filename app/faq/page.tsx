@@ -44,7 +44,8 @@ export default function FaqPage() {
             <Section
                 variant={'section-content'}
                 container={true}
-                text={<div className={'section__text'}><AccordionList items={testData.data.accordion} /></div>}
+                text={<div className={'section__text'}>
+                    <AccordionList items={testData.data.accordion} /></div>}
                 links={<div className={'section__links'}><Link href={'//#contactpage'} className={'button button-big button-contrast'}>Contact</Link></div> }
             />
 
