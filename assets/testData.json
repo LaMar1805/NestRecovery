@@ -146,6 +146,11 @@
        "src": "/svg/patio.svg",
        "width": 103,
        "height": 86
+     },
+      "adj_beds": {
+       "src": "/svg/adj_beds.svg",
+       "width": 91,
+       "height": 101
      }
     },
     "rooms": [
@@ -178,7 +183,7 @@
           ]
         },
         "full_data": {
-          "features": ["bed", "patio", "closet", "fridge", "shower"],
+          "features": ["bed", "patio", "closet", "fridge", "shower", "adj_beds"],
           "room_includes": [
             {
               "title": "Occupancy",
@@ -305,7 +310,7 @@
           ]
         },
         "full_data": {
-          "features": ["bed", "patio", "closet", "fridge", "shower"],
+          "features": ["bed", "patio", "closet", "fridge", "shower","adj_beds"],
           "room_includes": [
             {
               "title": "Occupancy",
@@ -400,7 +405,7 @@
       },
       {
         "title": "Cahaya Room",
-        "properties": [ "400 sqft", "350 sqft deck", "second floor"],
+        "properties": [ "400 sqft", "350 sqft deck", "second floor","adj_beds"],
         "href": "/rooms/cahaya",
         "images": {
           "screen": {
@@ -443,7 +448,7 @@
           ]
         },
         "full_data": {
-          "features": ["bed", "deck", "closet", "fridge", "shower"],
+          "features": ["bed", "deck", "closet", "fridge", "shower","adj_beds"],
           "room_includes": [
             {
               "title": "Occupancy",
@@ -575,7 +580,7 @@
           ]
         },
         "full_data": {
-          "features": ["bed", "deck", "closet", "fridge", "shower"],
+          "features": ["bed", "deck", "closet", "fridge", "shower","adj_beds"],
           "room_includes": [
             {
               "title": "Occupancy",
@@ -670,7 +675,7 @@
       },
       {
         "title": "Pelangi Room",
-        "properties": [ "600 sqft", "1,110 sqft deck", "penthouse", "third floor"],
+        "properties": [ "600 sqft", "1,110 sqft deck", "penthouse", "third floor","adj_beds"],
         "href": "/rooms/pelangi",
         "images": {
           "screen": {
@@ -757,7 +762,7 @@
           ]
         },
         "full_data": {
-          "features": ["bed", "deck", "view", "fire_pit", "closet", "fridge", "shower"],
+          "features": ["bed", "deck", "view", "fire_pit", "closet", "fridge", "shower","adj_beds"],
           "room_includes": [
             {
               "title": "Occupancy",
