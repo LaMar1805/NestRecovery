@@ -3,6 +3,8 @@ import Footer from "@/components/layout/Footer";
 import React from "react";
 import Script from "next/script";
 import { Analytics } from '@vercel/analytics/react';
+import OnScreen from "@/components/OnScreen/OnScreen";
+import FootBar from "@/components/FootBar/FootBar";
 
 const Layout = ({
 	children,
@@ -30,6 +32,8 @@ const Layout = ({
 		<Header/>
 			{children}
 		<Footer/>
+			<OnScreen />
+			<FootBar/>
 			{envDev && (	<Analytics />)}
 		</>
 	)

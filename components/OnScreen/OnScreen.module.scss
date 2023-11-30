@@ -1,0 +1,79 @@
+.OnScreen {
+	display: grid;
+  gap: 2rem;
+  position: fixed;
+  bottom: 10vh;
+  right: 3vw;
+  z-index: 9999;
+  @media screen and (max-width: 768px){
+	display: none;
+  }
+}
+.phone, .chat{
+  &:hover {
+	scale: 1.1;
+	transition: scale .15s ease-in-out;
+  }
+}
+.phone {
+  transition: scale .15s ease-in-out;
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+
+
+  padding: 1rem;
+	img {
+	  position: relative;
+	  z-index: 1;
+	  width: 2.5rem;
+	  height: 2.5rem;
+	}
+	border-radius:100%;
+  &:before {
+	content: '';
+	background: var(--actionGradient);
+	display: block;
+	transform: rotate(90deg);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	left: 0;
+
+  }
+}
+.chat {
+  transition: scale .15s ease-in-out;
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+
+  padding: 1.125rem 1rem .875rem;
+  img {
+	position: relative;
+	z-index: 1;
+	width: 2.5rem;
+	height: 2.5rem;
+  }
+  border-radius:100%;
+  &:before {
+	content: '';
+	background: var(--actionGradient);
+	display: block;
+	transform: rotate(90deg);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	left: 0;
+
+  }
+}
