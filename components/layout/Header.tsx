@@ -1,5 +1,5 @@
 import React from "react";
-import { BeverlyHills,  LogoSvg, NestRecovery } from "@/components/Icons";
+import { BeverlyHills, LogoSvg, NestRecovery } from "@/components/Icons";
 import HeaderNavbar from "@/components/layout/Navbar";
 import Link from "next/link";
 
@@ -10,6 +10,7 @@ const Header = () => {
 			<div className={'container'}>
 				<HeaderNavbar >
 					<div className={"layout-header__logo"}>
+
 						<Link href={'/'}><LogoSvg/></Link>
 					</div>
 					<div className={'textStyled left'}>

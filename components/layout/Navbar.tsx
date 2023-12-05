@@ -45,7 +45,9 @@ export default function HeaderNavbar({children}:{children: ReactNode | ReactElem
 		return(
 			<>
 				<Navbar   style={''} items={linkAr.slice(0,3)}/>
+				<a className={'header_mailto appear'} href={'mailto:info@nestrecovery.me'}>info@nestrecovery.me</a>
 				{children}
+				<a className={'header_phone appear'} href={'tel:4242825171'}>(424)282-5171</a>
 				<Navbar style={''} items={linkAr.slice(3, 6)}/>
 				</>)
 	} else {

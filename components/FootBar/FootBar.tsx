@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './FootBar.module.scss';
 import phone from '../../public/images/phone.png';
-import chat from '../../public/images/chat.png';
 import mail from '../../public/images/mail.png';
 import map from '../../public/images/map.png';
 import Image from "next/image";
@@ -12,11 +11,11 @@ const items = [
 		img: <Image src={phone} alt={''}/>,
 		link: "tel:4242825171"
 	},
-	{
-		text: 'Chat',
-		img: <Image src={chat} alt={''}/>,
-		link: '#'
-	},
+	// {
+	// 	text: 'Chat',
+	// 	img: <Image src={chat} alt={''}/>,
+	// 	link: '#'
+	// },
 	{
 		text: 'E-mail',
 		img: <Image src={mail} alt={''}/>,
