@@ -17,7 +17,7 @@ export default function TermsPage() {
     const cardsMobImages = [slideMobImg,slideMobImg2,slideMobImg3];
 
     return (
-        <main className={'page-index '}>
+        <main className={'page-index test'}>
             <div style={{position:"relative", paddingTop: "56.25%"}}>
                 <iframe src="https://iframe.mediadelivery.net/embed/147492/288586aa-5453-4518-98b6-fad98f70d902?autoplay=false&loop=false&muted=false&preload=true"
                     loading="lazy"
