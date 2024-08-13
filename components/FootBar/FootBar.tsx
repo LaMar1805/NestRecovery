@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import styles from './FootBar.module.scss';
 import phone from '../../public/images/phone.png';
@@ -33,7 +34,18 @@ type FootBarProps = {}
 const FootBar = () => {
 	return (
 		<div className={styles.FootBar}>
-			{items.map((i:any, index: number) => <a key={`tab-${index}`} href={i.link}>{i.img}<span>{i.text}</span></a>)}
+			{items.map((i:any, index: number) => {
+				if(i.text === "E-mail") {
+					return <a key={`tab-${index}`}
+						href={""} onClick={(event) => {
+							event.preventDefault();
+							window.location.replace(i.link);
+							return false
+					}}>{i.img}<span>{i.text}</span></a>
+				}
+				return <a key={`tab-${index}`}
+					href={i.link}>{i.img}<span>{i.text}</span></a>
+			})}
 		</div>
 	);
 };
