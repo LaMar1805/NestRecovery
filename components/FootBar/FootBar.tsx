@@ -36,9 +36,10 @@ const FootBar = () => {
 		<div className={styles.FootBar}>
 			{items.map((i:any, index: number) => {
 				if(i.text === "E-mail") {
-					return <a key={`tab-${index}`} target="_blank"
-						href={"#"} onClick={(event) => {
-							event.preventDefault();
+					return <a key={`tab-${index}`}
+					 onClick={(event) => {
+							console.log('click');
+							// event.preventDefault();
 							window.location.replace(i.link);
 							return false
 					}}>{i.img}<span>{i.text}</span></a>
