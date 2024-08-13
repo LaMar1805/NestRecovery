@@ -36,9 +36,9 @@ export default function HeaderNavbar({children}:{children: ReactNode | ReactElem
 	useEffect(() => {
 		setAnimate(0);
 	}, [])
-
-	const linkAr = testData.data.menuLinks.map((item) => <><Link className={`navbar__link ${pathname === item.link && 'active'}`} key={id} onClick={() => (width && width > 1200) && handleBurger()} href={item.link}>{item.text}</Link>
-		{item.submenu ? <Navbar style={'navbar__submenu'} items={item.submenu.map((item) => <Link className={"navbar__link navbar__link-submenu"} key={id} onClick={() => (width && width > 1200) && handleBurger()} href={item.link}>{item.text}</Link>)}/> : null}</>)
+	console.log(pathname.includes("/what-to-expect"))
+	const linkAr = testData.data.menuLinks.map((item) => <><Link className={`navbar__link ${pathname.includes(item.link) && 'active'}`} key={id} onClick={() => (width && width > 1200) && handleBurger()} href={item.link}>{item.text}</Link>
+		{item.submenu ? <Navbar style={'navbar__submenu'} items={item.submenu.map((item) => <Link className={`navbar__link navbar__link-submenu ${pathname.includes(item.link) && 'active'}`} key={id} onClick={() => (width && width > 1200) && handleBurger()} href={item.link}>{item.text}</Link>)}/> : null}</>)
 
 	const Burger = () => <a className={'burger'}  onClick={handleBurger}>{!open ? <BurgerSvg /> : <BurgerClosedSvg />}</a>;
 	if(width && width > 1200) {

@@ -50,6 +50,10 @@
 	  margin-bottom: 10px;
 	  right: 0;
 	  z-index: 2;
+	  @media  screen and (max-width: 1199px){
+		font-size: 1.25rem;
+
+	  }
 	}
 	&:last-child {
 	  @media (min-width: 1200px) {
@@ -83,6 +87,22 @@
 		right: 0;
 		height: 2px;
 		background: linear-gradient(90deg, #BE9042 0%, #FBDD78 60%, #C59541 100%);
+	  }
+	  @media  screen and (min-width: 1200px){
+		p {
+		 padding: 0;
+		 margin: 0;
+		}
+	  }
+	  @media  screen and (max-width: 1199px){
+		p {
+
+		  margin: 0; /* Убираем внешний отступ */
+		  -webkit-line-clamp: 3; /* Число отображаемых строк */
+		  display: -webkit-box; /* Включаем флексбоксы */
+		  -webkit-box-orient: vertical; /* Вертикальная ориентация */
+		  overflow: hidden;
+		}
 	  }
 	}
 
@@ -146,7 +166,7 @@
 		aspect-ratio: 360/400;
 	  }
 	  .card__title {
-		bottom: 8rem;
+		bottom: 7rem;
 	  }
 
 	  .card__description {
@@ -189,7 +209,7 @@
   }
   @media screen and (max-width: 1199px){
 
-	  max-width: 480px;
+	  //max-width: 480px;
 	  justify-self: center;
 	  align-self: center;
 

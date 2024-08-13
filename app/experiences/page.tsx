@@ -79,7 +79,7 @@ export default function ExperiencesPage() {
                         320: {
                             slidesPerView: 1,
                             spaceBetween: 0,
-                            navigation: false
+                            navigation: true
                         },
                         1200: {
                             loop: true,
@@ -101,9 +101,7 @@ export default function ExperiencesPage() {
                 gallery={<div className={'section__gallery_wrapper'}>
                     <div className={'section__gallery'}>
                     <Slider items={[...imgs, ...imgs,...imgs]} itemsMob={[...imgs, ...imgs,...imgs]} navigation={true} style={{
-                        width: "460px",
-                        height: "360px",
-                        maxWidth: "460px"
+
                     }} breakpoints={{
                         // when window width is >= 320px
 
@@ -112,6 +110,11 @@ export default function ExperiencesPage() {
                             slidesPerView: 1,
                             spaceBetween: 20,
                             navigation: false
+                        },
+                        720: {
+                            loop: false,
+                            slidesPerView: 2,
+                            spaceBetween: 10,
                         },
                         1200: {
                             loop: false,

@@ -105,6 +105,11 @@ export default function WhatToExpectPage() {
 
                         },
                         // when window width is >= 480px
+                        720: {
+                            loop: false,
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
                         1200: {
                             slidesPerView: 3,
                             spaceBetween: 30
@@ -120,7 +125,7 @@ export default function WhatToExpectPage() {
                     <p>If you ever feel social during your healing journey, you can visit our common areas, including the dining room, lounge zone, and pool. Otherwise, all your time with us will be completely private and confidential.</p>
                 </div>}
                 links={<div className={'section__footer'}>
-                    <Link href={'https://hotels.cloudbeds.com/reservation/y3Nqxi'} className={'button button-big'}>Book</Link>
+                    <Link href={'https://hotels.cloudbeds.com/reservation/y3Nqxi'} className={'button button-big '}>Book</Link>
                     <Link href={'/faq'} className={'button button-big'}>Read FAQ</Link>
                 </div>}
                 variant={'section-gallery wte-four grid'}
@@ -133,6 +138,12 @@ export default function WhatToExpectPage() {
                                 spaceBetween: 0,
                                 navigation: false
                             },
+                            720: {
+                                loop: false,
+                                slidesPerView: 2,
+                                spaceBetween: 20,
+                            },
+
                             1200: {
                                 loop: true,
                                 slidesPerView: 1,

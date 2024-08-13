@@ -37,7 +37,7 @@
           "height": 1061
         }
       },
-       "about": {
+      "about": {
         "title": "Post-surgery recovery in the heart of Beverly Hills",
         "description": "The post-surgery journey is a critical time requiring both expert care and a tranquil environment. We offer the perfect balance of world-class medical support and luxurious accommodations. Learn about our superior services here.",
         "image": {
@@ -278,6 +278,9 @@
       },
       {
         "title": "Serai Room",
+        "meta": {
+          "title": ""
+        },
         "properties": [ "405 sqft", "100 sqft patio", "first floor"],
         "href": "/rooms/serai",
         "images": {

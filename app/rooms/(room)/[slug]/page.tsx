@@ -11,9 +11,49 @@ import { DefList } from "@/components/ui/Elements";
 import Image from "next/image";
 
 import dynamic from "next/dynamic";
+import { Metadata, ResolvingMetadata } from "next";
 
 const SliderWithThumbs = dynamic(() => import('@/components/Slider/SliderWithThumbs'))
+type Props = {
+	params: { slug: string }
+}
 
+export async function generateMetadata(
+	{ params }: Props,
+	parent: ResolvingMetadata
+): Promise<Metadata> {
+	// read route params
+	const slug = params.slug
+
+	// fetch data
+	const room = testData.data.rooms.filter(r => (r.href.includes(slug)))[0]
+
+
+	// optionally access and extend (rather than replace) parent metadata
+	const previousImages = (await parent).openGraph?.images || []
+	return {
+		title: room.title + " - Post-surgery recovery in the heart of Beverly Hills" + "| nestrecovery.me",
+		description: room.properties.join(", ").toString(),
+		twitter: {
+			title: room.title + " - Post-surgery recovery in the heart of Beverly Hills",
+			images: room.images.gallery.map(i => i.src)
+		},
+		openGraph: {
+			title: room.title + " - Post-surgery recovery in the heart of Beverly Hills" + "| nestrecovery.me",
+			description: room.properties.join(" ").toString(),
+			url: new URL('https://www.nestrecovery.me'),
+			siteName: 'Nest Recovery',
+			images: room.images.gallery.map(i => ({
+					alt: room.title + room.properties.join(" ").toString() + "| nestrecovery.me",
+					url: `${process.env.baseUrl}${i.src}`,
+					height: i.height,
+					width: i.width,
+					})),
+			locale: 'en_US',
+			type: 'website',
+		},
+	}
+}
 export default function RoomPage({ params: {slug} }: { params: { slug: string } }) {
 
 	const room = testData.data.rooms.filter(r => (r.href.includes(slug)))[0];

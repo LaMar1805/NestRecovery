@@ -246,11 +246,15 @@
   border-top: 2px solid #1A2714;
   border-bottom: 2px solid #1A2714;
   margin-top: -2px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   svg {
     transition: all .5s ease-in-out;
   }
   &:hover{
-    background-color: #0000000f;
+    @media screen and (min-width: 1024px){
+      background-color: #0000000f;
+    }
+
   }
   &.expanded {
     background-color: rgba(0, 0, 0, 0);
@@ -350,6 +354,8 @@
   rotate: 90deg;
   position: relative;
   margin: 0 1rem;
+  min-height: 2rem;
+  aspect-ratio: 1/1;
 
 }
 .arrow--l-r.left span:nth-child(4) {

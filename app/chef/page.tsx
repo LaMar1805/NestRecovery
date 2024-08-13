@@ -120,7 +120,11 @@ export default function ChefPage() {
                             spaceBetween: 20,
                         },
                         // when window width is >= 480px
-                        1400: {
+                        841: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                        1200: {
                             slidesPerView: 3,
                             spaceBetween: 30
                         }

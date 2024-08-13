@@ -19,7 +19,7 @@ const items = [
 	{
 		text: 'E-mail',
 		img: <Image src={mail} alt={''}/>,
-		link: 'mailto:INFO@NESTRECOVERY.ME&subject=Letter from NESTRECOVERY.ME'
+		link: 'mailto:info@nestrecovery.me?subject=Letter from NESTRECOVERY.ME'
 	},
 	{
 		text: 'Address',

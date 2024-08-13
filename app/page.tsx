@@ -57,7 +57,7 @@ export default function Home() {
     const imagesMobImages = [slideMobImg,slideMobImg2,slideMobImg3];
     const cardsImages = [slideCardImg,slideCardImg2,slideCardImg3];
 
-    const ar = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={testData.data.cardBenefits[index].description} key={index+100}
+    const ar = cardsImages.map((item, index) => <CardImage href={testData.data.cardBenefits[index].link} style={'card-benefit'} title={testData.data.cardBenefits[index].title} description={<p>{testData.data.cardBenefits[index].description}</p>} key={index+100}
         image={item} />);
     ar.push(<CardImage  image={""} style={'card-benefit'} svg={<FallBackImgSvg />} key={123}/>);
     // console.log(ar)
@@ -95,6 +95,11 @@ export default function Home() {
                     720: {
                         loop: false,
                         slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    841: {
+                        loop: false,
+                        slidesPerView: 3,
                         spaceBetween: 20,
                     },
 

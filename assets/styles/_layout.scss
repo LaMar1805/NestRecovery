@@ -171,11 +171,12 @@ main {
   &:after {
     content: '';
     background-image: var(--actionGradient);
+    opacity: 0;
     height: 2px;
     transform: scaleX(0%);
     width: 100%;
     display: block;
-    transition: transform 0.2s ease-in-out, color 0.25s 0.05s ease-in-out;
+    transition: all 0.2s ease-in-out, color 0.25s 0.05s ease-in-out;
 
   }
   &:hover, &:focus, &.active {
@@ -184,6 +185,7 @@ main {
       content: '';
       background-image: var(--actionGradient);
       height: 2px;
+      opacity: 1;
       width: 100%;
       transform: scaleX(100%);
       display: block;
@@ -249,5 +251,8 @@ main {
       flex-flow: column;
       gap: 1rem;
     }
+  }
+  @media screen and (max-width: 767px){
+    padding-bottom: 96px !important;
   }
 }

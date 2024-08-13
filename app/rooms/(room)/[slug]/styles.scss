@@ -151,14 +151,16 @@
 	.accordion__text {
 	  padding: 0;
 	  transform: initial;
-	  max-height: initial;
+	  max-height: 0;
 	  display: grid;
+	  height: 100%;
 	  grid-template-columns: var(--gridinner);
 	  gap: var(--gridGap);
 	  grid-template-rows: auto auto auto;
 	  grid-auto-flow: column;
 	  opacity: 0;
 	  transition: opacity 300ms;
+
 	}
 	&.expanded  {
 	  grid-template-rows: auto auto;
@@ -169,6 +171,7 @@
 	  .accordion__text {
 		padding: 2.25rem 0;
 		opacity: 1;
+		max-height: 100%;
 	  }
 
 	}
@@ -179,7 +182,7 @@
 		  grid-auto-flow: initial;
 		}
 		.def_list {
-		  grid-column: 1/-1;
+		  //grid-column: 1/-1;
 		  dt {
 			font-size: 1.125rem;
 		  }
