@@ -1,6 +1,6 @@
 <svg width="489" height="420" viewBox="0 0 489 420" fill="none" xmlns="http://www.w3.org/2000/svg">
 <mask id="mask0_294_5203" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="489" height="420">
-<rect x="0.536133" y="0.481445" width="488.395" height="418.982" fill="#1A2714"/>
+<rect x="0.536133" y="0.481445" width="488.395" height="418.982" fill="#313D2D"/>
 </mask>
 <g mask="url(#mask0_294_5203)">
 <path d="M517.773 196.464C518.484 201.391 516.538 217.028 503.13 226.072C486.371 237.377 467.479 240.855 456.51 259.406C445.54 277.957 454.986 285.783 433.961 301.725C412.936 317.668 397.701 332.161 385.817 338.248C373.933 344.335 348.881 365.35 345.834 373.466" stroke="url(#paint0_linear_294_5203)" stroke-width="2"/>
