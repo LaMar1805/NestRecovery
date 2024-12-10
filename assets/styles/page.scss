@@ -1298,6 +1298,23 @@
 		grid-column: span 1;
 	  }
 	}
+	@media screen and (max-width: 767px) {
+	  .section__gallery_wrapper {
+		overflow: hidden;
+		.section__gallery {
+		  max-width: 100vw;
+		}
+	  }
+	}
+	@media screen and (max-width: 1199px) {
+	  .section__gallery_wrapper {
+		//overflow: hidden;
+		.section__gallery {
+		  max-width: 100vw;
+		}
+	  }
+	}
+
   }
   @media screen and (max-width: 767px){
 	.section-gallery.wte-three {
