@@ -2,11 +2,13 @@ import Section from "@/components/layout/Section";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
 import testData from "@/assets/testData.json"
-import slideImg from "@/public/images/index/Ofich2Dg1@2x.png"
-import slideImg2 from "@/public/images/index/index_sl_1@2x.png"
+import slideImg from "@/public/images/index/indexfirst.png"
+import slideImg2 from "@/public/images/index/Ofich2Dg1@2x.png"
+// import slideImg2 from "@/public/images/index/index_sl_1@2x.png"
 import slideImg3 from "@/public/images/index/index_sl_2@2x.png"
-import slideMobImg from "@/public/images/index/Ofich2Dg1-mobile@2x.png"
-import slideMobImg2 from "@/public/images/index/index_sl_1-mobile@2x.png"
+import slideMobImg from "@/public/images/exp/screen_mob_first@2x.png"
+import slideMobImg2 from "@/public/images/index/Ofich2Dg1-mobile@2x.png"
+// import slideMobImg2 from "@/public/images/index/index_sl_1-mobile@2x.png"
 import slideMobImg3 from "@/public/images/index/index_sl_2-mobile@2x.png"
 import slideCardImg from "@/public/images/index/1.png"
 import slideCardImg2 from "@/public/images/index/2.png"
