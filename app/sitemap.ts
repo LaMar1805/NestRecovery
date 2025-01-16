@@ -43,7 +43,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			lastModified: new Date(),
 		},
 		{
-			url: 'https://www.nestrecovery.me/what-to-expect',
+			url: 'https://www.nestrecovery.me/rooms',
+			lastModified: new Date(),
+		},
+		{
+			url: 'https://www.nestrecovery.me/rooms/cinta',
+			lastModified: new Date(),
+		},
+		{
+			url: 'https://www.nestrecovery.me/rooms/serai',
+			lastModified: new Date(),
+		},
+		{
+			url: 'https://www.nestrecovery.me/rooms/kirana',
+			lastModified: new Date(),
+		},
+		{
+			url: 'https://www.nestrecovery.me/rooms/cahaya',
+			lastModified: new Date(),
+		},
+		{
+			url: 'https://www.nestrecovery.me/rooms/pelangi',
 			lastModified: new Date(),
 		}
 	]
